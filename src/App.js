@@ -1,4 +1,5 @@
 import {Navigate, Route, Routes} from "react-router-dom";
+import Recent from "./components/Recent";
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
           <Route path='/:language/about' element={<About />} />
           <Route path='*' element={<Navigate to='/pl' />} />
         </Routes>*/}
-          <h1 className="text-3xl font-bold underline">Hello vitek</h1>
+          <h1 className="text-3xl font-bold underline cursor-pointer">Hello vitek</h1>
+          <Recent/>
       </div>
   );
 }
