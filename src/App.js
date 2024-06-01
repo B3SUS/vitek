@@ -10,7 +10,7 @@ function App() {
           <Route path='/:language/about' element={<About />} />
           <Route path='*' element={<Navigate to='/pl' />} />
         </Routes>*/}
-          <h1 className="text-3xl font-bold underline">Hello world</h1>
+          <h1 className="text-3xl font-bold underline">Hello vitek</h1>
       </div>
   );
 }
