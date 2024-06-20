@@ -2,16 +2,16 @@ import React from "react";
 
 
 
-function CoinLi({coin, isActive, onClick, updateExchangeDetails}){
-
+function CoinLi({coin, isActive, onClick, updateExchangeDetails, clearSearchInput}){
 
 
     return(
 
 
         <li onClick={() => {
-            updateExchangeDetails();
+            updateExchangeDetails(coin);
             onClick(coin.id);
+            clearSearchInput();
         }}
             className={`px-[1em]  flex justify-between items-center relative m-0 w-full cursor-pointer font-sans text-[#f7931a] ${isActive ? 'bg-[#29315C]' : 'bg-none '}`}
         >

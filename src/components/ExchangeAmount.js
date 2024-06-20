@@ -16,6 +16,10 @@ export const ExchangeAmount  = ({
 
     const [searchValue, setSearchValue] = useState('');
     const [filteredCoins, setFilteredCoins] = useState(coins);
+
+    useEffect(() => {
+        setFilteredCoins(coins);
+    }, [coins]);
     const handleSearchChange = (e) => {
 
         const searchValue = e.target.value;
@@ -73,6 +77,10 @@ export const ExchangeAmount  = ({
     }, [selectedColor1, selectedColor2]);
 
 
+    const clearSearchInput = () => {
+      setSearchValue('');
+      setFilteredCoins(coins)
+    }
 
 
     return (
@@ -130,6 +138,7 @@ export const ExchangeAmount  = ({
                                         isActive={coin.id === activeCoin1}
                                         onClick={handleClick1}
                                         updateExchangeDetails={updateExchangeDetails}
+                                        clearSearchInput={clearSearchInput}
                                     />
                                 ))}
 
@@ -231,6 +240,7 @@ export const ExchangeAmount  = ({
                                         isActive={coin.id === activeCoin2}
                                         onClick={handleClick2}
                                         updateExchangeDetails={updateExchangeDetails}
+                                        clearSearchInput={clearSearchInput}
                                     />
                                 ))}
 
