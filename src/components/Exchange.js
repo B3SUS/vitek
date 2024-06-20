@@ -99,7 +99,6 @@ const ExchangeForm = () => {
                     color: coinColors[coin.id],
                     icon: coinIcons[coin.id]
                 })))
-                console.log(coins)
                 if (data.length > 1) {
                     setActiveCoin1(data[0].id);
                     setActiveCoin2(data[1].id);
@@ -189,7 +188,7 @@ const ExchangeForm = () => {
     };
 
     const handleAmount1Change = (e) => {
-        const value = e.target.value;
+        const value = e.target.value.replace(/,/g, '');
         if(/^[0-9]*\.?[0-9]*$/.test(value)){
             setAmount1(value);
             setLastChanged('amount1');
@@ -197,7 +196,7 @@ const ExchangeForm = () => {
     };
 
     const handleAmount2Change = (e) => {
-        const value = e.target.value;
+        const value = e.target.value.replace(/,/g, '');
         setAmount2(value);
         setLastChanged('amount2');
     };
