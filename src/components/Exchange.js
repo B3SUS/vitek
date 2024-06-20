@@ -4,7 +4,22 @@ import {ExchangeAmount} from "./ExchangeAmount";
 import {ExchangeAdress} from "./exchangeAdress";
 import {ExchangeWrapper} from "./ExchangeWrapper";
 import {ExchangeTerms} from "./ExchangeTerms";
-import Web3 from "web3";
+import btc from '../svg/bitcoin-ico.png'
+import bnb from '../svg/bnb.png'
+import dogecoin from '../svg/dogecoin.png'
+import ethereum from '../svg/ethereum.png'
+import litecoin from '../svg/litecoin.png'
+import monero from '../svg/monero.png'
+import shibainu from '../svg/shiba-inu.png'
+import solana from '../svg/solana.png'
+import tether from '../svg/tether.png'
+import avalanche from '../svg/avalanche.png'
+import tron from '../svg/tron.png'
+import polka from '../svg/polkadot.png'
+import cardano from '../svg/cardano.png'
+import xrp from '../svg/xrp.png'
+import near from '../svg/near.png'
+import usdc from '../svg/usdc.png'
 
 
 const ExchangeForm = () => {
@@ -30,14 +45,61 @@ const ExchangeForm = () => {
         setSelectedOption(e.target.value);
     };
 
+    const neededCoins = ['bitcoin', 'ethereum', 'tether', 'binance-coin', 'solana', 'usd-coin', 'xrp', 'dogecoin', 'shiba-inu', 'cardano', 'avalanche', 'tron', 'polkadot', 'near-protocol', 'litecoin', 'monero'];
 
+    const coinColors = {
+
+        'bitcoin': '#f7931a',
+        'ethereum': '#fff',
+        'tether': '#53ae94',
+        'binance-coin': '#ffcc4c',
+        'solana': '#a364fc',
+        'usd-coin': '#2775ca',
+        'xrp': '#0c89ca',
+        'dogecoin': '#ba9f33',
+        'shiba-inu': '#f4a816',
+        'cardano': '#fff',
+        'avalanche': '#ca443c',
+        'tron': '#ff2e4b',
+        'polkadot': '#e6007a',
+        'near-protocol': '#8B9467',
+        'litecoin': '#497ed1',
+        'monero': '#e06b1a',
+    };
+
+    const coinIcons ={
+        'bitcoin': btc,
+        'ethereum': ethereum,
+        'tether': tether,
+        'binance-coin': bnb,
+        'solana': solana,
+        'usd-coin': usdc,
+        'xrp': xrp,
+        'dogecoin': dogecoin,
+        'shiba-inu': shibainu,
+        'cardano': cardano,
+        'avalanche': avalanche,
+        'tron': tron,
+        'polkadot': polka,
+        'near-protocol': near,
+        'litecoin': litecoin,
+        'monero': monero,
+    }
     useEffect(()=>{
-        axios.get('https://api.coincap.io/v2/assets?limit=10')
+        axios.get(`https://api.coincap.io/v2/assets/?ids=${neededCoins.join(',')}`)
             .then(res => {
                 const data = res.data.data
-                setCoins(data)
-                setCopiedCoins(data)
-                console.log([...data])
+                setCoins(data.map(coin => ({
+                    ...coin,
+                    color: coinColors[coin.id],
+                    icon: coinIcons[coin.id]
+                })))
+                setCopiedCoins(data.map(coin => ({
+                    ...coin,
+                    color: coinColors[coin.id],
+                    icon: coinIcons[coin.id]
+                })))
+                console.log(coins)
                 if (data.length > 1) {
                     setActiveCoin1(data[0].id);
                     setActiveCoin2(data[1].id);
@@ -76,6 +138,8 @@ const ExchangeForm = () => {
                 if (coin1 && coin2) {
                     const price1 = parseFloat(coin1.priceUsd);
                     const price2 = parseFloat(coin2.priceUsd);
+                    setSelectedPrice1(price1);
+                    setSelectedPrice2(price2);
                     if (selectedOption === 'fixed'){
                         const calculatedAmount2 = ((parseFloat(amount1) * price1 / price2) * 0.99).toFixed(8);
                         setAmount2(calculatedAmount2);
@@ -89,14 +153,7 @@ const ExchangeForm = () => {
         }
     }, [activeCoin1, activeCoin2, amount1, coins, copiedCoins, lastChanged, selectedOption]);
 
-    const [address, setAddress] = useState('');
-    const [isValid, setIsValid] = useState(null);
 
-    const validateAddress = () => {
-        const web3 = new Web3();
-        const isValid = web3.utils.isAddress(address);
-        setIsValid(isValid);
-    };
 
 
 
@@ -109,10 +166,16 @@ const ExchangeForm = () => {
     };
 
     const toggleCoin1 = (coinId) =>{
+        if (coinId === activeCoin2){
+            setActiveCoin2(activeCoin1)
+        }
         setActiveCoin1(coinId);
     }
 
     const toggleCoin2 = (coinId) =>{
+        if (coinId === activeCoin1){
+            setActiveCoin1(activeCoin2)
+        }
         setActiveCoin2(coinId);
     }
 
@@ -126,21 +189,35 @@ const ExchangeForm = () => {
     };
 
     const handleAmount1Change = (e) => {
-        const value1 = e.target.value;
-        setAmount1(value1);
-        setLastChanged('amount1');
+        const value = e.target.value;
+        if(/^[0-9]*\.?[0-9]*$/.test(value)){
+            setAmount1(value);
+            setLastChanged('amount1');
+        }
     };
 
     const handleAmount2Change = (e) => {
-        const value2 = e.target.value;
-        setAmount2(value2);
+        const value = e.target.value;
+        setAmount2(value);
         setLastChanged('amount2');
     };
 
     const [nearPrice, setNearPrice] = useState('');
-    const [selectedCoin1, setSelectedCoin1] = useState('');
     const [nearPrice2, setNearPrice2] = useState('');
+    const [selectedCoin1, setSelectedCoin1] = useState('');
     const [selectedCoin2, setSelectedCoin2] = useState('');
+
+    const [selectedPrice1, setSelectedPrice1] = useState('');
+    const [selectedPrice2, setSelectedPrice2] = useState('');
+
+    const [selectedName1, setSelectedName1] = useState('');
+    const [selectedName2, setSelectedName2] = useState('');
+
+    const [selectedColor1, setSelectedColor1] = useState('')
+    const [selectedColor2, setSelectedColor2] = useState('')
+
+    const [selectedIcon1, setSelectedIcon1] = useState('')
+    const [selectedIcon2, setSelectedIcon2] = useState('')
 
     let findCoinById = (coinId) => {
         return coins.find(coin => coin.id === coinId);
@@ -157,16 +234,42 @@ const ExchangeForm = () => {
                 let newNearPrice2 = (price2 / price1).toFixed(6);
                 let newSelectedCoin1 = coin1.symbol;
                 let newSelectedCoin2 = coin2.symbol;
+                let newSelectedName1 = coin1.name;
+                let newSelectedName2 = coin2.name;
+                let newSelectedColor1 = coin1.color;
+                let newSelectedColor2 = coin2.color;
+                let newSelectedIcon1 = coin1.icon;
+                let newSelectedIcon2 = coin2.icon;
 
                 setNearPrice(newNearPrice);
                 setNearPrice2(newNearPrice2);
                 setSelectedCoin1(newSelectedCoin1);
                 setSelectedCoin2(newSelectedCoin2);
+                setSelectedName1(newSelectedName1);
+                setSelectedName2(newSelectedName2);
+                setSelectedColor1(newSelectedColor1);
+                setSelectedColor2(newSelectedColor2);
+                setSelectedIcon1(newSelectedIcon1);
+                setSelectedIcon2(newSelectedIcon2);
+
             }
         }
     };
 
+    const [address, setAddress] = useState('');
 
+
+    var WAValidator = require('multicoin-address-validator');
+
+    var valid = WAValidator.validate(address, selectedCoin2, 'prod')
+    if (valid) console.log('valid')
+    else console.log('invalid')
+
+    const switchCoins = (coinId) =>{
+        let temp = activeCoin2;
+        setActiveCoin2(coinId);
+        setActiveCoin1(temp);
+    }
 
 
 
@@ -176,7 +279,7 @@ const ExchangeForm = () => {
             <div id={'exchange-form-outer'} className={'pb-[10em] mt-[3em] w-full mx-auto max-w-[860px] relative z-10 outline-0 text-white text-[12px]'}>
 
                 <h1 className={' font-[Verdana] text-[1.9em] mb-[1em] font-semibold text-center indent-0 block mx-auto text-transparent bg-clip-text bg-grad leading-[1.15em] p-0 outline-0 max-w-[19em]'}
-                >Lightning cryptocurrency exchange</h1>
+                >Моментальный обмен криптовалют</h1>
 
                 <form id={'exchange-form'}>
 
@@ -191,10 +294,12 @@ const ExchangeForm = () => {
                         updateExchangeDetails={updateExchangeDetails}
                         nearPrice={nearPrice} nearPrice2={nearPrice2}
                         selectedCoin1={selectedCoin1} selectedCoin2={selectedCoin2}
-                        selectedOption={selectedOption}
+                        selectedOption={selectedOption} selectedPrice1={selectedPrice1} selectedPrice2={selectedPrice2}
+                        selectedColor1={selectedColor1} selectedColor2={selectedColor2}
+                        switchCoins={switchCoins} selectedIcon1={selectedIcon1} selectedIcon2={selectedIcon2}
                     />
-                    <ExchangeAdress address={address} setAddress={setAddress} isValid={isValid}/>
-                    <ExchangeWrapper validateAdress={validateAddress} selectedOption={selectedOption} handleOptionChange={handleOptionChange}/>
+                    <ExchangeAdress address={address} setAddress={setAddress} activeCoin2={activeCoin2} selectedName1={selectedName1} selectedName2={selectedName2}/>
+                    <ExchangeWrapper selectedOption={selectedOption} handleOptionChange={handleOptionChange}/>
                     <ExchangeTerms/>
                 </form>
             </div>

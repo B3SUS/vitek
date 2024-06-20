@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {AdressValidator} from "./AdressValidator";
 
-export const ExchangeAdress = ({address, setAddress, isValid}) => {
+export const ExchangeAdress = ({address, setAddress, isValid, activeCoin2, selectedName1, selectedName2}) => {
 
 
 
@@ -14,7 +14,7 @@ export const ExchangeAdress = ({address, setAddress, isValid}) => {
                     </h1>
                 </div>
 
-                <AdressValidator address={address} setAddress={setAddress} isValid={isValid}/>
+                <AdressValidator address={address} setAddress={setAddress} isValid={isValid} activeCoin2={activeCoin2} selectedName1={selectedName1} selectedName2={selectedName2}/>
 
             </div>
         </div>
