@@ -85,8 +85,8 @@ export const ExchangeAmount  = ({
 
                     </div>
                     <div className={" flex flex-col gap-y-2"}>
-                        <input autoComplete={'off'} required={true} placeholder={'Enter the amount'} type={'text'} maxLength={18} value={amount1} onChange={handleAmount1Change}
-                               className={'select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full z-10 box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-sans'}
+                        <input autoComplete={'off'} required={true} placeholder={'Enter the amount'} type={'number'} maxLength={18} value={amount1} onChange={handleAmount1Change}
+                               className={'no-spinner select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full z-10 box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-sans'}
                         >
                         </input>
                         <label onClick={toggleMenu1}
@@ -165,8 +165,8 @@ export const ExchangeAmount  = ({
 
                     </div>
                     <div className={'flex flex-col gap-y-2'}>
-                        <input autoComplete={'off'} required={true} placeholder={'Enter the amount'} type={'text'} maxLength={18} value={selectedOption === 'fixed' ? amount2 : `~${amount2}`} onChange={handleAmount2Change}
-                               className={'select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full z-10 box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-sans'}
+                        <input autoComplete={'off'} required={true} placeholder={''} type={selectedOption === 'float' ? 'text' : 'number'} maxLength={18} value={selectedOption === 'fixed' ? amount2 : `~${amount2}`} onChange={handleAmount2Change} disabled={selectedOption === 'float'}
+                               className={`no-spinner select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full z-10 box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-sans`}
                         >
                         </input>
                         <label onClick={toggleMenu2}
