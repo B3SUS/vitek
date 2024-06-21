@@ -20,6 +20,9 @@ import cardano from '../svg/cardano.png'
 import xrp from '../svg/xrp.png'
 import near from '../svg/near.png'
 import usdc from '../svg/usdc.png'
+import ruble from '../svg/ruble.png'
+import lari from '../svg/lari.png'
+import WAValidator from "multicoin-address-validator";
 
 
 const ExchangeForm = () => {
@@ -85,10 +88,22 @@ const ExchangeForm = () => {
         'litecoin': litecoin,
         'monero': monero,
     }
-    useEffect(()=>{
+
+    const ratesColors = {
+        'russian-ruble': '#B3404A',
+        'georgian-lari': '#2E58FF'
+    }
+
+    const ratesIcon = {
+        'russian-ruble' : ruble,
+        'georgian-lari': lari,
+    }
+    /*useEffect(()=>{
         axios.get(`https://api.coincap.io/v2/assets/?ids=${neededCoins.join(',')}`)
+        axios.get(`https://api.coincap.io/v2/rates`)
             .then(res => {
                 const data = res.data.data
+                console.log(data)
                 setCoins(data.map(coin => ({
                     ...coin,
                     color: coinColors[coin.id],
@@ -104,6 +119,48 @@ const ExchangeForm = () => {
                     setActiveCoin2(data[1].id);
                 }
             })
+    }, []);*/
+
+    useEffect(() => {
+        const fetchAssets = axios.get(`https://api.coincap.io/v2/assets/?ids=${neededCoins.join(',')}`);
+        const fetchRates = axios.get('https://api.coincap.io/v2/rates');
+
+        Promise.all([fetchAssets, fetchRates])
+            .then(responses => {
+                const assetsData = responses[0].data.data;
+                const ratesData = responses[1].data.data;
+
+                // Фільтруємо курси для рубля і ларі
+                const filteredRates = ratesData.filter(rate => rate.id === 'russian-ruble' || rate.id === 'georgian-lari');
+
+                // Об'єднуємо дані про активи та курси
+                const combinedData = [
+                    ...assetsData.map(asset => ({
+                        ...asset,
+                        color: coinColors[asset.id],
+                        icon: coinIcons[asset.id],
+                        type: 'crypto'
+                    })),
+                    ...filteredRates.map(rate => ({
+                        id: rate.id,
+                        name: rate.symbol,
+                        priceUsd: rate.rateUsd,
+                        color: ratesColors[rate.id],
+                        icon: ratesIcon[rate.id],
+                        type: 'fiat',
+                        symbol: rate.symbol
+                    }))
+                ];
+
+                setCoins(combinedData);
+                setCopiedCoins(combinedData);
+
+                if (assetsData.length > 1) {
+                    setActiveCoin1(assetsData[0].id);
+                    setActiveCoin2(assetsData[1].id);
+                }
+            })
+            .catch(err => console.error(err));
     }, []);
 
 
@@ -218,6 +275,8 @@ const ExchangeForm = () => {
     const [selectedIcon1, setSelectedIcon1] = useState('')
     const [selectedIcon2, setSelectedIcon2] = useState('')
 
+    const [selectedId2, setSelectedId2] = useState('')
+
     let findCoinById = (coinId) => {
         return coins.find(coin => coin.id === coinId);
     };
@@ -239,6 +298,7 @@ const ExchangeForm = () => {
                 let newSelectedColor2 = coin2.color;
                 let newSelectedIcon1 = coin1.icon;
                 let newSelectedIcon2 = coin2.icon;
+                let newSelectedId2 = coin2.id;
 
                 setNearPrice(newNearPrice);
                 setNearPrice2(newNearPrice2);
@@ -250,6 +310,7 @@ const ExchangeForm = () => {
                 setSelectedColor2(newSelectedColor2);
                 setSelectedIcon1(newSelectedIcon1);
                 setSelectedIcon2(newSelectedIcon2);
+                setSelectedId2(newSelectedId2);
 
             }
         }
@@ -258,11 +319,34 @@ const ExchangeForm = () => {
     const [address, setAddress] = useState('');
 
 
-    var WAValidator = require('multicoin-address-validator');
+    var currenciesToSkipValidation = ['russian-ruble', 'georgian-lari'];
 
-    var valid = WAValidator.validate(address, selectedCoin2, 'prod')
-    if (valid) console.log('valid')
-    else console.log('invalid')
+    /*if (!currenciesToSkipValidation.includes(selectedCoin2)) {
+        if (WAValidator.isCurrencySupported(selectedCoin2)) {
+            var valid = WAValidator.validate(address, selectedCoin2, 'prod');
+            if (valid) {
+                console.log('valid');
+            } else {
+                console.log('invalid');
+            }
+        } else {
+            console.log('Currency not supported: ' + selectedCoin2);
+        }
+    } else {
+        console.log('Validation skipped for currency: ' + selectedCoin2);
+    }*/
+
+    if (neededCoins.includes(selectedId2)) {
+        var valid = WAValidator.validate(address, selectedName2, 'prod');
+        if (valid) {
+            console.log('valid');
+        } else {
+            console.log('invalid');
+        }
+    }
+    else {
+        console.log('Currency not supported: ' + selectedName2);
+    }
 
     const switchCoins = (coinId) =>{
         let temp = activeCoin2;
@@ -298,7 +382,7 @@ const ExchangeForm = () => {
                         switchCoins={switchCoins} selectedIcon1={selectedIcon1} selectedIcon2={selectedIcon2}
                     />
                     <ExchangeAdress address={address} setAddress={setAddress} activeCoin2={activeCoin2} selectedName1={selectedName1} selectedName2={selectedName2}/>
-                    <ExchangeWrapper selectedOption={selectedOption} handleOptionChange={handleOptionChange}/>
+                    <ExchangeWrapper selectedOption={selectedOption} handleOptionChange={handleOptionChange} activeCoin2={activeCoin2}/>
                     <ExchangeTerms/>
                 </form>
             </div>

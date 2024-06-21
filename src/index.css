@@ -14,6 +14,52 @@
     }
 }
 
+@layer base {
+    @font-face {
+        font-family: 'MontMed';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(./fonts/Montserrat-Medium.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'MontBold';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(./fonts/Montserrat-Bold.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'MontSemi';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(./fonts/Montserrat-SemiBold.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Mont';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(./fonts/Montserrat-Regular.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'MontIt';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(./fonts/Montserrat-Italic.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'MontL';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(./fonts/Montserrat-Light.woff2) format('woff2');
+    }
+
+}
+
 .input-wabbr::before{
     box-sizing: border-box;
     border-radius: .5rem;

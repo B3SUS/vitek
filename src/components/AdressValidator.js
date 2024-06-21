@@ -5,12 +5,13 @@ import {ExchangeButton} from "./ExchangeButton";
 export const AdressValidator  = ({isValid, address, setAddress, activeCoin2, selectedName1, selectedName2}) => {
 
 
+    const rateCheck = activeCoin2 === 'russian-ruble' || activeCoin2 === 'georgian-lari' ? 'Введите номер банковской карты' : `Ваш ${selectedName2} адрес`
 
     return (
         <div id={'field'} className={`relative rounded-[.5rem] mt-[.2em] pointer-events-auto text-center text-[12px] text-white`}>
             <input
                 className={`rounded-[.5rem] h-[53px] pr-[6.8em] box-border bg-black/[.5] border border-solid border-transparent text-[1.1em] leading-[1] py-[1.05em] pl-[1em] w-full resize-none block overflow-hidden pointer-events-auto text-left focus:outline-none font-[Verdana]`}
-                required={true} autoComplete={`off`} placeholder={`Ваш ${selectedName2} адрес`} value={address}
+                required={true} autoComplete={`off`} placeholder={rateCheck} value={address}
                 onChange={(e) => setAddress(e.target.value)}
             ></input>
         </div>

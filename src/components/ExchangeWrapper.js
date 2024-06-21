@@ -1,9 +1,15 @@
 import React, {useState} from "react";
 import {ExchangeButton} from "./ExchangeButton";
+import {DIffPopup} from "./DIffPopup";
 
-export const ExchangeWrapper = ({validateAdress, selectedOption, handleOptionChange}) => {
+export const ExchangeWrapper = ({validateAdress, selectedOption, handleOptionChange, activeCoin2}) => {
 
 
+    const [diffActive, setDiffActive] = useState(false)
+
+    const handleClick = () =>{
+        setDiffActive(!diffActive)
+    }
 
 
     return (
@@ -27,7 +33,7 @@ export const ExchangeWrapper = ({validateAdress, selectedOption, handleOptionCha
                     </label>
                 </div>
                 <span className={'type-difference w-auto cursor-pointer block text-white whitespace-nowrap h-[2em] relative ml-[.5em]'}>
-                    <div className={'exchange-option-diff-inner bg-transparent text-[#C5C5C5] relative items-center flex h-full left-0 top-0 rounded-[1em] cursor-pointer whitespace-nowrap'}>
+                    <div onClick={handleClick} className={'exchange-option-diff-inner bg-transparent text-[#C5C5C5] relative items-center flex h-full left-0 top-0 rounded-[1em] cursor-pointer whitespace-nowrap'}>
                         <i className={'flex bg-black/[.5] rounded-[1em] items-center justify-center mr-[.5em] text-[1.2em] h-[2em] min-w-[2em] font-serif'}>
                             ?
                         </i>
@@ -37,7 +43,8 @@ export const ExchangeWrapper = ({validateAdress, selectedOption, handleOptionCha
                     </div>
                 </span>
             </div>
-            <ExchangeButton validateAddress={validateAdress}/>
+            <ExchangeButton validateAddress={validateAdress} activeCoin2={activeCoin2}/>
+            <DIffPopup diffActive={diffActive} handleClick={handleClick}/>
         </div>
     )
 }
