@@ -84,13 +84,13 @@ export const ExchangeAmount  = ({
 
 
     return (
-        <div id={'exchange-amount'} className={`flex flex-col mb-[2.2em] z-50 relative w-full text-[12px]`}>
+        <div id={'exchange-amount'} className={`flex flex-col mb-[1.05em] z-50 relative w-full text-[12px]`}>
 
-            <div id={'col'} className={'box-border mb-[20px]'}>
+            <div id={'col'} className={'box-border'}>
 
-                <div id={'wrap-header'} className={`flex justify-between items-end pb-[.4em] px-[1.2em] font-[Verdana] m-0 outline-0`} style={{color: selectedColor1}}>
-                    <header className={'text-[.9em] text-left whitespace-nowrap overflow-hidden font-medium  font-sans'}>
-                        Отправляете
+                <div id={'wrap-header'} className={`flex justify-between items-end pb-[.4em] px-[1.2em]`} style={{color: selectedColor1}}>
+                    <header className={'text-[.9em] text-left whitespace-nowrap overflow-hidden font-[MontMed] leading-[1.2]'}>
+                        Send
                     </header>
                 </div>
 
@@ -111,9 +111,9 @@ export const ExchangeAmount  = ({
                                     </div>
                                 </div>
 
-                                <div className={'ui-select-inner h-full font-[Arial] w-full'}>
-                                    <input type="text" placeholder={"Введите название или тикер"} value={searchValue} onChange={handleSearchChange} style={{color:selectedColor1}}
-                                           className={`dynamic-placeholder text-left py-[.3em] px-0 box-border bg-none h-full w-full placeholder:font-[Verdana] bg-transparent focus:outline-none`}
+                                <div className={'ui-select-inner h-full font-[MontL] w-full'}>
+                                    <input type="text" placeholder={"Type a currency or ticker"} value={searchValue} onChange={handleSearchChange} style={{color:selectedColor1}}
+                                           className={`dynamic-placeholder text-left py-[.3em] px-0 box-border bg-none h-full w-full placeholder:font-[MontL] bg-transparent focus:outline-none`}
                                     />
                                 </div>
 
@@ -150,7 +150,7 @@ export const ExchangeAmount  = ({
                     </div>
                     <div className={" flex flex-col gap-y-2"}>
                         <input autoComplete={'off'} required={true} placeholder={'Enter the amount'} type={'number'} maxLength={18} value={amount1} onChange={handleAmount1Change} onKeyDown={handleKeyPress}
-                               className={'no-spinner select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full z-10 box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-sans'}
+                               className={'no-spinner select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full z-10 box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-[MontMed]'}
                         >
                         </input>
                         <label
@@ -160,10 +160,10 @@ export const ExchangeAmount  = ({
                                     </span>
                         </label>
                         <div className={'flex gap-x-4 ml-2.5'}>
-                            <span className={'select-hinterror-from font-[Arial] text-[.8em] text-gray-400'}>
+                            <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400 leading-[1.15]'}>
                                 1 {selectedCoin1} ~ {nearPrice} {selectedCoin2}
                             </span>
-                            <span className={'select-hinterror-from font-[Arial] text-[.8em] text-gray-400'}>
+                            <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400'}>
                                 {amount1 !== '' ? `${(selectedPrice1*amount1).toFixed(2)}$` : ''}
                             </span>
                         </div>
@@ -172,7 +172,7 @@ export const ExchangeAmount  = ({
                                 <img src={selectedIcon1} alt={selectedIcon1} className="w-full h-full" />
                             </span>
                             <span className={"coin-name flex-1 text-[.75em] flex flex-col items-start"}>
-                                <span className={'name leading-[1] font-medium font-[Verdana]'}>
+                                <span className={'name leading-[1] font-medium font-[MontMed]'}>
                                     {selectedCoin1}
                                 </span>
                             </span>
@@ -182,18 +182,18 @@ export const ExchangeAmount  = ({
                 </div>
             </div>
 
-            <div id={'col-middle'} className={"flex box-border justify-end pt-0 px-[1.1em] items-center h-[30px] mt-[-2em]"}>
+            <div id={'col-middle'} className={"flex box-border justify-end pt-0 px-[1.1em] items-center h-[30px] mt-[-.6em]"}>
                 <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" className={"rotate-90 w-[30px] h-[30px] cursor-pointer"} onClick={()=> switchCoins(activeCoin1)}>
                     <path className={'translate-x-[10px] translate-y-[4px]'} style={{fill: selectedColor1}} d="M17.6,4.2l-4-3a1,1,0,0,0-1.05-.09A.977.977,0,0,0,12,2V4H1A1,1,0,0,0,1,6H12V8a.988.988,0,0,0,.55.89A.99.99,0,0,0,13.6,8.8l4-3a1,1,0,0,0,0-1.6Z"/>
                     <path className={'translate-x-[1px] translate-y-[6px]'} style={{fill: selectedColor2}} d="M.4,12.2l4-3a1,1,0,0,1,1.05-.09A.977.977,0,0,1,6,10v2H17a1,1,0,0,1,0,2H6v2a.988.988,0,0,1-.55.89A.99.99,0,0,1,4.4,16.8l-4-3a1,1,0,0,1,0-1.6Z"/>
                 </svg>
             </div>
 
-            <div id={'col2'} className={'box-border mb-[12px] mt-[-0.8em]'}>
+            <div id={'col2'} className={'box-border mb-[12px] mt-[-1em]'}>
 
                 <div id={'wrap-header'} className={'flex justify-between items-end pb-[.4em] px-[1.2em] font-[Verdana] m-0 outline-0'} style={{color:selectedColor2}}>
-                    <header className={'text-[.9em] text-left whitespace-nowrap overflow-hidden font-medium  font-sans'}>
-                        Отправляете
+                    <header className={'text-[.9em] text-left whitespace-nowrap overflow-hidden font-[MontMed] leading-[1.2]'}>
+                        Receive
                     </header>
                 </div>
 
@@ -214,8 +214,8 @@ export const ExchangeAmount  = ({
                                 </div>
 
                                 <div className={'ui-select-inner h-full font-[Arial] w-full'}>
-                                    <input type="text" placeholder={"Введите название или тикер"} style={{color:selectedColor2}} value={searchValue} onChange={handleSearchChange2}
-                                           className={'dynamic-placeholder2 text-left py-[.3em] px-0 box-border bg-none h-full w-full placeholder:font-[Verdana] placeholder:text-[rgba(247,147,26,0.5)] bg-transparent focus:outline-none'}
+                                    <input type="text" placeholder={"Type a currency or ticker"} style={{color:selectedColor2}} value={searchValue} onChange={handleSearchChange2}
+                                           className={'dynamic-placeholder2 text-left py-[.3em] px-0 box-border bg-none h-full w-full placeholder:font-[MontL] placeholder:text-[rgba(247,147,26,0.5)] bg-transparent focus:outline-none'}
                                     />
                                 </div>
 
@@ -262,10 +262,10 @@ export const ExchangeAmount  = ({
                         </label>
 
                         <div className={'flex gap-x-4 ml-2.5'}>
-                            <span className={'select-hinterror-from font-[Arial] text-[.8em] text-gray-400 ml-2.5'}>
+                            <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400 ml-2.5 leading-[1.15]'}>
                                 1 {selectedCoin2} ~ {nearPrice2} {selectedCoin1}
                             </span>
-                            <span className={'select-hinterror-from font-[Arial] text-[.8em] text-gray-400'}>
+                            <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400'}>
                                 {amount2 === '' ? '': `${(selectedPrice2*amount2).toFixed(2)}$`}
                             </span>
                             <div className={'select-label-from right-0 select-none items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap z-10'} onClick={toggleMenu2}>
@@ -273,7 +273,7 @@ export const ExchangeAmount  = ({
                                     <img src={selectedIcon2} alt={selectedIcon2} className="w-full h-full" />
                                 </span>
                                 <span className={"coin-name flex-1 text-[.75em] flex flex-col items-start"}>
-                                <span className={'name leading-[1] font-medium font-[Verdana]'}>
+                                <span className={'name leading-[1] font-medium font-[MontMed]'}>
                                     {selectedCoin2}
                                 </span>
                             </span>

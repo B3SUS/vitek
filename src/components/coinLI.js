@@ -13,11 +13,11 @@ function CoinLi({coin, isActive, onClick, updateExchangeDetails, clearSearchInpu
             onClick(coin.id);
             clearSearchInput();
         }}
-            className={`px-[1em]  flex justify-between items-center relative m-0 w-full cursor-pointer font-sans text-[#f7931a] ${isActive ? 'bg-[#29315C]' : 'bg-none '}`}
+            className={`px-[1em]  flex justify-between items-center relative m-0 w-full cursor-pointer text-[#f7931a] ${isActive ? 'bg-[#29315C]' : 'bg-none '}`}
         >
             <div className={'border border-solid border-t-0 border-x-0 border-b-gray-700 w-full py-[.5em] flex items-center'}>
                 <div className={'float-right flex flex-col items-end order-2 justify-center min-h-[2em] cursor-pointer h-full'}>
-                    <span className={'text-[.875em] font-semibold font-[Arial]'} style={{color: coin.color}}>
+                    <span className={'text-[.875em] font-[MontSemi]'} style={{color: coin.color}}>
                         {coin.symbol}
                     </span>
                 </div>
@@ -26,7 +26,7 @@ function CoinLi({coin, isActive, onClick, updateExchangeDetails, clearSearchInpu
                 </div>
 
                 <div className={'flex min-h-[1.5em] flex-1'}>
-                    <span className={'font-medium font-[Verdana]'} style={{color: coin.color}}>
+                    <span className={'font-[MontMed]'} style={{color: coin.color}}>
                         {coin.name}
                     </span>
                 </div>

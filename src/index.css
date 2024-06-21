@@ -21,7 +21,6 @@
         font-weight: 500;
         font-display: swap;
         src: url(./fonts/Montserrat-Medium.woff2) format('woff2');
-        src: url(./fonts/Montserrat-Medium.woff) format('woff');
     }
     @font-face {
         font-family: 'MontBold';
@@ -29,7 +28,6 @@
         font-weight: 700;
         font-display: swap;
         src: url(./fonts/Montserrat-Bold.woff2) format('woff2');
-        src: url(./fonts/Montserrat-Bold.woff) format('woff');
     }
     @font-face {
         font-family: 'MontSemi';
@@ -37,7 +35,6 @@
         font-weight: 600;
         font-display: swap;
         src: url(./fonts/Montserrat-SemiBold.woff2) format('woff2');
-        src: url(./fonts/Montserrat-SemiBold.woff) format('woff');
     }
     @font-face {
         font-family: 'Mont';
@@ -45,7 +42,6 @@
         font-weight: 400;
         font-display: swap;
         src: url(./fonts/Montserrat-Regular.woff2) format('woff2');
-        src: url(./fonts/Montserrat-Regular.woff) format('woff');
     }
     @font-face {
         font-family: 'MontIt';
@@ -61,7 +57,6 @@
         font-weight: 300;
         font-display: swap;
         src: url(./fonts/Montserrat-Light.woff2) format('woff2');
-        src: url(./fonts/Montserrat-Light.woff) format('woff');
     }
 
 }
