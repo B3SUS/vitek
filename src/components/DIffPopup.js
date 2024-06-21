@@ -35,7 +35,9 @@ export const DIffPopup = ({diffActive, handleClick}) => {
                             </li>
                         </ul>
                         <p className={'indent-0 leading-[1.2] text-justify mb-[.2em] font-[MontIt]'}>
-                            Attention! Your transaction must be received within 10 minutes and the amount must exactly match the amount of the order. Otherwise, you will be prompted to make a refund or continue the exchange at the market rate.
+                            <em>
+                                Attention! Your transaction must be received within 10 minutes and the amount must exactly match the amount of the order. Otherwise, you will be prompted to make a refund or continue the exchange at the market rate.
+                            </em>
                         </p>
                         <h3 className={'mt-[1.4em] text-[1em] font-[MontBold] mb-[.3em] text-left text-white pb-[.3em]'}>
                             <b>
