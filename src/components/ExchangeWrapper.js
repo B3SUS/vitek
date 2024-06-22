@@ -34,7 +34,7 @@ export const ExchangeWrapper = ({validateAdress, selectedOption, handleOptionCha
                 </div>
                 <span className={'type-difference w-auto cursor-pointer block text-white whitespace-nowrap h-[2em] relative ml-[.5em]'}>
                     <div onClick={handleClick} className={'exchange-option-diff-inner bg-transparent text-[#C5C5C5] relative items-center flex h-full left-0 top-0 rounded-[1em] cursor-pointer whitespace-nowrap'}>
-                        <i className={'flex bg-black/[.5] rounded-[1em] items-center justify-center mr-[.5em] text-[1.2em] h-[2em] min-w-[2em] font-serif'}>
+                        <i className={'flex bg-black/[.5] rounded-[1em] items-center justify-center mr-[.5em] text-[1.2em] h-[2em] min-w-[2em] font-[Mont]'}>
                             ?
                         </i>
                         <font className={'text-[1em] pr-[.9em] text-[#c5c5c5] whitespace-nowrap font-[MontMed]'}>
