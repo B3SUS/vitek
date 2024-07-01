@@ -12,7 +12,7 @@ export const ExchangeAmount  = ({
                                 selectedCoin1, selectedCoin2, nearPrice, nearPrice2, selectedOption,
                                 selectedPrice1, selectedPrice2,
                                 selectedColor1, selectedColor2, switchCoins,
-                                selectedIcon1, selectedIcon2}) => {
+                                selectedIcon1, selectedIcon2, handleAddressChange, setValidError, valid}) => {
 
     const [searchValue, setSearchValue] = useState('');
     const [filteredCoins, setFilteredCoins] = useState(coins);
@@ -139,6 +139,8 @@ export const ExchangeAmount  = ({
                                         onClick={handleClick1}
                                         updateExchangeDetails={updateExchangeDetails}
                                         clearSearchInput={clearSearchInput}
+                                        setValidError={setValidError}
+                                        valid={valid}
                                     />
                                 ))}
 
@@ -241,6 +243,9 @@ export const ExchangeAmount  = ({
                                         onClick={handleClick2}
                                         updateExchangeDetails={updateExchangeDetails}
                                         clearSearchInput={clearSearchInput}
+                                        handleAddressChange={handleAddressChange}
+                                        setValidError={setValidError}
+                                        valid={valid}
                                     />
                                 ))}
 

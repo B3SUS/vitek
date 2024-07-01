@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import logo1 from "../img/logo1.png";
+import {Link} from "react-router-dom";
 
 const Navbar = () => {
 
@@ -32,7 +33,7 @@ const Navbar = () => {
                 </div>
                 <nav className="border-b border-b-white/[.2] border-solid flex justify-between text-center text-[12px] pb-[1px]">
                     <a className="inline-block float-none mx-auto my-0 text-center relative py-[1.125em] px-0 whitespace-nowrap decoration-0">
-                        <span className={'text-[1.0625em]'}>Company</span></a>
+                        <span  className={'text-[1.0625em]'}><Link to='/'>Company</Link></span></a>
                 </nav>
             </div>
         </div>

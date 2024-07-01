@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-function CoinLi({coin, isActive, onClick, updateExchangeDetails, clearSearchInput}){
+function CoinLi({coin, isActive, onClick, updateExchangeDetails, clearSearchInput, handleAddressChange, setValidError, valid}){
 
 
     return(
@@ -12,6 +12,7 @@ function CoinLi({coin, isActive, onClick, updateExchangeDetails, clearSearchInpu
             updateExchangeDetails(coin);
             onClick(coin.id);
             clearSearchInput();
+            setValidError(!valid);
         }}
             className={`px-[1em]  flex justify-between items-center relative m-0 w-full cursor-pointer text-[#f7931a] ${isActive ? 'bg-[#29315C]' : 'bg-none '}`}
         >

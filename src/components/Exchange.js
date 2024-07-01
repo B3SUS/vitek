@@ -98,28 +98,6 @@ const ExchangeForm = () => {
         'russian-ruble' : ruble,
         'georgian-lari': lari,
     }
-    /*useEffect(()=>{
-        axios.get(`https://api.coincap.io/v2/assets/?ids=${neededCoins.join(',')}`)
-        axios.get(`https://api.coincap.io/v2/rates`)
-            .then(res => {
-                const data = res.data.data
-                console.log(data)
-                setCoins(data.map(coin => ({
-                    ...coin,
-                    color: coinColors[coin.id],
-                    icon: coinIcons[coin.id]
-                })))
-                setCopiedCoins(data.map(coin => ({
-                    ...coin,
-                    color: coinColors[coin.id],
-                    icon: coinIcons[coin.id]
-                })))
-                if (data.length > 1) {
-                    setActiveCoin1(data[0].id);
-                    setActiveCoin2(data[1].id);
-                }
-            })
-    }, []);*/
 
     useEffect(() => {
         const fetchAssets = axios.get(`https://api.coincap.io/v2/assets/?ids=${neededCoins.join(',')}`);
@@ -277,6 +255,9 @@ const ExchangeForm = () => {
 
     const [selectedId2, setSelectedId2] = useState('')
 
+
+
+
     let findCoinById = (coinId) => {
         return coins.find(coin => coin.id === coinId);
     };
@@ -300,6 +281,8 @@ const ExchangeForm = () => {
                 let newSelectedIcon2 = coin2.icon;
                 let newSelectedId2 = coin2.id;
 
+
+
                 setNearPrice(newNearPrice);
                 setNearPrice2(newNearPrice2);
                 setSelectedCoin1(newSelectedCoin1);
@@ -318,25 +301,7 @@ const ExchangeForm = () => {
 
     const [address, setAddress] = useState('');
 
-
-    var currenciesToSkipValidation = ['russian-ruble', 'georgian-lari'];
-
-    /*if (!currenciesToSkipValidation.includes(selectedCoin2)) {
-        if (WAValidator.isCurrencySupported(selectedCoin2)) {
-            var valid = WAValidator.validate(address, selectedCoin2, 'prod');
-            if (valid) {
-                console.log('valid');
-            } else {
-                console.log('invalid');
-            }
-        } else {
-            console.log('Currency not supported: ' + selectedCoin2);
-        }
-    } else {
-        console.log('Validation skipped for currency: ' + selectedCoin2);
-    }*/
-
-    if (neededCoins.includes(selectedId2)) {
+    if (neededCoins.includes(selectedId2) && address !== '') {
         var valid = WAValidator.validate(address, selectedName2, 'prod');
         if (valid) {
             console.log('valid');
@@ -348,11 +313,26 @@ const ExchangeForm = () => {
         console.log('Currency not supported: ' + selectedName2);
     }
 
+    const handleAddressChange = (newAddress) => {
+        setAddress(newAddress);
+
+        if (neededCoins.includes(selectedId2) && newAddress !== '') {
+            const isValidAddress = WAValidator.validate(newAddress, selectedName2, 'prod');
+            setValidError(!isValidAddress);
+            console.log(validError)
+
+        }
+
+    };
+
     const switchCoins = (coinId) =>{
         let temp = activeCoin2;
         setActiveCoin2(coinId);
         setActiveCoin1(temp);
     }
+
+    const [validError, setValidError] = useState(true);
+
 
 
 
@@ -362,7 +342,7 @@ const ExchangeForm = () => {
             <div id={'exchange-form-outer'} className={'pb-[10em] mt-[3em] w-full mx-auto max-w-[860px] relative z-10 outline-0 text-white text-[12px]'}>
 
                 <h1 className={' font-[MontSemi] text-[1.9em] mb-[1em] text-center indent-0 block mx-auto text-transparent bg-clip-text bg-grad leading-[1.15em] p-0 outline-0 max-w-[19em]'}
-                >Lightning cryptocurrency exchange</h1>
+                >Lightning cryptocurrency exchange </h1>
 
                 <form id={'exchange-form'}>
 
@@ -380,9 +360,11 @@ const ExchangeForm = () => {
                         selectedOption={selectedOption} selectedPrice1={selectedPrice1} selectedPrice2={selectedPrice2}
                         selectedColor1={selectedColor1} selectedColor2={selectedColor2}
                         switchCoins={switchCoins} selectedIcon1={selectedIcon1} selectedIcon2={selectedIcon2}
+                        handleAddressChange={handleAddressChange}
+                        setValidError={setValidError} valid={valid}
                     />
-                    <ExchangeAdress address={address} setAddress={setAddress} activeCoin2={activeCoin2} selectedName1={selectedName1} selectedName2={selectedName2}/>
-                    <ExchangeWrapper selectedOption={selectedOption} handleOptionChange={handleOptionChange} activeCoin2={activeCoin2}/>
+                    <ExchangeAdress address={address} setAddress={setAddress} activeCoin2={activeCoin2} selectedName1={selectedName1} selectedName2={selectedName2} valid={valid} validError={validError} setValidError={setValidError} handleAddressChange={handleAddressChange}/>
+                    <ExchangeWrapper selectedOption={selectedOption} handleOptionChange={handleOptionChange} activeCoin2={activeCoin2} valid={valid} setValidError={setValidError} amount1={amount1} amount2={amount2} selectedCoin1={selectedCoin1} selectedCoin2={selectedCoin2} selectedIcon1={selectedIcon1} selectedIcon2={selectedIcon2}/>
                     <ExchangeTerms/>
                 </form>
             </div>
