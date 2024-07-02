@@ -122,7 +122,7 @@ export const ExchangeAmount  = ({
                         </label>
 
                         <div
-                            className={'ui-select-list relative flex-auto h-full border-0 rounded-[0 0 .4em .4em] box-border block left-0 mt-0 overflow-hidden pt-0 w-full z-20 select-none font-sans text-[12px]'}
+                            className={'ui-select-list relative flex-auto h-full border-0 rounded-[0 0 .4em .4em] box-border block left-0 mt-0 overflow-hidden pt-0 w-full z-50 select-none font-sans text-[12px]'}
                         >
 
                             <ul className={'pr-0 w-full max-h-none bg-[#21284b] pt-[.3em] block h-full overflow-x-hidden overflow-y-auto relative list-none m-0 outline-0 text-[1.4em]'}>

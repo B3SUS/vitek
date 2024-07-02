@@ -66,6 +66,10 @@
 
 }
 
+html, body{
+    overflow: hidden;
+}
+
 .input-wabbr::before{
     box-sizing: border-box;
     border-radius: .5rem;
