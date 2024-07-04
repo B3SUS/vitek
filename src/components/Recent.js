@@ -18,6 +18,7 @@ import near from '../svg/near.png';
 import usdc from '../svg/usdc.png';
 import ruble from '../svg/ruble.png';
 import lari from '../svg/lari.png';
+import arrow from '../img/arrow.png'
 
 import clock from '../img/clock.png';
 
@@ -147,7 +148,7 @@ const Recent = () => {
                                     {transaction.timeAgo || 'Несколько секунд назад'}
                                 </div>
                             </div>
-                            <div className={'dir-from row-[2] col-[1] flex items-center justify-end h-[4em]'}>
+                            <div className={'dir-from row-[2] col-[1] flex items-center justify-end h-[4em] px-[.6em]'}>
                                 <div className={'coin-value inline-block'}>
                                     {transaction.amount} {transaction.currency1}
                                 </div>
@@ -156,7 +157,7 @@ const Recent = () => {
                                 </div>
                             </div>
                             <div className={'dir-arrow row-[2] col-[2/3] flex items-center py-0 px-[.1em] justify-center w-[1.4em]'}>
-                                {/* Arrow Icon */}
+                                <img src={arrow} alt={arrow} className={'w-full'}/>
                             </div>
                             <div className={'dir-to row-[2] col-[4] flex items-center justify-start min-w-[20%] text-left py-0 px-[.6em]'}>
                                 <div className={'coin-ico mr-[1em] float-none h-[2em] w-[2em] text-center inline-block'}>
@@ -168,7 +169,7 @@ const Recent = () => {
                             </div>
                             <div className={'recent-howlong pr-[1.3em] whitespace-nowrap text-right row-[1] col-[3/5] flex border-b border-white/[.2] items-center justify-start h-[4em] pl-[1em]'}>
                                 <div className={'ico-timer inline-block'}><img className={'h-[1.2em]'} src={clock} alt="clock" /></div>
-                                <span className={'inline-block'}>{transaction.time}</span>
+                                <span className={'inline-block'}>{transaction.time} sec</span>
                             </div>
                         </li>
                     ))}

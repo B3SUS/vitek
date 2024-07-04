@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Navigate, useLocation, useNavigate} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import bg from '../img/bg.svg'
 import arrow from '../img/arrow.png'
+import Timer from "../components/Timer";
+import {Footer} from "../components/Footer";
+import {OrderInfo} from "../components/OrderInfo";
+import QRCode from "react-qr-code";
 
 export const SecondPage = () => {
 
@@ -10,12 +14,13 @@ export const SecondPage = () => {
     const {activeCoin2, valid, amount1, amount2, selectedCoin1, selectedCoin2, selectedIcon1, selectedIcon2} = location.state || {};
 
 
+
     if (!valid){
         return <Navigate to='/' replace/>
     }
 
     return (
-        <div className={'flex flex-col justify-stretch flex-auto'}>
+        <div className={'flex flex-col justify-stretch flex-auto font-[Mont]'}>
             <div className={'index-main bg-[#151b23] bg-gradient-to-t from-[#0c0d16] to-[#151b23] bg-cover bg-bottom bg-no-repeat relative w-full flex-1'}>
                 <Navbar/>
                 <div className={'wrapper max-w-none py-0 px-[1em] mx-auto my-0 w-full  text-[12px]'}>
@@ -51,8 +56,8 @@ export const SecondPage = () => {
                             <div className={'order-wrap-shadow'}>
                                 <div className={'order-action mt-[1em] mb-[1.6em]'}>
                                     <div className={'order-action-body grid grid-cols-[12em_1fr] justify-between'}>
-                                        <div className={'order-qr col-start-2 row-start-1 text-center order-4 h-[237.2px] bg-white'}>
-
+                                        <div className={'order-qr col-start-2 row-start-1 text-center order-4 h-[237.2px] bg-white max-w-[18em]'}>
+                                            <QRCode className={'p-[1.2em] h-[18em] w-[18em]'} value={"bc1qk2jpzqsm4t77w2dyc3ck7sg8eg28ggzq6yu2jr"}/>
                                         </div>
                                         <div style={{backgroundImage:`url(${bg})`}} className={'order-info mr-[1em] row-start-1 order-1 px-[.8em] pt-[.3em] pb-[.7em] rounded-[.5em] text-center bg-cover'}>
                                             <div className={'order-info-inner text-center font-[Mont]'}>
@@ -61,7 +66,7 @@ export const SecondPage = () => {
                                                     <div className={'flex items-center justify-center text-center'}>
                                                         <span onClick={() => {
                                                             navigator.clipboard.writeText('EB4CF4');}} className={'pseudo-hint-blue inline-flex items-center cursor-copy relative leading-[1.2] text-center'}>
-                                                            <span className={'text-[1.4em]'}>EB4CF4</span>
+                                                            <span className={'text-[1.4em] text-[#f7931a]'}>EB4CF4</span>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -69,6 +74,9 @@ export const SecondPage = () => {
                                                     <label className={'text-[.85em] whitespace-nowrap inline-block align-middle text-[#879fab]'}>
                                                         Времени осталось
                                                     </label>
+                                                    <div className={''}>
+                                                        <Timer/>
+                                                    </div>
                                                 </div>
                                                 <div className={'py-[.6em] border-t border-gray-600'}>
                                                     <label className={'text-[#879fab] text-[.85em] whitespace-nowrap'}>
@@ -130,10 +138,12 @@ export const SecondPage = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <OrderInfo/>
                             </div>
                         </div>
                     </section>
                 </div>
+                <Footer/>
             </div>
         </div>
     )
