@@ -5,9 +5,9 @@ import close from '../svg/close.png'
 export const DIffPopup = ({diffActive, handleClick}) => {
     return (
         <div className={`${diffActive === false ? 'hidden' : '' } diffpopup pr-0 z-[100] box-border h-full left-0 fixed top-0 w-full font-[MontSemi]`}>
-            <div className={'popup-bg h-full left-0 absolute top-0 w-full -z-10 blur-[10px] bg-[#21284b]/[.4]'}></div>
-            <div className={'popup-wrap flex h-full overflow-auto text-[12px]'}>
-                <div className={'popup-content flex flex-col text-[1.4em] h-full py-[2em] px-[1.8em] box-border bg-[#21284b] m-auto max-w-[650px] pointer-events-auto relative text-center w-full leading-[1.5]'}>
+
+            <div className={'popup-wrap flex overflow-y-auto text-[12px] bg-[#21284b] bg-opacity-40 h-full'}>
+                <div className={'popup-content bg-[#21284b] flex flex-col text-[1.4em] py-[2em] px-[1.8em] box-border  m-auto max-w-[650px] pointer-events-auto relative text-center w-full leading-[1.5]'}>
                     <div onClick={handleClick} className={'cursor-pointer py-[1em] px-[.7em] absolute top-0 right-0 z-[999]'}>
                         <img src={close} alt={close} className={`w-[25px] h-[25px]`}/>
                     </div>
@@ -71,6 +71,7 @@ export const DIffPopup = ({diffActive, handleClick}) => {
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }

@@ -30,6 +30,14 @@ const ExchangeForm = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
 
+    useEffect(() => {
+        if (isOpen || isOpen2) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [isOpen, isOpen2]);
+
     const [amount1, setAmount1] = useState('');
     const [amount2, setAmount2] = useState('');
 
@@ -280,7 +288,6 @@ const ExchangeForm = () => {
                 let newSelectedIcon1 = coin1.icon;
                 let newSelectedIcon2 = coin2.icon;
                 let newSelectedId2 = coin2.id;
-
 
 
                 setNearPrice(newNearPrice);

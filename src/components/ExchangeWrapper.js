@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {ExchangeButton} from "./ExchangeButton";
 import {DIffPopup} from "./DIffPopup";
 
@@ -9,9 +9,19 @@ export const ExchangeWrapper = ({validateAdress, selectedOption, handleOptionCha
 
 
 
+
+
     const handleClick = () =>{
         setDiffActive(!diffActive)
     }
+
+    useEffect(() => {
+        if (diffActive) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [diffActive]);
 
 
     return (

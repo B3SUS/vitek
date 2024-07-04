@@ -127,7 +127,7 @@ export const ExchangeAmount  = ({
 
                             <ul className={'pr-0 w-full max-h-none bg-[#21284b] pt-[.3em] block h-full overflow-x-hidden overflow-y-auto relative list-none m-0 outline-0 text-[1.4em]'}>
 
-                                <li className={'box-border block m-0 w-full text-[#636363] text-[.8em] py-[.4em] px-[1.25em] font-[Verdana]'}>
+                                <li className={'box-border block m-0 w-full text-[#636363] text-[.8em] py-[.4em] px-[1.25em] font-[Verdana] overflow-hidden'}>
                                     Популярные валюты
                                 </li>
 

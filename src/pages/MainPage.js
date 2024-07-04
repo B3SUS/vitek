@@ -19,7 +19,7 @@ export const MainPage = () => {
                     <Exchange/>
                 </div>
                 <Advantages/>
-
+                <Recent/>
                 <Faq/>
             </div>
             <Footer/>
