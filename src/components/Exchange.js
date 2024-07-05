@@ -25,7 +25,11 @@ import lari from '../svg/lari.png'
 import WAValidator from "multicoin-address-validator";
 
 
+
 const ExchangeForm = () => {
+
+
+
 
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
@@ -55,6 +59,8 @@ const ExchangeForm = () => {
     const handleOptionChange = (e) => {
         setSelectedOption(e.target.value);
     };
+
+
 
     const neededCoins = ['bitcoin', 'ethereum', 'tether', 'binance-coin', 'solana', 'usd-coin', 'xrp', 'dogecoin', 'shiba-inu', 'cardano', 'avalanche', 'tron', 'polkadot', 'near-protocol', 'litecoin', 'monero'];
 
@@ -302,6 +308,7 @@ const ExchangeForm = () => {
                 setSelectedIcon2(newSelectedIcon2);
                 setSelectedId2(newSelectedId2);
 
+
             }
         }
     };
@@ -310,14 +317,6 @@ const ExchangeForm = () => {
 
     if (neededCoins.includes(selectedId2) && address !== '') {
         var valid = WAValidator.validate(address, selectedName2, 'prod');
-        if (valid) {
-            console.log('valid');
-        } else {
-            console.log('invalid');
-        }
-    }
-    else {
-        console.log('Currency not supported: ' + selectedName2);
     }
 
     const handleAddressChange = (newAddress) => {
@@ -346,7 +345,7 @@ const ExchangeForm = () => {
     return (
         <div id={'wrapper'} className={`max-w-none min-w-fit py-0 px-[1em] mx-auto my-0 w-full box-border`}>
 
-            <div id={'exchange-form-outer'} className={'pb-[10em] mt-[3em] w-full mx-auto max-w-[860px] relative z-10 outline-0 text-white text-[12px]'}>
+            <div id={'exchange-form-outer'} className={'pb-[10em] mt-[3em] w-full mx-auto max-w-[860px] relative outline-0 text-white text-[12px]'}>
 
                 <h1 className={' font-[MontSemi] text-[1.9em] mb-[1em] text-center indent-0 block mx-auto text-transparent bg-clip-text bg-grad leading-[1.15em] p-0 outline-0 max-w-[19em]'}
                 >Lightning cryptocurrency exchange </h1>
@@ -371,7 +370,7 @@ const ExchangeForm = () => {
                         setValidError={setValidError} valid={valid}
                     />
                     <ExchangeAdress address={address} setAddress={setAddress} activeCoin2={activeCoin2} selectedName1={selectedName1} selectedName2={selectedName2} valid={valid} validError={validError} setValidError={setValidError} handleAddressChange={handleAddressChange}/>
-                    <ExchangeWrapper selectedOption={selectedOption} handleOptionChange={handleOptionChange} activeCoin2={activeCoin2} valid={valid} setValidError={setValidError} amount1={amount1} amount2={amount2} selectedCoin1={selectedCoin1} selectedCoin2={selectedCoin2} selectedIcon1={selectedIcon1} selectedIcon2={selectedIcon2}/>
+                    <ExchangeWrapper selectedOption={selectedOption} handleOptionChange={handleOptionChange} activeCoin2={activeCoin2} valid={valid} setValidError={setValidError} amount1={amount1} amount2={amount2} selectedCoin1={selectedCoin1} selectedCoin2={selectedCoin2} selectedIcon1={selectedIcon1} selectedIcon2={selectedIcon2} selectedColor1={selectedColor1} selectedColor2={selectedColor2} address={address}/>
                     <ExchangeTerms/>
                 </form>
             </div>

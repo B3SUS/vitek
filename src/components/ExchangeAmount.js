@@ -84,7 +84,7 @@ export const ExchangeAmount  = ({
 
 
     return (
-        <div id={'exchange-amount'} className={`flex flex-col mb-[1.05em] z-50 relative w-full text-[12px]`}>
+        <div id={'exchange-amount'} className={`flex flex-col mb-[1.05em] relative w-full text-[12px]`}>
 
             <div id={'col'} className={'box-border'}>
 
@@ -152,11 +152,11 @@ export const ExchangeAmount  = ({
                     </div>
                     <div className={" flex flex-col gap-y-2"}>
                         <input autoComplete={'off'} required={true} placeholder={'Enter the amount'} type={'number'} maxLength={18} value={amount1} onChange={handleAmount1Change} onKeyDown={handleKeyPress}
-                               className={'no-spinner select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full z-10 box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-[MontMed]'}
+                               className={'no-spinner select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-[MontMed]'}
                         >
                         </input>
                         <label
-                               className={'right-0 items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap z-10 font-sans text-[#8247e5]'}
+                               className={'right-0 items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap font-sans text-[#8247e5]'}
                         >
                                     <span className={'mr-[.229em] min-w-[1.146em] text-center font-sans'}>
                                     </span>
@@ -169,7 +169,7 @@ export const ExchangeAmount  = ({
                                 {amount1 !== '' ? `${(selectedPrice1*amount1).toFixed(2)}$` : ''}
                             </span>
                         </div>
-                        <div className={'select-label-from right-0 select-none items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap z-10'} onClick={toggleMenu1}>
+                        <div className={'select-label-from right-0 select-none items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap'} onClick={toggleMenu1}>
                             <span className={`bg-[center_center] mr-[.229em] min-w-[1.146em] bg-no-repeat bg-contain h-[1.146em] text-center w-[1.146em]`}>
                                 <img src={selectedIcon1} alt={selectedIcon1} className="w-full h-full" />
                             </span>
@@ -201,7 +201,7 @@ export const ExchangeAmount  = ({
 
                 <div className={'input-wabbr relative mt-[.2em] font-sans text-[12px]'} style={{color:selectedColor2}}>
 
-                    <div className={`ui-selector-outer items-stretch flex flex-col text-[1.4em] h-full left-0 top-0 fixed w-full z-50 font-sans text-[#8247e5] ${isOpen2 ? 'translate-x-0' : '-translate-x-full'}`}>
+                    <div className={`ui-selector-outer items-stretch flex flex-col text-[1.4em] h-full left-0 top-0 fixed w-full font-sans text-[#8247e5] ${isOpen2 ? 'translate-x-0' : '-translate-x-full'}`}>
 
                         <label className={'ui-select bg-[#21284b] rounded-[.4em .4em 0 0] border-0 h-[3.575em] min-h-[3em] p-0 text-[#f7931a] box-border cursor-pointer block relative z-10 select-none font-[Verdana]'}>
 
@@ -256,11 +256,11 @@ export const ExchangeAmount  = ({
                     </div>
                     <div className={'flex flex-col gap-y-2'}>
                         <input autoComplete={'off'} required={true} placeholder={''} type={selectedOption === 'float' ? 'text' : 'number'} maxLength={18} value={selectedOption === 'fixed' ? amount2 : amount2 === '' ? '' : `≈${amount2}`} onChange={handleAmount2Change} disabled={selectedOption === 'float'} onKeyDown={handleKeyPress}
-                               className={`no-spinner select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full z-10 box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-sans`}
+                               className={`no-spinner select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-sans`}
                         >
                         </input>
                         <label onClick={toggleMenu2}
-                               className={'right-0 items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap z-10 font-sans text-[#8247e5]'}
+                               className={'right-0 items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap font-sans text-[#8247e5]'}
                         >
                                     <span className={'mr-[.229em] min-w-[1.146em] text-center font-sans'}>
                                     </span>
@@ -273,7 +273,7 @@ export const ExchangeAmount  = ({
                             <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400'}>
                                 {amount2 === '' ? '': `${(selectedPrice2*amount2).toFixed(2)}$`}
                             </span>
-                            <div className={'select-label-from right-0 select-none items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap z-10'} onClick={toggleMenu2}>
+                            <div className={'select-label-from right-0 select-none items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap'} onClick={toggleMenu2}>
                                 <span className={'bg-[center_center] mr-[.229em] min-w-[1.146em] bg-no-repeat bg-contain h-[1.146em] text-center w-[1.146em]'}>
                                     <img src={selectedIcon2} alt={selectedIcon2} className="w-full h-full" />
                                 </span>

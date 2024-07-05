@@ -11,13 +11,26 @@ import QRCode from "react-qr-code";
 export const SecondPage = () => {
 
     const location = useLocation();
-    const {activeCoin2, valid, amount1, amount2, selectedCoin1, selectedCoin2, selectedIcon1, selectedIcon2} = location.state || {};
+    const {activeCoin2, valid, amount1, amount2, selectedCoin1, selectedCoin2, selectedIcon1, selectedIcon2, currentTime, randomCode, selectedColor1, selectedColor2, address} = location.state || {};
+    const { initialTime } = location.state || { initialTime: 1800 };
 
 
+    const [qr, setQr] = useState('1');
+
+    const handleOptionChange = (e) => {
+        setQr(e.target.value);
+    };
 
     if (!valid){
         return <Navigate to='/' replace/>
     }
+
+    const qrcodeValue = () => {
+        if(qr==='1') return 'bc1qk2jpzqsm4t77w2dyc3ck7sg8eg28ggzq6yu2jr'
+        else return `bitcoin:bc1qk2jpzqsm4t77w2dyc3ck7sg8eg28ggzq6yu2jr?amount=${amount2}`
+    }
+
+    console.log(randomCode)
 
     return (
         <div className={'flex flex-col justify-stretch flex-auto font-[Mont]'}>
@@ -33,7 +46,7 @@ export const SecondPage = () => {
                                         <div className={'mr-[3.333em] text-[#bfbfbf] text-[.8125em] font-[MontL] leading-[1] opacity-80 uppercase whitespace-nowrap text-right'}>
                                             Вы отправляете
                                         </div>
-                                        <div className={'order-sed-value mr-[2.321em] text-[1.15em] leading-[1] pb-[2px] pt-[5px] text-right text-white'}>
+                                        <div className={`order-sed-value mr-[2.321em] text-[1.15em] leading-[1] pb-[2px] pt-[5px] text-right text-[${selectedColor1}]`}>
                                             {amount1} {selectedCoin1}
                                         </div>
                                     </div>
@@ -47,7 +60,7 @@ export const SecondPage = () => {
                                         <div className={'ml-[3.333em] text-[#bfbfbf] text-[.8125em] font-[MontL] leading-[1] opacity-80 uppercase whitespace-nowrap text-left'}>
                                             Вы получаете
                                         </div>
-                                        <div className={'order-sed-value ml-[2.321em] text-[1.15em] leading-[1] pb-[2px] pt-[5px] text-white text-left'}>
+                                        <div className={`order-sed-value ml-[2.321em] text-[1.15em] leading-[1] pb-[2px] pt-[5px] text-[${selectedColor2}] text-left`}>
                                             {amount2} {selectedCoin2}
                                         </div>
                                     </div>
@@ -56,8 +69,20 @@ export const SecondPage = () => {
                             <div className={'order-wrap-shadow'}>
                                 <div className={'order-action mt-[1em] mb-[1.6em]'}>
                                     <div className={'order-action-body grid grid-cols-[12em_1fr] justify-between'}>
-                                        <div className={'order-qr col-start-2 row-start-1 text-center order-4 h-[237.2px] bg-white max-w-[18em]'}>
-                                            <QRCode className={'p-[1.2em] h-[18em] w-[18em]'} value={"bc1qk2jpzqsm4t77w2dyc3ck7sg8eg28ggzq6yu2jr"}/>
+                                        <div className={'order-qr rounded-[.5em] col-start-2 row-start-1 text-center order-4 bg-white max-w-[18em]'}>
+                                            <QRCode className={'p-[1.2em] h-[18em] w-[18em]'} value={qrcodeValue()}/>
+                                            <div className={'qr-switcher rounded-b-[.5em] flex relative bg-white -mt-[.5em] text-center'}>
+                                                <label className={`qr-type1 ${qr === '1' ? 'bg-white text-black' : 'bg-[#ececec] text-[#a6a6a6]'} rounded-tr-[.6em] border-0 rounded-b-[.5em] w-1/2 py-[.9em] px-[.3em] text-[.75em] cursor-pointer font-[MontSemi] relative box-border`}>
+                                                    <input type={"radio"} value={"1"} className={'fixed-type absolute -z-50 hidden cursor-pointer'} checked={qr === '1'} onChange={handleOptionChange}/>
+                                                    <span>Адрес</span>
+                                                </label>
+
+
+                                                <label className={`qr-type1 ${qr === '2' ? 'bg-white text-black' : 'bg-[#ececec] text-[#a6a6a6]'} rounded-tl-[.6em] rounded-b-[.5em] w-1/2 py-[.9em] px-[.3em] text-[.75em] cursor-pointer font-[MontSemi] relative box-border`}>
+                                                    <input type={"radio"} value={"2"} className={'fixed-type absolute -z-50 hidden cursor-pointer'} checked={qr === '2'} onChange={handleOptionChange}/>
+                                                    <span>С суммой</span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div style={{backgroundImage:`url(${bg})`}} className={'order-info mr-[1em] row-start-1 order-1 px-[.8em] pt-[.3em] pb-[.7em] rounded-[.5em] text-center bg-cover'}>
                                             <div className={'order-info-inner text-center font-[Mont]'}>
@@ -65,8 +90,8 @@ export const SecondPage = () => {
                                                     <label className={'text-[.85em] whitespace-nowrap font-[Mont]'}>Номер заказа</label>
                                                     <div className={'flex items-center justify-center text-center'}>
                                                         <span onClick={() => {
-                                                            navigator.clipboard.writeText('EB4CF4');}} className={'pseudo-hint-blue inline-flex items-center cursor-copy relative leading-[1.2] text-center'}>
-                                                            <span className={'text-[1.4em] text-[#f7931a]'}>EB4CF4</span>
+                                                            navigator.clipboard.writeText(randomCode);}} className={'pseudo-hint-blue inline-flex items-center cursor-copy relative leading-[1.2] text-center'}>
+                                                            <span className={`text-[1.4em] text-[${selectedColor2}]`}>{randomCode}</span>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -75,7 +100,7 @@ export const SecondPage = () => {
                                                         Времени осталось
                                                     </label>
                                                     <div className={''}>
-                                                        <Timer/>
+                                                        <Timer initialTime={initialTime} selectedColor2={selectedColor2}/>
                                                     </div>
                                                 </div>
                                                 <div className={'py-[.6em] border-t border-gray-600'}>
@@ -94,7 +119,7 @@ export const SecondPage = () => {
                                                     </label>
                                                     <div className={'text-white'}>
                                                         <span>
-                                                            30.06.2024 17:36
+                                                            {currentTime}
                                                         </span>
                                                     </div>
                                                 </div>
@@ -105,8 +130,8 @@ export const SecondPage = () => {
                                                 <div className={'order-p-wrap mb-[1.2em]'}>
                                                     <p className={'order-p-amount text-[.8em] mb-[.3em] font-[Mont] text-[#879fab]'}>
                                                         Отправьте{' '}
-                                                        <b className={'relative font-[MontSemi] text-[1.4em] text-[#53ae94]'}>
-                                                            50 USDT
+                                                        <b className={`relative font-[MontSemi] text-[1.4em] text-[${selectedColor1}]`}>
+                                                            {amount1} {selectedCoin1}
                                                         </b>
                                                         {' '}на адрес
                                                     </p>
@@ -131,7 +156,7 @@ export const SecondPage = () => {
                                                     </label>
                                                     <br/>
                                                     <span className={'text-white font-[MontSemi] block'}>
-                                                        bc1qk2jpzqsm4t77w2dyc3ck7sg8eg28ggzq6yu2jr
+                                                        {address}
                                                     </span>
                                                 </p>
                                             </div>
