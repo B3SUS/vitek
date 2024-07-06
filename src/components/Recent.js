@@ -24,87 +24,64 @@ import clock from '../img/clock.png';
 
 const currencies = ['BTC', 'ETH', 'LTC', 'USD', 'BNB', 'SOL', 'XRP', 'DOGE', 'ADA', 'TRX', 'AVAX', 'SHIB', 'DOT', 'NEAR', 'XMR', 'GEL', 'RUB'];
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomAmount = () => Math.floor(Math.random() * 1000) + 1;
 
-const getRandomCurrency = () => currencies[getRandomNumber(0, currencies.length - 1)];
-
-const generateRandomTransaction = (offsetMinutes = 0, offsetSeconds = 0) => {
-    const amount = getRandomNumber(1, 100);
-    const currency1 = getRandomCurrency();
-    let currency2;
-    do {
-        currency2 = getRandomCurrency();
-    } while (currency1 === currency2);
-
-    const timestamp = new Date();
-    timestamp.setMinutes(timestamp.getMinutes() - offsetMinutes);
-    timestamp.setSeconds(timestamp.getSeconds() - offsetSeconds);
-    const time = getRandomNumber(5,15);
-
-    return {
-        amount,
-        currency1,
-        currency2,
-        timestamp,
-        time
-    };
+// Function to generate a random time ago string and seconds
+const getRandomTimeAgo = () => {
+    const seconds = Math.floor(Math.random() * 480) + 1; // 1 second to 8 minutes (480 seconds)
+    const timeAgo = seconds < 60 ? `${seconds} seconds ago` : `${Math.floor(seconds / 60)} minutes ago`;
+    return { timeAgo, seconds };
 };
 
-const saveTransactionsToLocalStorage = (transactions) => {
-    localStorage.setItem('transactions', JSON.stringify(transactions));
-};
+// Function to generate a random static time between 5 and 15 seconds
+const getRandomStaticTime = () => Math.floor(Math.random() * 11) + 5;
 
-const loadTransactionsFromLocalStorage = () => {
-    const savedTransactions = localStorage.getItem('transactions');
-    return savedTransactions ? JSON.parse(savedTransactions) : [];
+// Function to create initial transactions
+const createInitialTransactions = () => {
+    const transactions = [];
+    for (let i = 0; i < 8; i++) {
+        const currency1 = currencies[Math.floor(Math.random() * currencies.length)];
+        const currency2 = currencies[Math.floor(Math.random() * currencies.length)];
+        const { timeAgo, seconds } = getRandomTimeAgo();
+        transactions.push({
+            amount: getRandomAmount(),
+            currency1,
+            currency2,
+            timeAgo,
+            time: seconds,
+            staticTime: getRandomStaticTime()
+        });
+    }
+    return transactions.sort((a, b) => a.time - b.time);
 };
 
 const Recent = () => {
-    const [transactions, setTransactions] = useState(loadTransactionsFromLocalStorage);
-
-    useEffect(() => {
-        const initialTransactions = loadTransactionsFromLocalStorage();
-
-        if (initialTransactions.length === 0) {
-            const newTransactions = [];
-            for (let i = 0; i < 8; i++) {
-                newTransactions.push(generateRandomTransaction(i, getRandomNumber(0, 59)));
-            }
-            setTransactions(newTransactions);
-            saveTransactionsToLocalStorage(newTransactions);
-        } else {
-            setTransactions(initialTransactions);
-        }
-    }, []);
+    const [transactions, setTransactions] = useState(createInitialTransactions());
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTransactions((prevTransactions) => {
-                const now = new Date();
-                const updatedTransactions = prevTransactions
-                    .map(transaction => {
-                        const diffInSeconds = Math.floor((now - new Date(transaction.timestamp)) / 1000);
+            setTransactions(prevTransactions => {
+                const newTransactions = prevTransactions.map(t => ({
+                    ...t,
+                    time: t.time + 1,
+                    timeAgo: t.time < 59 ? `${t.time + 1} seconds ago` : `${Math.floor((t.time + 1) / 60)} minutes ago`
+                })).filter(t => t.time <= 540); // Remove transactions older than 9 minutes (540 seconds)
 
-                        return {
-                            ...transaction,
-                            timeAgo: diffInSeconds < 60
-                                ? `${diffInSeconds} секунд назад`
-                                : `${Math.floor(diffInSeconds / 60)} хвилин назад`
-                        };
-                    })
-                    .filter(transaction => {
-                        const diffInMinutes = Math.floor((now - new Date(transaction.timestamp)) / 60000);
-                        return diffInMinutes < 9;
-                    });
-
-                // Если транзакции удалены, добавляем новые
-                const transactionsToAdd = 8 - updatedTransactions.length;
-                for (let i = 0; i < transactionsToAdd; i++) {
-                    updatedTransactions.unshift(generateRandomTransaction());
+                if (newTransactions.length < 8) {
+                    const currency1 = currencies[Math.floor(Math.random() * currencies.length)];
+                    const currency2 = currencies[Math.floor(Math.random() * currencies.length)];
+                    const newTransaction = {
+                        amount: getRandomAmount(),
+                        currency1,
+                        currency2,
+                        timeAgo: '1 second ago',
+                        time: 1,
+                        staticTime: getRandomStaticTime()
+                    };
+                    newTransactions.unshift(newTransaction);
                 }
 
-                saveTransactionsToLocalStorage(updatedTransactions);
-                return updatedTransactions;
+                return newTransactions.sort((a, b) => a.time - b.time);
             });
         }, 1000);
 
@@ -169,7 +146,7 @@ const Recent = () => {
                             </div>
                             <div className={'recent-howlong pr-[1.3em] whitespace-nowrap text-right row-[1] col-[3/5] flex border-b border-white/[.2] items-center justify-start h-[4em] pl-[1em]'}>
                                 <div className={'ico-timer inline-block'}><img className={'h-[1.2em]'} src={clock} alt="clock" /></div>
-                                <span className={'inline-block'}>{transaction.time} sec</span>
+                                <span className={'inline-block'}>{transaction.staticTime} sec</span>
                             </div>
                         </li>
                     ))}
