@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import plus1 from '../img/plus1.png'
 import plus2 from '../img/plus2.png'
 import arrow from '../img/faqarrow.png'
+import {Link} from "react-router-dom";
 
 
 export const Faq = () => {
@@ -78,12 +79,12 @@ export const Faq = () => {
                         </div>
                     </li>
                     <div className={'faq-more text-right py-[2.34em]'}>
-                        <a className={'text-[#008FDF] flex font-[Mont] float-right items-center'}>
+                        <Link to={'/faq'} className={'text-[#008FDF] flex font-[Mont] float-right items-center'}>
                             <span className={''}>Перейти на страницу FAQ</span>
-                            <div className={`bg-[#008fdf33] rounded-full text-[1.5em] p-[.55em] h-[40px] inline-block ml-[1em]`}>
-                                <img src={arrow} alt={arrow} className={'w-[18px] inline-block'}/>
+                            <div className={`bg-[#008fdf33] rounded-full text-[1.5em] p-[.55em] inline-block ml-[1em]`}>
+                                <img src={arrow} alt={arrow} className={'w-[18px]'}/>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </ol>
             </div>

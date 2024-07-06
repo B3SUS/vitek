@@ -69,8 +69,8 @@ export const SecondPage = () => {
                             <div className={'order-wrap-shadow'}>
                                 <div className={'order-action mt-[1em] mb-[1.6em]'}>
                                     <div className={'order-action-body grid grid-cols-[12em_1fr] justify-between'}>
-                                        <div className={'order-qr rounded-[.5em] col-start-2 row-start-1 text-center order-4 bg-white max-w-[18em]'}>
-                                            <QRCode className={'p-[1.2em] h-[18em] w-[18em]'} value={qrcodeValue()}/>
+                                        <div className={'order-qr rounded-[.5em] col-start-2 row-start-1 text-center order-4 bg-white'}>
+                                            <QRCode className={'p-[1.2em] max-h-[18em] w-full'} value={qrcodeValue()}/>
                                             <div className={'qr-switcher rounded-b-[.5em] flex relative bg-white -mt-[.5em] text-center'}>
                                                 <label className={`qr-type1 ${qr === '1' ? 'bg-white text-black' : 'bg-[#ececec] text-[#a6a6a6]'} rounded-tr-[.6em] border-0 rounded-b-[.5em] w-1/2 py-[.9em] px-[.3em] text-[.75em] cursor-pointer font-[MontSemi] relative box-border`}>
                                                     <input type={"radio"} value={"1"} className={'fixed-type absolute -z-50 hidden cursor-pointer'} checked={qr === '1'} onChange={handleOptionChange}/>

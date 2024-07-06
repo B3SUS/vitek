@@ -1,5 +1,18 @@
 
-
+html{
+    height: 100%;
+}
+body{
+    box-sizing: border-box;
+    background-color: #0C0D16;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -69,6 +82,94 @@
 }
 
 
+
+.article-menu-list{
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+}
+.article-menu-list li{
+    margin-bottom: .5em;
+    line-height: 1.5em;
+    position: relative;
+    padding-left: 2.1em;
+    counter-increment: list-item;
+}
+.article-menu-list li::before{
+    content: counter(list-item);
+    position: absolute;
+    left: 0;
+    color: #008fdf;
+    font-size: 1.25em;
+    text-align: center;
+    width: 1em;
+    line-height: 1.5em;
+    font-family: 'MontSemi', Arial, sans-serif;
+    transform: translateY(-12%);
+}
+.article-menu-list li a{
+    color: #0171a6;
+    border-bottom: 1px dashed #0171a6;
+    text-decoration: none;
+    cursor: pointer;
+}
+.terms-section{
+    font-size: 1em;
+    font-weight: 400;
+    margin: 3.5em 0 1.25em;
+    max-width: initial;
+    line-height: 1.25em;
+}
+.terms-section span{
+    color: white;
+    font-size: 1.25em;
+    font-weight: 400;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+.terms-section label{
+    color: #F9943C;
+    display: block;
+    font-size: 2em;
+    line-height: 1.25;
+}
+.with-counter{
+    padding-left: 3.5em;
+    position: relative;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+.counter{
+    color: #008FDF;
+    font-size: 1.25em;
+    font-weight: 600;
+    left: 0;
+    line-height: 1.1;
+    position: absolute;
+    top: 0;
+}
+.with-marker{
+    padding-left: 2.25em;
+}
+.deep{
+    margin-left: 3.5em;
+}
+.nogap{
+    margin-top: 0;
+}
+.marker{
+    color: #008FDF;
+    font-size: 1.25em;
+    font-weight: 600;
+    left: 0;
+    line-height: 1.1;
+    position: absolute;
+    top: 0;
+}
+
+.content-terms p{
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
 
 .input-wabbr::before{
     box-sizing: border-box;

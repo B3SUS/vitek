@@ -1,4 +1,3 @@
-// src/Recent.js
 import React, { useEffect, useState } from 'react';
 import btc from '../svg/bitcoin-ico.png';
 import bnb from '../svg/bnb.png';
@@ -18,7 +17,7 @@ import near from '../svg/near.png';
 import usdc from '../svg/usdc.png';
 import ruble from '../svg/ruble.png';
 import lari from '../svg/lari.png';
-import arrow from '../img/arrow.png'
+import arrow from '../img/arrow.png';
 
 import clock from '../img/clock.png';
 
@@ -39,7 +38,7 @@ const generateRandomTransaction = (offsetMinutes = 0, offsetSeconds = 0) => {
     const timestamp = new Date();
     timestamp.setMinutes(timestamp.getMinutes() - offsetMinutes);
     timestamp.setSeconds(timestamp.getSeconds() - offsetSeconds);
-    const time = getRandomNumber(5,15);
+    const time = getRandomNumber(5, 15);
 
     return {
         amount,
@@ -89,7 +88,7 @@ const Recent = () => {
                             ...transaction,
                             timeAgo: diffInSeconds < 60
                                 ? `${diffInSeconds} секунд назад`
-                                : `${Math.floor(diffInSeconds / 60)} хвилин назад`
+                                : `${Math.floor(diffInSeconds / 60)} минут назад`
                         };
                     })
                     .filter(transaction => {
@@ -169,7 +168,7 @@ const Recent = () => {
                             </div>
                             <div className={'recent-howlong pr-[1.3em] whitespace-nowrap text-right row-[1] col-[3/5] flex border-b border-white/[.2] items-center justify-start h-[4em] pl-[1em]'}>
                                 <div className={'ico-timer inline-block'}><img className={'h-[1.2em]'} src={clock} alt="clock" /></div>
-                                <span className={'inline-block'}>{transaction.time} sec</span>
+                                <span className={'inline-block'}>{transaction.time} сек</span>
                             </div>
                         </li>
                     ))}
