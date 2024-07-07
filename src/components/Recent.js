@@ -24,7 +24,7 @@ import clock from '../img/clock.png';
 
 const currencies = ['BTC', 'ETH', 'LTC', 'USD', 'BNB', 'SOL', 'XRP', 'DOGE', 'ADA', 'TRX', 'AVAX', 'SHIB', 'DOT', 'NEAR', 'XMR', 'GEL', 'RUB'];
 
-const getRandomAmount = () => Math.floor(Math.random() * 1000) + 1;
+
 
 // Function to generate a random time ago string and seconds
 const getRandomTimeAgo = () => {
@@ -44,7 +44,7 @@ const createInitialTransactions = () => {
         const currency2 = currencies[Math.floor(Math.random() * currencies.length)];
         const { timeAgo, seconds } = getRandomTimeAgo();
         transactions.push({
-            amount: getRandomAmount(),
+            amount: getRandomAmount(currency1),
             currency1,
             currency2,
             timeAgo,
@@ -54,9 +54,62 @@ const createInitialTransactions = () => {
     }
     return transactions.sort((a, b) => a.time - b.time);
 };
+const getRandomAmount = (currency) => {
+    const getRandomInRange = (min, max, roundTo = 0.001) => {
+        const randomValue = Math.random() * (max - min) + min;
+        return (Math.round(randomValue / roundTo) * roundTo).toFixed(2);
+    };
+    // eslint-disable-next-line default-case
+    switch (currency) {
+        case 'BTC': return getRandomInRange(0.001, 0.1); // 0.001 to 0.1 BTC
+        case 'ETH': return getRandomInRange(0.01, 1);    // 0.01 to 1 ETH
+        case 'LTC': return getRandomInRange(0.1, 10);    // 0.1 to 10 LTC
+        case 'USD': return getRandomInRange(0,1000, 100); // 0 to 1000 USD
+        case 'BNB': return getRandomInRange(0.1, 2);     // 0.1 to 2 BNB
+        case 'SOL': return getRandomInRange(0.1, 5);     // 0.1 to 5 SOL
+        case 'XRP': return getRandomInRange(1, 1000);    // 1 to 1000 XRP
+        case 'DOGE': return getRandomInRange(10, 10000); // 10 to 10000 DOGE
+        case 'ADA': return getRandomInRange(1, 500);     // 1 to 500 ADA
+        case 'TRX': return getRandomInRange(10, 2000);   // 10 to 2000 TRX
+        case 'AVAX': return getRandomInRange(0.1, 10);   // 0.1 to 10 AVAX
+        case 'SHIB': return getRandomInRange(0,1000000); // 0 to 1,000,000 SHIB
+        case 'DOT': return getRandomInRange(0.1, 50);    // 0.1 to 50 DOT
+        case 'NEAR': return getRandomInRange(0.1, 20);   // 0.1 to 20 NEAR
+        case 'XMR': return getRandomInRange(0.01, 1);    // 0.01 to 1 XMR
+        case 'GEL': return getRandomInRange(0,5000) // 0 to 5000 GEL
+        case 'RUB': return getRandomInRange(5000,10000); // 5000 to 10000 RUB
+        default:            console.warn(`Unknown currency: ${currency}`);
+            return null;
+    }
+};
 
 const Recent = () => {
-    const [transactions, setTransactions] = useState(createInitialTransactions());
+
+    const [transactions, setTransactions] = useState([]);
+    const [initialized, setInitialized] = useState(() => {
+        return localStorage.getItem('transactions') !== null;
+    });
+
+    useEffect(() => {
+        if (initialized) {
+            const storedTransactions = localStorage.getItem('transactions');
+            setTransactions(JSON.parse(storedTransactions));
+        } else {
+            setTransactions(createInitialTransactions());
+        }
+    }, [initialized]);
+
+    useEffect(() => {
+        const saveTransactionsToLocalStorage = () => {
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+        };
+        saveTransactionsToLocalStorage(); // save initially
+        const intervalId = setInterval(saveTransactionsToLocalStorage, 1000); // save every 1 second
+        return () => {
+            clearInterval(intervalId); // clean up when component unmounts
+        };
+    }, [transactions]);
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -71,7 +124,7 @@ const Recent = () => {
                     const currency1 = currencies[Math.floor(Math.random() * currencies.length)];
                     const currency2 = currencies[Math.floor(Math.random() * currencies.length)];
                     const newTransaction = {
-                        amount: getRandomAmount(),
+                        amount: getRandomAmount(currency1),
                         currency1,
                         currency2,
                         timeAgo: '1 second ago',
@@ -110,6 +163,7 @@ const Recent = () => {
             default: return null;
         }
     };
+
 
     return (
         <div className={'recent-section mb-[6em] relative font-[Mont]'}>
