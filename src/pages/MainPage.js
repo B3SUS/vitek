@@ -14,7 +14,7 @@ export const MainPage = () => {
                 <div className="box-border bg-[#151b23]  bg-cover text-white relative w-full min-h-screen pt-[55px]">
                     <Navbar/>
                     <div className="absolute w-full h-[120%] top-0 overflow-hidden z-0 bg-[#0c0d16]">
-                        <img src={background} alt="background" className="w-full  object-cover absolute top-0 left-1/2 transform -translate-x-1/2 md:-translate-y-1/2"/>
+                        <img src={background} alt="background" className="w-full  object-cover absolute top-0 left-1/2 transform h-[67em] md:h-auto -translate-x-1/2 md:-translate-y-1/2"/>
                     </div>
                     <Exchange/>
                 </div>

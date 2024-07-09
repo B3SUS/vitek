@@ -94,7 +94,7 @@ export const ExchangeAmount  = ({
                     </header>
                 </div>
 
-                <div className={'input-wabbr relative mt-[.2em] font-sans text-[16px]'} style={{color: selectedColor1}}>
+                <div className={'input-wabbr relative mt-[.2em] font-sans md:text-[16px]'} style={{color: selectedColor1}}>
 
                     <div
                         className={`ui-selector-outer items-stretch flex flex-col text-[1.4em] h-full left-0 top-0 fixed w-full z-50 font-sans text-[#8247e5] ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>

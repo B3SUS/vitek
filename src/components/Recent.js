@@ -188,21 +188,21 @@ const Recent = () => {
 
 
     return (
-        <div className={'recent-section mb-[6em] md:mb-[9em] relative font-[Mont] md:text-[16px]'}>
+        <div className={'recent-section mb-[6em]  relative font-[Mont] md:text-[16px] md:mb-[9em]'}>
             <ClearTransactionsButton onClick={clearTransactions}/>
             <div className={'wrapper max-w-none px-[1em] mx-auto box-border w-full md:max-w-[1280px] md:px-[2em]'}>
-                <h2 className={'text-center md:text-nowrap text-[2em] md:text-[3.5em] text-transparent bg-clip-text bg-grad font-[MontBold] leading-[1.15em] mb-[.7em]'}>
+                <h2 className={'text-center  text-[2em]  text-transparent bg-clip-text bg-grad font-[MontBold] leading-[1.15em] mb-[.7em] md:text-nowrap md:text-[3.5em]'}>
                     Recent Transactions
                 </h2>
                 <ul className={'flex flex-col overflow-hidden items-center list-none'}>
                     {transactions.map((transaction, index) => (
-                        <li key={index} className={'grid grid-cols-[1fr_.8em_.8em_.85fr] md:table w-full h-[3.3em] box-border bg-[#21284B] rounded-[.3em] text-[.9em] min-h-[3.3em] mb-[.7em] text-center whitespace-nowrap border-collapse md:w-[70%] md:table-fixed'}>
-                            <div className={'recent-time row-[1] col-[1/3] md:table-cell md:align-middle flex md:border-none border-b border-white/[.2] items-center justify-end pl-[1.3em] whitespace-nowrap text-left pr-[.6em]'}>
+                        <li key={index} className={'grid grid-cols-[1fr_.8em_.8em_.85fr] h-auto w-full box-border bg-[#21284B] rounded-[.3em] text-[.9em] min-h-[3.3em] mb-[.7em] text-center whitespace-nowrap border-collapse md:w-[70%] md:table md:table-fixed md:h-[3.3em]'}>
+                            <div className={'recent-time row-[1] col-[1/3]  flex  border-b border-white/[.2] items-center justify-end pl-[1.3em] whitespace-nowrap text-left pr-[.6em] md:table-cell md:align-middle md:border-none'}>
                                 <div className={'time'}>
                                     {transaction.timeAgo || 'Несколько секунд назад'}
                                 </div>
                             </div>
-                            <div className={'dir-from row-[2] col-[1] md:min-w-[28%] md:text-right md:table-cell md:align-middle flex items-center justify-end md:justify-normal h-[4em] md:h-auto px-[.6em]'}>
+                            <div className={'dir-from row-[2] col-[1]  flex items-center justify-end md:justify-normal h-[4em] md:h-auto px-[.6em] md:min-w-[28%] md:text-right md:table-cell md:align-middle'}>
                                 <div className={'coin-value inline-block md:align-middle'}>
                                     {transaction.amount} {transaction.currency1}
                                 </div>
