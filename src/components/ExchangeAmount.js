@@ -84,7 +84,7 @@ export const ExchangeAmount  = ({
 
 
     return (
-        <div id={'exchange-amount'} className={`flex flex-col mb-[1.05em] relative w-full text-[12px]`}>
+        <div id={'exchange-amount'} className={`flex flex-col mb-[1.05em] md:mb-[2.2em] relative w-full text-[12px] md:text-[16px] md:flex-row`}>
 
             <div id={'col'} className={'box-border'}>
 
@@ -94,7 +94,7 @@ export const ExchangeAmount  = ({
                     </header>
                 </div>
 
-                <div className={'input-wabbr relative mt-[.2em] font-sans text-[12px]'} style={{color: selectedColor1}}>
+                <div className={'input-wabbr relative mt-[.2em] font-sans text-[16px]'} style={{color: selectedColor1}}>
 
                     <div
                         className={`ui-selector-outer items-stretch flex flex-col text-[1.4em] h-full left-0 top-0 fixed w-full z-50 font-sans text-[#8247e5] ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>

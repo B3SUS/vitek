@@ -343,11 +343,11 @@ const ExchangeForm = () => {
 
 
     return (
-        <div id={'wrapper'} className={`max-w-none min-w-fit py-0 px-[1em] mx-auto my-0 w-full box-border`}>
+        <div id={'wrapper'} className={`max-w-none min-w-fit py-0 px-[1em] mx-auto my-0 w-full box-border md:max-w-[1280px] md:px-[2em]`}>
 
-            <div id={'exchange-form-outer'} className={'pb-[10em] mt-[3em] w-full mx-auto max-w-[860px] relative outline-0 text-white text-[12px]'}>
+            <div id={'exchange-form-outer'} className={'pb-[10em] md:pb-[16em] mt-[3em] md:mt-[4.4em] w-full mx-auto max-w-[860px] relative outline-0 text-white text-[12px] md:text-[16px]'}>
 
-                <h1 className={' font-[MontSemi] text-[1.9em] mb-[1em] text-center indent-0 block mx-auto text-transparent bg-clip-text bg-grad leading-[1.15em] p-0 outline-0 max-w-[19em]'}
+                <h1 className={' font-[MontSemi] text-[1.9em] md:text-[2.6em] mb-[1em] text-center indent-0 block mx-auto text-transparent bg-clip-text bg-grad leading-[1.15em] p-0 outline-0 max-w-[19em]'}
                 >Lightning cryptocurrency exchange </h1>
 
                 <form id={'exchange-form'}>
