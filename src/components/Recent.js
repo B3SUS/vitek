@@ -90,15 +90,21 @@ const Recent = () => {
 
     const [transactions, setTransactions] = useState([]);
     const [initialized, setInitialized] = useState(() => {
-        return localStorage.getItem('transactions') !== null;
+        const storedTransactions = localStorage.getItem('transactions');
+        return storedTransactions !== null;
     });
 
     useEffect(() => {
         if (initialized) {
             const storedTransactions = localStorage.getItem('transactions');
-            setTransactions(JSON.parse(storedTransactions));
+            if (storedTransactions) {
+                setTransactions(JSON.parse(storedTransactions));
+            }
         } else {
-            setTransactions(createInitialTransactions());
+            const initialTransactions = createInitialTransactions();
+            setTransactions(initialTransactions);
+            localStorage.setItem('transactions', JSON.stringify(initialTransactions));
+            setInitialized(true);
         }
     }, [initialized]);
 
@@ -106,13 +112,9 @@ const Recent = () => {
         const saveTransactionsToLocalStorage = () => {
             localStorage.setItem('transactions', JSON.stringify(transactions));
         };
-        saveTransactionsToLocalStorage(); // save initially
         const intervalId = setInterval(saveTransactionsToLocalStorage, 1000); // save every 1 second
-        return () => {
-            clearInterval(intervalId); // clean up when component unmounts
-        };
+        return () => clearInterval(intervalId); // clean up when component unmounts
     }, [transactions]);
-
 
     useEffect(() => {
         const interval = setInterval(() => {
