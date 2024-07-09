@@ -24,6 +24,18 @@ import clock from '../img/clock.png';
 
 import bg from '../svg/recent.svg'
 
+const ClearTransactionsButton = ({ onClick }) => {
+    const handleClick = () => {
+        if (typeof onClick === 'function') {
+            onClick();
+        }
+    };
+    return (
+        <button onClick={handleClick} className="btn-clear-transactions">
+            Clear Transactions and Create New
+        </button>
+    );
+};
 
 const currencies = ['BTC', 'ETH', 'LTC', 'USD', 'BNB', 'SOL', 'XRP', 'DOGE', 'ADA', 'TRX', 'AVAX', 'SHIB', 'DOT', 'NEAR', 'XMR', 'GEL', 'RUB'];
 
@@ -169,9 +181,15 @@ const Recent = () => {
         }
     };
 
+    const clearTransactions = () => {
+        localStorage.removeItem('transactions');
+        setTransactions(createInitialTransactions());
+    };
+
 
     return (
         <div className={'recent-section mb-[6em] md:mb-[9em] relative font-[Mont] md:text-[16px]'}>
+            <ClearTransactionsButton onClick={clearTransactions}/>
             <div className={'wrapper max-w-none px-[1em] mx-auto box-border w-full md:max-w-[1280px] md:px-[2em]'}>
                 <h2 className={'text-center md:text-nowrap text-[2em] md:text-[3.5em] text-transparent bg-clip-text bg-grad font-[MontBold] leading-[1.15em] mb-[.7em]'}>
                     Recent Transactions
