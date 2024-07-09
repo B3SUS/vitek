@@ -86,10 +86,9 @@ export const Terms = () => {
     return (
         <div className={'text-[12px] bg-[#0c0d16] bg-cover text-white min-h-full relative flex flex-col font-[Mont]'}>
             <Navbar/>
-            <div className={'pt-[3.875em] mb-[1em] flex-[1_0_auto]'}>
-                <div className={'wrapper px-[1em] mx-auto box-border w-full'}>
+                <div className={'wrapper md:text-[16px] pt-[3.875em] md:px-[2em] px-[1em] md:max-w-[1280px] mx-auto box-border w-full'}>
                     <div className={'content py-[1em]'}>
-                        <h1 className={'text-[3em] bg-clip-text bg-grad mt-[.8125em] mb-[.8125em] text-transparent font-[MontBold] leading-[1.15em]'}>
+                        <h1 className={'text-[3em] md:text-[5em] bg-clip-text bg-grad mt-[.8125em] mb-[.8125em] text-transparent font-[MontBold] leading-[1.15em]'}>
                             Terms of Service
                         </h1>
                         <section className={'blog-article-content mb-[12em] max-w-[60em] mt-[4em]'}>
@@ -777,7 +776,6 @@ export const Terms = () => {
                         </section>
                     </div>
                 </div>
-            </div>
             <Footer/>
         </div>
     )

@@ -92,7 +92,7 @@ export const ExchangeButton = ({
     };
 
     return (
-        <div className="exchange-button mt-[1em] text-center font-[Verdana] p-0 outline-0 text-white text-[12px]">
+        <div className="exchange-button mt-[1em] text-center font-[Verdana] p-0 outline-0 text-white text-[12px] md:text-[16px] md:mt-0 md:text-nowrap">
             <button className="bg-white rounded-[.5em] border-0 cursor-pointer inline-block text-[1em] overflow-hidden h-[3.575em] p-0 text-center" onClick={handleClick}>
                 <span className="w-auto box-border items-center justify-center bg-[#008fdf] flex text-white text-[1em] font-[MontSemi] h-full py-[.73em] px-[3em] text-center">
                     Exchange now

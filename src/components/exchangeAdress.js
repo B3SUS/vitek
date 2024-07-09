@@ -6,9 +6,9 @@ export const ExchangeAdress = ({address, setAddress, isValid, activeCoin2, selec
 
 
     return (
-        <div id={'exchange-address'} className={`flex flex-col w-full relative mx-auto text-white text-[12px]`}>
+        <div id={'exchange-address'} className={`flex flex-col w-full relative mx-auto text-white text-[12px] md:text-[16px]`}>
             <div id={'exchange-wallet'} className={`flex-1 max-h-[30em] opacity-100 pointer-events-auto`}>
-                <div id={'wrap-header'} className={`px-[1.2em] pb-[.4em] pointer-events-auto text-center text-[12px]`}>
+                <div id={'wrap-header'} className={`px-[1.2em] pb-[.4em] pointer-events-auto text-center text-[12px] md:text-[16px]`}>
                     <h1 className={`text-[#ccc] text-[.9em] text-left overflow-hidden whitespace-nowrap font-[MontMed] leading-[1.2]`}>
                         Destination
                     </h1>

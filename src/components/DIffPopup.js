@@ -4,7 +4,7 @@ import close from '../svg/close.png'
 
 export const DIffPopup = ({diffActive, handleClick}) => {
     return (
-        <div className={`${diffActive === false ? 'hidden' : '' } diffpopup pr-0 z-[100] box-border h-full left-0 fixed top-0 w-full font-[MontSemi]`}>
+        <div className={`${diffActive === false ? 'hidden' : '' } md:rounded-[.5em] diffpopup pr-0 z-[100] box-border h-full left-0 fixed top-0 w-full font-[MontSemi]`}>
 
             <div className={'popup-wrap flex overflow-y-auto text-[12px] bg-[#21284b] bg-opacity-40 h-full'}>
                 <div className={'popup-content bg-[#21284b] flex flex-col text-[1.4em] py-[2em] px-[1.8em] box-border  m-auto max-w-[650px] pointer-events-auto relative text-center w-full leading-[1.5]'}>
@@ -71,7 +71,9 @@ export const DIffPopup = ({diffActive, handleClick}) => {
                     </div>
                 </div>
             </div>
+            <div className={'absolute h-full left-0 top-0 w-full -z-10 backdrop-blur-[10px] bg-[#21284b66]'}>
 
+            </div>
         </div>
     )
 }

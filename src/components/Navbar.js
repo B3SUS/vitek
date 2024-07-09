@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import logo1 from "../img/logo1.png";
 import {Link} from "react-router-dom";
 
@@ -10,10 +10,25 @@ const Navbar = () => {
         setIsOpen(!isOpen);
     };
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            setIsScrolled(scrollTop > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="header w-full fixed top-0 z-10 bg-transparent shadow-[0 0 0 -2px #000] font-[Mont]">
+        <div className={`header w-full fixed top-0 z-10  shadow-[0 0 0 -2px #000] ${isScrolled? 'bg-[#0c0d16]' : 'bg-transparent'} font-[Mont]`}>
             <div className="wrapper w-full box-border text-white">
-                <div className="left-menu-wrap block absolute left-0 h-full" style={{zIndex:999}}>
+                {/*<div className="left-menu-wrap block absolute left-0 h-full" style={{zIndex:999}}>
                     <div className="left-menu-btn box-border flex h-full py-[1em] px-[1.5em] relative z-50 items-center text-[12px]">
                         <div onClick={toggleMenu} className="h-[17px] w-[17px] cursor-pointer text-white">
                             <div className={`mb-[4px] w-[17px] h-[3px] rounded-[1.5px] bg-white origin-top-left transform transition-all duration-600 ${isOpen ? 'rotate-[45deg] scale-x-[1.25] scale-y-60' : ''}`} />
@@ -30,7 +45,7 @@ const Navbar = () => {
                             <li></li>
                         </ul>
                     </div>
-                </div>
+                </div>*/}
                 <nav className="border-b border-b-white/[.2] border-solid flex justify-between text-center text-[12px] pb-[1px]">
                     <a className="inline-block float-none mx-auto my-0 text-center relative py-[1.125em] px-0 whitespace-nowrap decoration-0">
                         <span  className={'text-[1.0625em]'}><Link to='/'>Company</Link></span></a>

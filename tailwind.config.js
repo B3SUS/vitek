@@ -21,6 +21,12 @@ module.exports = {
       backgroundImage:{
         'grad': 'linear-gradient(rgb(255, 255, 255) 0px, rgb(177, 218, 255) 100%)'
       },
+      backgroundSize:{
+        'custom': 'min(max(100%, 1140px), 1770px) auto'
+      },
+      width:{
+        'custom': 'calc(100% - 13em)',
+      },
     },
   },
   plugins: [],

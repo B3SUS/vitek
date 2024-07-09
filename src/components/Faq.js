@@ -15,8 +15,8 @@ export const Faq = () => {
     };
 
     return (
-        <div className={'faq-wrapper mb-[4em]'}>
-            <div className={'wrapper px-[1em] max-w-none box-border mx-auto w-full'}>
+        <div className={'faq-wrapper mb-[4em] md:mb-[14em]'}>
+            <div className={'wrapper px-[1em] max-w-none box-border mx-auto w-full md:max-w-[1280px] md:px-[2em]'}>
                 <h2 className={'text-[2em] font-[MontBold] mb-[.7em] text-transparent bg-clip-text bg-grad leading-[1.15em]'}>
                     <span>
                         FAQ
@@ -32,7 +32,7 @@ export const Faq = () => {
 
                             </div>
                         </h4>
-                        <div className={`${activeIndex === 0 ? 'h-[136.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                        <div className={`${activeIndex === 0 ? 'h-[136.8px] md:h-[86.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                             <div className={'faq-inner pb-[1.4em]'}>
                                 <p>
                                     Тремя способами: в реальном времени на нашем сайте, через подписку на email уведомления или путем просмотра транзакций в блокчейн по ссылкам из вашего заказа.
@@ -49,7 +49,7 @@ export const Faq = () => {
 
                             </div>
                         </h4>
-                        <div className={`${activeIndex === 1 ? 'h-[136.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                        <div className={`${activeIndex === 1 ? 'h-[124.8px] md:h-[102.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                             <div className={'faq-inner pb-[1.4em]'}>
                                 <p>
                                     Никакой регистрации и удержания ваших средств, все обмены проходят с максимальной скоростью и в полностью автоматическом режиме.                                 </p>
@@ -65,7 +65,7 @@ export const Faq = () => {
 
                             </div>
                         </h4>
-                        <div className={`${activeIndex === 2 ? 'h-[136.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                        <div className={`${activeIndex === 2 ? 'h-[148.8px] md:h-[134.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                             <div className={'faq-inner pb-[1.4em]'}>
                                 <p>
                                     Честность — наш главный приоритет, поэтому все наши комиссии максимально прозрачны:

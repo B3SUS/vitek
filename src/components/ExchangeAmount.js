@@ -84,7 +84,7 @@ export const ExchangeAmount  = ({
 
 
     return (
-        <div id={'exchange-amount'} className={`flex flex-col mb-[1.05em] md:mb-[2.2em] relative w-full text-[12px] md:text-[16px] md:flex-row`}>
+        <div id={'exchange-amount'} className={`flex flex-col mb-[1.05em] md:mb-[2.2em] relative w-full text-[12px] md:text-[16px] md:flex-row md:items-center`}>
 
             <div id={'col'} className={'box-border'}>
 
@@ -161,11 +161,11 @@ export const ExchangeAmount  = ({
                                     <span className={'mr-[.229em] min-w-[1.146em] text-center font-sans'}>
                                     </span>
                         </label>
-                        <div className={'flex gap-x-4 ml-2.5'}>
+                        <div className={'flex gap-x-4 ml-2.5 md:justify-between'}>
                             <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400 leading-[1.15]'}>
                                 1 {selectedCoin1} ~ {nearPrice} {selectedCoin2}
                             </span>
-                            <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400'}>
+                            <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400 md:mt-[-0.2em]'}>
                                 {amount1 !== '' ? `${(selectedPrice1*amount1).toFixed(2)}$` : ''}
                             </span>
                         </div>
@@ -184,14 +184,14 @@ export const ExchangeAmount  = ({
                 </div>
             </div>
 
-            <div id={'col-middle'} className={"flex box-border justify-end pt-0 px-[1.1em] items-center h-[30px] mt-[-.6em]"}>
-                <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" className={"rotate-90 w-[30px] h-[30px] cursor-pointer"} onClick={()=> switchCoins(activeCoin1)}>
+            <div id={'col-middle'} className={"flex box-border justify-end pt-0 px-[1.1em] items-center h-[30px] mt-[-.6em] md:justify-normal"}>
+                <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" className={"rotate-90 md:rotate-0 w-[30px] h-[30px] md:h-[35px] md:w-[35px] cursor-pointer md:translate-y-[5px]"} onClick={()=> switchCoins(activeCoin1)}>
                     <path className={'translate-x-[10px] translate-y-[4px]'} style={{fill: selectedColor1}} d="M17.6,4.2l-4-3a1,1,0,0,0-1.05-.09A.977.977,0,0,0,12,2V4H1A1,1,0,0,0,1,6H12V8a.988.988,0,0,0,.55.89A.99.99,0,0,0,13.6,8.8l4-3a1,1,0,0,0,0-1.6Z"/>
                     <path className={'translate-x-[1px] translate-y-[6px]'} style={{fill: selectedColor2}} d="M.4,12.2l4-3a1,1,0,0,1,1.05-.09A.977.977,0,0,1,6,10v2H17a1,1,0,0,1,0,2H6v2a.988.988,0,0,1-.55.89A.99.99,0,0,1,4.4,16.8l-4-3a1,1,0,0,1,0-1.6Z"/>
                 </svg>
             </div>
 
-            <div id={'col2'} className={'box-border mb-[12px] mt-[-1em]'}>
+            <div id={'col2'} className={'box-border mb-[12px] mt-[-1em] md:mt-0 md:mb-0'}>
 
                 <div id={'wrap-header'} className={'flex justify-between items-end pb-[.4em] px-[1.2em] font-[Verdana] m-0 outline-0'} style={{color:selectedColor2}}>
                     <header className={'text-[.9em] text-left whitespace-nowrap overflow-hidden font-[MontMed] leading-[1.2]'}>
@@ -199,7 +199,7 @@ export const ExchangeAmount  = ({
                     </header>
                 </div>
 
-                <div className={'input-wabbr relative mt-[.2em] font-sans text-[12px]'} style={{color:selectedColor2}}>
+                <div className={'input-wabbr relative mt-[.2em] font-sans text-[12px] md:text-[16px]'} style={{color:selectedColor2}}>
 
                     <div className={`ui-selector-outer items-stretch flex flex-col text-[1.4em] h-full left-0 top-0 fixed w-full font-sans text-[#8247e5] ${isOpen2 ? 'translate-x-0' : '-translate-x-full'}`}>
 
@@ -266,12 +266,12 @@ export const ExchangeAmount  = ({
                                     </span>
                         </label>
 
-                        <div className={'flex gap-x-4 ml-2.5'}>
+                        <div className={'flex gap-x-4 ml-2.5 md:justify-between'}>
                             <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400 ml-2.5 leading-[1.15]'}>
                                 1 {selectedCoin2} ~ {nearPrice2} {selectedCoin1}
                             </span>
-                            <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400'}>
-                                {amount2 === '' ? '': `${(selectedPrice2*amount2).toFixed(2)}$`}
+                            <span className={'select-hinterror-from font-[MontSemi] text-[.8em] text-gray-400 md:mt-[-.2em]'}>
+                                {amount1 === '' ? '': `${(selectedPrice2*amount2).toFixed(2)}$`}
                             </span>
                             <div className={'select-label-from right-0 select-none items-center cursor-pointer flex text-[1.6em] h-[2.15em] pr-[.6em] absolute top-0 whitespace-nowrap'} onClick={toggleMenu2}>
                                 <span className={'bg-[center_center] mr-[.229em] min-w-[1.146em] bg-no-repeat bg-contain h-[1.146em] text-center w-[1.146em]'}>

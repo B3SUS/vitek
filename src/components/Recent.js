@@ -22,6 +22,9 @@ import arrow from '../img/arrow.png'
 
 import clock from '../img/clock.png';
 
+import bg from '../svg/recent.svg'
+
+
 const currencies = ['BTC', 'ETH', 'LTC', 'USD', 'BNB', 'SOL', 'XRP', 'DOGE', 'ADA', 'TRX', 'AVAX', 'SHIB', 'DOT', 'NEAR', 'XMR', 'GEL', 'RUB'];
 
 
@@ -166,41 +169,41 @@ const Recent = () => {
 
 
     return (
-        <div className={'recent-section mb-[6em] relative font-[Mont]'}>
-            <div className={'wrapper max-w-none px-[1em] mx-auto box-border w-full'}>
-                <h2 className={'text-center text-[2em] text-transparent bg-clip-text bg-[linear-gradient(180deg,#FFF_0%,#B1DAFF_100%)] font-[MontBold] leading-[1.15em] mb-[.7em]'}>
+        <div className={'recent-section mb-[6em] md:mb-[9em] relative font-[Mont] md:text-[16px]'}>
+            <div className={'wrapper max-w-none px-[1em] mx-auto box-border w-full md:max-w-[1280px] md:px-[2em]'}>
+                <h2 className={'text-center md:text-nowrap text-[2em] md:text-[3.5em] text-transparent bg-clip-text bg-grad font-[MontBold] leading-[1.15em] mb-[.7em]'}>
                     Recent Transactions
                 </h2>
                 <ul className={'flex flex-col overflow-hidden items-center list-none'}>
                     {transactions.map((transaction, index) => (
-                        <li key={index} className={'grid grid-cols-[1fr_.8em_.8em_.85fr] w-full h-auto box-border bg-[#21284B] rounded-[.3em] text-[.9em] min-h-[3.3em] mb-[.7em] text-center whitespace-nowrap border-collapse'}>
-                            <div className={'recent-time row-[1] col-[1/3] flex border-b border-white/[.2] items-center justify-end pl-[1.3em] whitespace-nowrap text-left pr-[.6em]'}>
+                        <li key={index} className={'grid grid-cols-[1fr_.8em_.8em_.85fr] md:table w-full h-[3.3em] box-border bg-[#21284B] rounded-[.3em] text-[.9em] min-h-[3.3em] mb-[.7em] text-center whitespace-nowrap border-collapse md:w-[70%] md:table-fixed'}>
+                            <div className={'recent-time row-[1] col-[1/3] md:table-cell md:align-middle flex md:border-none border-b border-white/[.2] items-center justify-end pl-[1.3em] whitespace-nowrap text-left pr-[.6em]'}>
                                 <div className={'time'}>
                                     {transaction.timeAgo || 'Несколько секунд назад'}
                                 </div>
                             </div>
-                            <div className={'dir-from row-[2] col-[1] flex items-center justify-end h-[4em] px-[.6em]'}>
-                                <div className={'coin-value inline-block'}>
+                            <div className={'dir-from row-[2] col-[1] md:min-w-[28%] md:text-right md:table-cell md:align-middle flex items-center justify-end md:justify-normal h-[4em] md:h-auto px-[.6em]'}>
+                                <div className={'coin-value inline-block md:align-middle'}>
                                     {transaction.amount} {transaction.currency1}
                                 </div>
-                                <div className={'coin-ico ml-[1em] float-none h-[2em] text-center w-[2em]'}>
+                                <div className={'coin-ico ml-[1em] float-none h-[2em] text-center w-[2em] md:inline-block md:align-middle'}>
                                     <img src={getIconForCurrency(transaction.currency1)} alt={transaction.currency1} />
                                 </div>
                             </div>
-                            <div className={'dir-arrow row-[2] col-[2/3] flex items-center py-0 px-[.1em] justify-center w-[1.4em]'}>
+                            <div className={'dir-arrow row-[2] col-[2/3] md:table-cell md:align-middle md:p-[.6em] flex items-center py-0 px-[.1em] justify-center w-[1.4em] md:w-[3em]'}>
                                 <img src={arrow} alt={arrow} className={'w-full'}/>
                             </div>
-                            <div className={'dir-to row-[2] col-[4] flex items-center justify-start min-w-[20%] text-left py-0 px-[.6em]'}>
-                                <div className={'coin-ico mr-[1em] float-none h-[2em] w-[2em] text-center inline-block'}>
+                            <div className={'dir-to row-[2] col-[4] md:min-w-[28%] md:table-cell md:align-middle flex items-center justify-start min-w-[20%] text-left py-0 px-[.6em]'}>
+                                <div className={'coin-ico mr-[1em] float-none h-[2em] w-[2em] text-center inline-block md:align-middle'}>
                                     <img src={getIconForCurrency(transaction.currency2)} alt={transaction.currency2} />
                                 </div>
-                                <div className={'coin-value inline-block'}>
+                                <div className={'coin-value inline-block md:align-middle'}>
                                     {transaction.currency2}
                                 </div>
                             </div>
-                            <div className={'recent-howlong pr-[1.3em] whitespace-nowrap text-right row-[1] col-[3/5] flex border-b border-white/[.2] items-center justify-start h-[4em] pl-[1em]'}>
-                                <div className={'ico-timer inline-block'}><img className={'h-[1.2em]'} src={clock} alt="clock" /></div>
-                                <span className={'inline-block'}>{transaction.staticTime} sec</span>
+                            <div className={'recent-howlong pr-[1.3em] md:table-cell md:align-middle md:pr-[1.3em] md:pl-[.6em] whitespace-nowrap text-right row-[1] col-[3/5] md:border-none flex border-b border-white/[.2] items-center justify-start h-[4em] pl-[1em]'}>
+                                <div className={'ico-timer inline-block md:align-middle'}><img className={'h-[1.2em]'} src={clock} alt="clock" /></div>
+                                <span className={'inline-block md:align-middle'}>{transaction.staticTime} sec</span>
                             </div>
                         </li>
                     ))}

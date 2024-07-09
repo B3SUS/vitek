@@ -25,8 +25,8 @@ export const FaqPage = () => {
         <div className={'text-white text-[12px] box-border bg-[#0c0d16] bg-cover min-h-full relative flex flex-col font-[Mont]'}>
             <Navbar/>
             <div className={'pt-[55px] mb-[1em] flex-[1_0_auto]'}>
-                <div className={'wrapper px-[1em] mx-auto w-full'}>
-                    <h1 className={'text-[3em] my-[.8125em] bg-grad text-transparent bg-clip-text font-[MontBold] leading-[1.15em]'}>
+                <div className={'wrapper px-[1em] md:text-[16px] md:px-[2em] md:max-w-[1280px] mx-auto w-full'}>
+                    <h1 className={'text-[3em] md:text-[5em] my-[.8125em] bg-grad text-transparent bg-clip-text font-[MontBold] leading-[1.15em]'}>
                         FAQ
                     </h1>
                     <div className={'fq-tabs mb-[2em]'}>
@@ -54,7 +54,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 0 ? 'h-[340.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 0 ? 'h-[340.8px] md:h-[198.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner after:pb-[1.4em] after:block'}>
                                         <p>
                                             <strong>FixedFloat</strong>{' '}
@@ -73,7 +73,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 1 ? 'h-[520.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 1 ? 'h-[520.8px] md:h-[310.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <p>
                                             Our top priority is to provide a high quality cryptocurrency exchange service through our unique solutions that do not compromise speed and security.
@@ -127,7 +127,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 3 ? 'h-[895.317px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 3 ? 'h-[895.317px] md:h-[616.917px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <h3 className={'mb-[.2em] text-[1.2em] font-[MontSemi] pb-[.3em] bg-grad bg-clip-text text-transparent leading-[1.15em]'}>
                                             <b>Fixed rate</b>
@@ -172,7 +172,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 4 ? 'h-[389.9px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 4 ? 'h-[389.9px] md:h-[231.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <p>You can choose from two exchange strategies:</p>
                                         <ul className={'list-disc ml-[1.2em] text-left'}>
@@ -199,7 +199,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 5 ? 'h-[232.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 5 ? 'h-[232.8px] md:h-[118.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <p>As soon as your transaction arrives at our address and receives the required number of network confirmations, the exchange is automatically performed and a transaction is sent to your address. The waiting time for transaction confirmation depends on several factors: the network fee you specified when sending it and the speed of the blockchain network.</p>
                                     </div>
@@ -214,7 +214,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 6 ? 'h-[232.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 6 ? 'h-[232.8px] md:h-[118.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <p>If you send us a transaction with a low network fee, you risk spending a lot of time waiting for the order to be completed. The order will be executed automatically only after your transaction receives the required number of network confirmations. Due to the low fees, the transaction may have poor priority and not be confirmed by the network anytime soon.</p>
                                     </div>
@@ -229,7 +229,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 7 ? 'h-[364.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 7 ? 'h-[364.8px] md:h-[198.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <p>The average amount of the network fee is individual for each blockchain, and depending on the current load, it may change. The more you set the network fee, the higher the priority of the transaction and the faster it will be processed. Usually, the optimal network fee is automatically calculated by your wallet.</p>
                                         <p>If you have sent us a transaction on the Bitcoin or Ethereum network and are waiting for a network confirmation for a long time, you can increase the priority of your transaction on the network using the RBF feature.</p>
@@ -245,7 +245,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 8 ? 'h-[208.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 8 ? 'h-[208.8px] md:h-[118.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <p>The speed of transaction processing depends on the bandwidth of the blockchain and the set fee of the network when it is sent. We automatically send transactions with the current network fee. Sometimes in the blockchain network there are increased loads beyond our control and untimely release of new blocks.</p>
                                     </div>
@@ -260,7 +260,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 9 ? 'h-[232.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 9 ? 'h-[232.8px] md:h-[118.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <p>Carefully check the network of the address you are trying to enter when creating the order, and the network of the currency you have selected in the "Receive" field. If your address is determined to be invalid, then your address network does not match the network of the selected currency.</p>
                                     </div>
@@ -277,7 +277,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 10 ? 'h-[184.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 10 ? 'h-[184.8px] md:h-[118.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <p>Order status is updated in real time. We recommend that you do not close the order page until it is completed. You can also subscribe to email notifications on the order page. When transactions enter the network, links to explorers appear on the order page to track them.</p>
                                     </div>
@@ -292,7 +292,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 11 ? 'h-[304.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 11 ? 'h-[304.8px] md:h-[182.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <p>If your transaction has not arrived before the order time has passed, on the order page you will be able to choose:</p>
                                         <ul className={'list-none'}>
@@ -311,7 +311,7 @@ export const FaqPage = () => {
 
                                     </div>
                                 </h4>
-                                <div className={`${activeIndex === 12 ? 'h-[184.8px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
+                                <div className={`${activeIndex === 12 ? 'h-[184.8px] md:h-[118.4px]' : 'h-0'} leading-[2em] ml-[8em] overflow-hidden box-border cursor-default transition-height`}>
                                     <div className={'faq-inner pb-[1.4em]'}>
                                         <ul className={'list-none'}>
                                             <li>If you have entered a valid email address in your order, you will receive an email with a link to your order.</li>

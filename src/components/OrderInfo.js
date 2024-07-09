@@ -52,7 +52,7 @@ export const OrderInfo = () => {
                             <input type={"text"} value={''} className={'box-border bg-transparent border border-white/[.2] rounded-[.25em] text-white text-[1em] py-[.8334em] px-[.6666667em] w-full'}/>
                             <label className={'text-[#828282] bg-transparent rounded-[.7em] left-[1px] leading-[1.2] p-[.8334em_.2em_.8334em_.6666667em] pointer-events-none absolute top-[1px]'}>Email</label>
                         </div>
-                        <button className={'w-full mt-[1em] text-[1em] py-[1em] px-[1.5em] box-border bg-[#008fdf] rounded-[.25em] text-white cursor-pointer inline-flex font-[MontSemi] leading-[1em] relative text-center align-middle justify-center items-center'}>Отправить</button>
+                        <button className={'w-full md:w-auto mt-[1em] text-[1em] py-[1em] px-[1.5em] box-border bg-[#008fdf] rounded-[.25em] text-white cursor-pointer inline-flex font-[MontSemi] leading-[1em] relative text-center align-middle justify-center items-center'}>Отправить</button>
                     </div>
                 </div>
             </div>

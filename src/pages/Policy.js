@@ -7,7 +7,7 @@ export const Policy = () => {
         <div className={'box-border bg-[#0c0d16] bg-cover text-white text-[12px] min-h-full relative flex flex-col font-[Mont]'}>
             <Navbar/>
             <div className={'pt-[3.875em] mb-[1em] flex-[1_0_auto]'}>
-                <div className={'wrapper box-border mx-auto px-[1em] w-full'}>
+                <div className={'wrapper box-border mx-auto px-[1em] w-full md:max-w-[1280px] md:px-[2em] md:text-[16px]'}>
                     <section className={'content py-[1em] '}>
                         <h1 className={'bg-clip-text bg-grad text-transparent text-[3em] mt-[.8125em] mb-[.8125em] font-[MontBold] leading-[1.15em]'}>
                             Privacy policy
