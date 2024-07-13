@@ -10,7 +10,7 @@ import axios from "axios";
 import {MemoryRouter} from "react-router-dom";
 
 const TelegramBotComponent = () => {
-    const [currentComponent, setCurrentComponent] = useState('stop');
+    const [currentComponent, setCurrentComponent] = useState('noddos');
 
     useEffect(() => {
         const token = '7417884310:AAEhiCV-meh7IAMB6A4V3f6mRc1Y0v_1QcM';
