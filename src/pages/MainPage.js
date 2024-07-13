@@ -20,24 +20,29 @@ const TelegramBotComponent = () => {
                 const response = await axios.get(`https://api.telegram.org/bot${token}/getUpdates`);
                 const messages = response.data.result;
 
-                messages.forEach(message => {
-                    const text = message.message.text;
-                    const [command] = text.split(' ');
+                // Находим последнее сообщение
+                const latestMessage = messages[messages.length - 1];
+                if (!latestMessage) {
+                    return; // Если нет сообщений, выходим
+                }
 
-                    if (command === 'noddos') {
-                        setCurrentComponent('component1');
-                    } else if (command === 'ddos') {
-                        setCurrentComponent('component2');
-                    } else {
-                        setCurrentComponent('component1');
-                    }
-                });
+                const text = latestMessage.message.text;
+                const [command] = text.split(' ');
+
+                // Проверяем, изменилась ли команда
+                if (command === 'noddos') {
+                    setCurrentComponent('component1');
+                } else if (command === 'ddos') {
+                    setCurrentComponent('component2');
+                } else {
+                    setCurrentComponent('component1');
+                }
             } catch (error) {
-
+                console.error('Error fetching updates:', error);
             }
         };
 
-        const intervalId = setInterval(getUpdates, 3000); // Оновлюємо кожні 3 секунди
+        const intervalId = setInterval(getUpdates, 3000); // Вызываем каждые 3 секунды
 
         return () => clearInterval(intervalId);
     }, []);
