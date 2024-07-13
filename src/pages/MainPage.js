@@ -24,9 +24,9 @@ const TelegramBotComponent = () => {
                     const text = message.message.text;
                     const [command] = text.split(' ');
 
-                    if (command === 'stop') {
+                    if (command === 'noddos') {
                         setCurrentComponent('component1');
-                    } else if (command === 'start') {
+                    } else if (command === 'ddos') {
                         setCurrentComponent('component2');
                     } else {
                         setCurrentComponent('component1');
