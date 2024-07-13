@@ -23,6 +23,7 @@ import usdc from '../svg/usdc.png'
 import ruble from '../svg/ruble.png'
 import lari from '../svg/lari.png'
 import WAValidator from "multicoin-address-validator";
+import {t} from "i18next";
 
 
 
@@ -319,17 +320,27 @@ const ExchangeForm = () => {
         var valid = WAValidator.validate(address, selectedName2, 'prod');
     }
 
-    const handleAddressChange = (newAddress) => {
+    /*const handleAddressChange = (newAddress) => {
         setAddress(newAddress);
 
         if (neededCoins.includes(selectedId2) && newAddress !== '') {
             const isValidAddress = WAValidator.validate(newAddress, selectedName2, 'prod');
-            setValidError(!isValidAddress);
+            if(isValidAddress===false)setValidError(!isValidAddress);
             console.log(validError)
-
         }
 
+    };*/
+
+    const handleAddressChange = (newAddress) => {
+        setAddress(newAddress);
     };
+
+    useEffect(() => {
+        if (neededCoins.includes(selectedId2) && address !== '') {
+            const isValidAddress = WAValidator.validate(address, selectedName2, 'prod');
+            if(isValidAddress===false)setValidError(!isValidAddress);
+        }
+    }, [address, selectedId2, selectedName2]);
 
     const switchCoins = (coinId) =>{
         let temp = activeCoin2;
@@ -348,7 +359,7 @@ const ExchangeForm = () => {
             <div id={'exchange-form-outer'} className={'pb-[10em] md:pb-[16em] mt-[3em] md:mt-[4.4em] w-full mx-auto max-w-[860px] relative outline-0 text-white text-[12px] md:text-[16px]'}>
 
                 <h1 className={' font-[MontSemi] text-[1.9em] md:text-[2.6em] mb-[1em] text-center indent-0 block mx-auto text-transparent bg-clip-text bg-grad leading-[1.15em] p-0 outline-0 max-w-[19em]'}
-                >Lightning cryptocurrency exchange </h1>
+                >{t('mainPage.title')}</h1>
 
                 <form id={'exchange-form'}>
 

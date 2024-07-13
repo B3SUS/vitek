@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {AdressValidator} from "./AdressValidator";
-
+import {t} from "i18next"
 export const ExchangeAdress = ({address, setAddress, isValid, activeCoin2, selectedName1, selectedName2, valid, validError, setValidError, handleAddressChange}) => {
 
 
@@ -10,7 +10,7 @@ export const ExchangeAdress = ({address, setAddress, isValid, activeCoin2, selec
             <div id={'exchange-wallet'} className={`flex-1 max-h-[30em] opacity-100 pointer-events-auto`}>
                 <div id={'wrap-header'} className={`px-[1.2em] pb-[.4em] pointer-events-auto text-center text-[12px] md:text-[16px]`}>
                     <h1 className={`text-[#ccc] text-[.9em] text-left overflow-hidden whitespace-nowrap font-[MontMed] leading-[1.2]`}>
-                        Destination
+                        {t('mainPage.destination')}
                     </h1>
                 </div>
 

@@ -1,0 +1,104 @@
+{
+  "over": "Zamówienie wygasło",
+  "popular": "Popularne waluty",
+  "ticker": "Wprowadź walutę lub ticker",
+  "bank": "Wprowadź numer swojej karty bankowej",
+  "mainPage": {
+    "title": "Błyskawiczna wymiana kryptowalut",
+    "send": "Wyślij",
+    "receive": "Odbierz",
+    "amount": "Wprowadź kwotę",
+    "destination": "Cel",
+    "ur": "Twój",
+    "address": "adres",
+    "type": "Rodzaj zamówienia",
+    "fixed": "Stały kurs",
+    "float": "Zmienny kurs",
+    "exchange": "Wymień teraz",
+    "hint": "Korzystając z witryny i tworząc wymianę, akceptujesz",
+    "hint2": "oraz",
+    "terms": "Warunki korzystania z usługi",
+    "policy": "Polityka prywatności"
+  },
+  "pros": {
+    "title": "Zaufany od 2018 roku",
+    "pros1": "Oszczędzaj czas",
+    "text1": "Maksymalna szybkość wymiany dzięki pełnej automatyzacji",
+    "pros2": "Dokonaj wymiany",
+    "text2": "Wybierz odpowiednią strategię i dokonaj korzystnych transakcji",
+    "pros3": "Oszczędzaj pieniądze",
+    "text3": "Najlepsze kursy wymiany i minimalne prowizje"
+  },
+  "recent": {
+    "title": "Ostatnie transakcje",
+    "sec": "sekund temu",
+    "min": "minut temu"
+  },
+  "faq": {
+    "title1": "Jak mogę śledzić moje zamówienie?",
+    "text1": "Na trzy sposoby: e-mailem (jeśli podasz swój adres e-mail), na naszej stronie (jeśli twoja przeglądarka akceptuje pliki cookie) lub przeglądając transakcje w blockchain za pomocą linków z twojego zamówienia.",
+    "title2": "Dlaczego mogę wam zaufać?",
+    "text2": "Brak rejestracji i potrzeby udostępniania swoich danych osobowych. Nie przechowujemy twoich środków, wszystkie wymiany odbywają się natychmiast w pełni automatycznym trybie.",
+    "title3": "Czy macie ukryte opłaty?",
+    "text3": "Uczciwość jest naszym głównym priorytetem, dlatego zobowiązujemy się do pełnej przejrzystości i uczynienia wszystkich opłat jasnymi:",
+    "fix": "1%, jeśli wybierzesz stały kurs",
+    "float": "0,5%, jeśli wybierzesz zmienny kurs",
+    "goto": "Przejdź do strony FAQ"
+  },
+  "popup": {
+    "title": "Jaka jest różnica między stałym a zmiennym kursem?",
+    "fix": {
+      "text": "Stały kurs",
+      "1": "Wybierając stały kurs, otrzymujesz cenę, którą widzisz w momencie inicjowania transakcji.",
+      "p1": "Zapłać tylko 1% + opłata sieciowa.",
+      "p2": "Kursy zamrażają się na 10 minut.",
+      "p3": "Jeśli kurs rynkowy zmieni się o więcej niż 1,2% przed pojawieniem się twojej transakcji w sieci blockchain, zostaniesz poproszony o dokonanie zwrotu lub kontynuowanie wymiany po kursie rynkowym.",
+      "att": "Uwaga! Twoja transakcja musi zostać otrzymana w ciągu 10 minut, a kwota musi dokładnie odpowiadać kwocie zamówienia. W przeciwnym razie zostaniesz poproszony o dokonanie zwrotu lub kontynuowanie wymiany po kursie rynkowym."
+    },
+    "float": {
+      "title": "Zmienny kurs",
+      "text": "Kurs wymiany ustalany jest ostatecznie, gdy twoja transakcja otrzyma niezbędną liczbę potwierdzeń sieci blockchain. Jeśli rynek pójdzie w górę, otrzymasz więcej kryptowalut, jeśli spadnie - mniej. Wszystko sprawiedliwie.",
+      "p1": "Zapłać tylko 0,5% + opłata sieciowa.",
+      "p2": "Wymiana zostanie dokonana po kursie rynkowym, który ustalany jest ostatecznie w ciągu 10 minut po tym, jak twoja transakcja otrzyma wymaganą liczbę potwierdzeń w sieci blockchain.",
+      "ex": "Przykład:",
+      "t1": "wymieniasz 1 BTC na 28.37362388 ETH. Przy stałym kursie",
+      "fixed": "stałym",
+      "t2": "otrzymasz dokładnie 28.37362388 ETH. Przy zmiennym kursie",
+      "float": "zmiennym",
+      "t3": "ilość ETH może się zmieniać zarówno w górę, jak i w dół. Zależy to od zmian w kursie rynkowym."
+    }
+  },
+  "second": {
+    "send": "WY WYSYŁACIE",
+    "receive": "WY ODBIERACIE",
+    "info": {
+      "id": "ID zamówienia",
+      "time": "Pozostały czas",
+      "type": "Rodzaj zamówienia",
+      "float": "Zmienny kurs",
+      "fixed": "Stały kurs",
+      "created": "Czas utworzenia"
+    },
+    "details": {
+      "send": "Wyślij",
+      "to": "na adres",
+      "p1": "Kurs wymiany zostanie ustalony po otrzymaniu",
+      "p2": "potwierdzeń sieciowych.",
+      "address": "Adres odbiorczy"
+    },
+    "qr": "Adres",
+    "qrWith": "Z kwotą",
+    "know": {
+      "title": "Co musisz wiedzieć?",
+      "p1": "Do zakończenia wymiany potrzebne jest tylko 1 potwierdzenie sieci blockchain TRX",
+      "p2": "Szybkość potwierdzenia transakcji Bitcoin zależy od poziomu zatorów w sieci blockchain Bitcoin, przeczytaj więcej w naszym artykule",
+      "p3": "Jeśli kwota transakcji, którą wysłałeś, różni się od początkowej kwoty określonej w zamówieniu ze zmiennym kursem, zamówienie zostanie automatycznie przeliczone.",
+      "p4": "Jeśli twoja transakcja zostanie otrzymana po wygaśnięciu zamówienia, ale w ciągu 24 godzin, transakcja ta zostanie automatycznie wyświetlona w zamówieniu. Będziesz mógł kontynuować zamówienie samodzielnie lub dokonać zwrotu."
+    },
+    "email": {
+      "title": "Powiadomienia o statusie zamówienia",
+      "p": "Wprowadź swój adres e-mail, jeśli chcesz otrzymywać powiadomienia o zmianach statusu tego zamówienia",
+      "but": "Potwierdź"
+    }
+  }
+}

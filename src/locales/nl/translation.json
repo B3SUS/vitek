@@ -1,0 +1,104 @@
+{
+  "over": "Bestelling verlopen",
+  "popular": "Populaire valuta's",
+  "ticker": "Typ een valuta of ticker",
+  "bank": "Voer uw bankkaartnummer in",
+  "mainPage": {
+    "title": "Bliksemsnelle cryptocurrency-uitwisseling",
+    "send": "Verzenden",
+    "receive": "Ontvangen",
+    "amount": "Voer het bedrag in",
+    "destination": "Bestemming",
+    "ur": "Uw",
+    "address": "adres",
+    "type": "Ordertype",
+    "fixed": "Vaste koers",
+    "float": "Variabele koers",
+    "exchange": "Nu wisselen",
+    "hint": "Door de site te gebruiken en een uitwisseling te creëren, gaat u akkoord met de",
+    "hint2": "en",
+    "terms": "Algemene Voorwaarden",
+    "policy": "Privacybeleid"
+  },
+  "pros": {
+    "title": "Betrouwbaar sinds 2018",
+    "pros1": "Tijd besparen",
+    "text1": "Maximale uitwisselingssnelheid dankzij volledige automatisering",
+    "pros2": "Een uitwisseling doen",
+    "text2": "Kies de juiste strategie en doe gunstige transacties",
+    "pros3": "Geld besparen",
+    "text3": "Beste wisselkoersen en minimale commissies"
+  },
+  "recent": {
+    "title": "Recente transacties",
+    "sec": "seconden geleden",
+    "min": "minuten geleden"
+  },
+  "faq": {
+    "title1": "Hoe kan ik mijn bestelling volgen?",
+    "text1": "Op drie manieren: per e-mail (als u uw e-mailadres achterlaat), op onze website (als uw browser cookies accepteert) of door de transacties in de blockchain te bekijken via de links van uw bestelling.",
+    "title2": "Waarom kan ik u vertrouwen?",
+    "text2": "Geen registratie en geen noodzaak om uw persoonlijke gegevens te delen. We houden uw geld niet vast, alle uitwisselingen vinden onmiddellijk plaats in volledig automatische modus.",
+    "title3": "Hebt u verborgen kosten?",
+    "text3": "Eerlijkheid is onze hoogste prioriteit, dus we zetten ons in voor volledige transparantie en maken alle kosten duidelijk:",
+    "fix": "1% als u kiest voor een vaste koers",
+    "float": "0,5% als u kiest voor een variabele koers",
+    "goto": "Ga naar de FAQ-pagina"
+  },
+  "popup": {
+    "title": "Wat is het verschil tussen vaste en variabele koersen?",
+    "fix": {
+      "text": "Vaste koers",
+      "1": "Als u kiest voor een vaste koers, krijgt u de prijs die u ziet op het moment dat u de transactie start.",
+      "p1": "Betaal slechts 1% + netwerkkosten.",
+      "p2": "Koersen bevriezen voor 10 minuten.",
+      "p3": "Als de marktkoers met meer dan 1,2% verandert voordat uw transactie op het blockchainnetwerk verschijnt, wordt u gevraagd om een terugbetaling te doen of door te gaan met wisselen tegen de marktkoers.",
+      "att": "Opgelet! Uw transactie moet binnen 10 minuten worden ontvangen en het bedrag moet exact overeenkomen met het orderbedrag. Anders wordt u gevraagd om een terugbetaling te doen of door te gaan met wisselen tegen de marktkoers."
+    },
+    "float": {
+      "title": "Variabele koers",
+      "text": "De wisselkoers wordt uiteindelijk bepaald wanneer uw transactie het vereiste aantal bevestigingen van het blockchainnetwerk ontvangt. Als de markt stijgt, krijgt u meer cryptocurrency, als deze daalt - minder. Alles eerlijk.",
+      "p1": "Betaal slechts 0,5% + netwerkkosten.",
+      "p2": "De uitwisseling vindt plaats tegen de marktkoers, die binnen 10 minuten na ontvangst van het vereiste aantal bevestigingen van het blockchainnetwerk uiteindelijk wordt vastgesteld.",
+      "ex": "Voorbeeld:",
+      "t1": "u wisselt 1 BTC voor 28.37362388 ETH. Met een",
+      "fixed": "vaste",
+      "t2": "koers ontvangt u precies 28.37362388 ETH. Met een",
+      "float": "variabele",
+      "t3": "wisselkoers kan de hoeveelheid ETH zowel omhoog als omlaag veranderen. Het hangt af van veranderingen in de marktkoers."
+    }
+  },
+  "second": {
+    "send": "U VERZENDT",
+    "receive": "U ONTVANGT",
+    "info": {
+      "id": "Order ID",
+      "time": "Resterende tijd",
+      "type": "Ordertype",
+      "float": "Variabele koers",
+      "fixed": "Vaste koers",
+      "created": "Aanmaaktijd"
+    },
+    "details": {
+      "send": "Verzenden",
+      "to": "naar het adres",
+      "p1": "De wisselkoers wordt vastgezet na ontvangst van",
+      "p2": "netwerkbevestigingen.",
+      "address": "Ontvangstadres"
+    },
+    "qr": "Adres",
+    "qrWith": "Met bedrag",
+    "know": {
+      "title": "Wat moet u weten?",
+      "p1": "Er is slechts 1 TRX blockchain-bevestiging nodig om de uitwisseling te voltooien",
+      "p2": "De snelheid van bevestiging van een Bitcoin-transactie hangt af van de mate van congestie van het Bitcoin blockchain-netwerk, lees meer in ons artikel",
+      "p3": "Als het bedrag van de transactie die u verzendt, afwijkt van het oorspronkelijke bedrag dat is opgegeven in de order met een variabele koers, wordt de order automatisch opnieuw berekend.",
+      "p4": "Als uw transactie wordt ontvangen na het verstrijken van de order, maar binnen 24 uur, wordt deze transactie automatisch in de order weergegeven. U kunt de order zelf voortzetten of een terugbetaling doen."
+    },
+    "email": {
+      "title": "Orderstatusmeldingen",
+      "p": "Voer uw e-mailadres in als u meldingen wilt ontvangen over wijzigingen in de status van deze bestelling",
+      "but": "Bevestigen"
+    }
+  }
+}

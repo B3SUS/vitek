@@ -1,6 +1,6 @@
 import React from "react";
-
 import close from '../svg/close.png'
+import {t} from 'i18next'
 
 export const DIffPopup = ({diffActive, handleClick}) => {
     return (
@@ -12,56 +12,56 @@ export const DIffPopup = ({diffActive, handleClick}) => {
                         <img src={close} alt={close} className={`w-[25px] h-[25px]`}/>
                     </div>
                     <h3 className={'bg-grad text-[1.6em] pb-[.3em] text-transparent bg-clip-text leading-[1.15em] mb-[.7em]'}>
-                        What is the difference between fixed and a float rates?
+                        {t('popup.title')}
                     </h3>
                     <div className={'exchange-different-faq font-[Mont]'}>
                         <h3 className={'mb-[.2em] text-[1em] font-[MontBold] mt-[1em] text-left text-white pb-[.3em] leading-[1.15em]'}>
                             <b>
-                                Fixed rate
+                                {t('popup.fix.text')}
                             </b>
                         </h3>
                         <p className={'mb-[.2em] leading-[1.2] indent-0 text-justify'}>
-                            Opting for a fixed rate, you get the price you see at the point of initiating a transaction.
+                            {t('popup.fix.1')}
                         </p>
                         <ul className={'mb-[.5em] list-disc ml-[1.2em] text-left'}>
                             <li>
-                                Pay just 1% + network fee.
+                                {t('popup.fix.p1')}
                             </li>
                             <li>
-                                Rates freeze for 10 minutes.
+                                {t('popup.fix.p2')}
                             </li>
                             <li>
-                                If the market rate changes by more than 1.2% before the appearance of your transaction on the blockchain network, you will be asked to make a refund or continue exchanging at the market rate.
+                                {t('popup.fix.p3')}
                             </li>
                         </ul>
                         <p className={'indent-0 leading-[1.2] text-justify mb-[.2em] font-[MontIt]'}>
                             <em>
-                                Attention! Your transaction must be received within 10 minutes and the amount must exactly match the amount of the order. Otherwise, you will be prompted to make a refund or continue the exchange at the market rate.
+                                {t('popup.fix.att')}
                             </em>
                         </p>
                         <h3 className={'mt-[1.4em] text-[1em] font-[MontBold] mb-[.3em] text-left text-white pb-[.3em]'}>
                             <b>
-                                Float Rate
+                                {t('popup.float.title')}
                             </b>
                         </h3>
                         <p className={'indent-0 leading-[1.2] text-justify mb-[.2em]'}>
-                            The exchange rate is finally set when your transaction receives the necessary number of blockchain network confirmations. If the market goes up, you will get more cryptocurrency, if down - less. All fair.
+                            {t('popup.float.text')}
                         </p>
                         <ul className={'mb-[.5em] list-disc ml-[1.2em] text-left'}>
                             <li>
-                                Pay just 0.5% + network fee.
+                                {t('popup.float.p1')}
                             </li>
                             <li>
-                                The exchange will be made at the market rate, which is finally set within 10 minutes after your transaction receives the required number of confirmations in the blockchain network.
+                                {t('popup.float.p2')}
                             </li>
                         </ul>
                         <p className={'pl-[1em] border-l-[#0171a6] border-solid border-l-[2px] text-[.9em] font-[MontIt] text-left indent-0 leading-[1.2]'}>
-                            <strong className={'font-[MontBoldIt]'}>Example</strong>
-                            : you are exchanging 1 BTC for 28.37362388 ETH. With a
-                            <strong className={'font-[MontBoldIt]'}> fixed </strong>
-                            rate, you will receive exactly 28.37362388 ETH. With a
-                            <strong className={'font-[MontBoldIt]'}> float </strong>
-                            exchange rate, the amount of ETH can change both up and down. It depends on changes in the market rate.
+                            <strong className={'font-[MontBoldIt]'}>{t('popup.float.ex')}</strong>
+                            {t('popup.float.t1')}
+                            <strong className={'font-[MontBoldIt]'}> {t('popup.float.fixed')} </strong>
+                            {t('popup.float.t2')}
+                            <strong className={'font-[MontBoldIt]'}> {t('popup.float.float')} </strong>
+                            {t('popup.float.t3')}
                         </p>
                     </div>
                     <div className={'popup-ctrl flex flex-wrap gap-[.5em] justify-center mt-[2em]'}>

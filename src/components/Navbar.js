@@ -1,14 +1,10 @@
 import React, {useEffect, useState} from "react";
 import logo1 from "../img/logo1.png";
 import {Link} from "react-router-dom";
+import {LanguageSwitcher} from "./LanguageSwitcher";
+import i18n from "../i18n";
 
 const Navbar = () => {
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
 
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -46,11 +42,14 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>*/}
-                <nav className="border-b border-b-white/[.2] border-solid flex justify-between text-center text-[12px] pb-[1px]">
+                <nav className="border-b border-b-white/[.2] border-solid text-center text-[12px] pb-[1px]">
                     <a className="inline-block float-none mx-auto my-0 text-center relative py-[1.125em] px-0 whitespace-nowrap decoration-0">
-                        <span  className={'text-[1.0625em]'}><Link to='/'>Company</Link></span></a>
+                        <span className={'text-[1.0625em]'}>
+                            <Link to={`/`}>Company</Link>
+                        </span>
+                    </a>
+                    <LanguageSwitcher/>
                 </nav>
-                <div className={`shadow-body bg-[#000] bottom-0 top-0 left-0 right-0 opacity-70 fixed transition-[opacity_.3s_ease] z-10 ${isOpen ? '' : 'hidden'}`}></div>
             </div>
         </div>
     );

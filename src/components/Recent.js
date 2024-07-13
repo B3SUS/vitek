@@ -23,19 +23,8 @@ import arrow from '../img/arrow.png'
 import clock from '../img/clock.png';
 
 import bg from '../svg/recent.svg'
+import {t} from 'i18next'
 
-const ClearTransactionsButton = ({ onClick }) => {
-    const handleClick = () => {
-        if (typeof onClick === 'function') {
-            onClick();
-        }
-    };
-    return (
-        <button onClick={handleClick} className="btn-clear-transactions">
-            Clear Transactions and Create New
-        </button>
-    );
-};
 
 const currencies = ['BTC', 'ETH', 'LTC', 'USD', 'BNB', 'SOL', 'XRP', 'DOGE', 'ADA', 'TRX', 'AVAX', 'SHIB', 'DOT', 'NEAR', 'XMR', 'GEL', 'RUB'];
 
@@ -44,7 +33,7 @@ const currencies = ['BTC', 'ETH', 'LTC', 'USD', 'BNB', 'SOL', 'XRP', 'DOGE', 'AD
 // Function to generate a random time ago string and seconds
 const getRandomTimeAgo = () => {
     const seconds = Math.floor(Math.random() * 480) + 1; // 1 second to 8 minutes (480 seconds)
-    const timeAgo = seconds < 60 ? `${seconds} seconds ago` : `${Math.floor(seconds / 60)} minutes ago`;
+    const timeAgo = seconds < 60 ? `${seconds} ${t('recent.sec')}` : `${Math.floor(seconds / 60)} ${t('recent.min')}`;
     return { timeAgo, seconds };
 };
 
@@ -56,7 +45,10 @@ const createInitialTransactions = () => {
     const transactions = [];
     for (let i = 0; i < 8; i++) {
         const currency1 = currencies[Math.floor(Math.random() * currencies.length)];
-        const currency2 = currencies[Math.floor(Math.random() * currencies.length)];
+        let currency2 = currencies[Math.floor(Math.random() * currencies.length)];
+        while(currency2 === currency1) {
+            currency2 = currencies[Math.floor(Math.random() * currencies.length)];
+        }
         const { timeAgo, seconds } = getRandomTimeAgo();
         transactions.push({
             amount: getRandomAmount(currency1),
@@ -76,7 +68,7 @@ const getRandomAmount = (currency) => {
     };
     // eslint-disable-next-line default-case
     switch (currency) {
-        case 'BTC': return getRandomInRange(0.001, 0.1); // 0.001 to 0.1 BTC
+        case 'BTC': return getRandomInRange(0.001, 0.1, 0.001); // 0.001 to 0.1 BTC
         case 'ETH': return getRandomInRange(0.01, 1);    // 0.01 to 1 ETH
         case 'LTC': return getRandomInRange(0.1, 10);    // 0.1 to 10 LTC
         case 'USD': return getRandomInRange(0,1000, 100); // 0 to 1000 USD
@@ -181,25 +173,21 @@ const Recent = () => {
         }
     };
 
-    const clearTransactions = () => {
-        localStorage.removeItem('transactions');
-        setTransactions(createInitialTransactions());
-    };
+
 
 
     return (
         <div className={'recent-section mb-[6em]  relative font-[Mont] md:text-[16px] md:mb-[9em]'}>
-            <ClearTransactionsButton onClick={clearTransactions}/>
             <div className={'wrapper max-w-none px-[1em] mx-auto box-border w-full md:max-w-[1280px] md:px-[2em]'}>
                 <h2 className={'text-center  text-[2em]  text-transparent bg-clip-text bg-grad font-[MontBold] leading-[1.15em] mb-[.7em] md:text-nowrap md:text-[3.5em]'}>
-                    Recent Transactions
+                    {t('recent.title')}
                 </h2>
                 <ul className={'flex flex-col overflow-hidden items-center list-none'}>
                     {transactions.map((transaction, index) => (
                         <li key={index} className={'grid grid-cols-[1fr_.8em_.8em_.85fr] h-auto w-full box-border bg-[#21284B] rounded-[.3em] text-[.9em] min-h-[3.3em] mb-[.7em] text-center whitespace-nowrap border-collapse md:w-[70%] md:table md:table-fixed md:h-[3.3em]'}>
                             <div className={'recent-time row-[1] col-[1/3]  flex  border-b border-white/[.2] items-center justify-end pl-[1.3em] whitespace-nowrap text-left pr-[.6em] md:table-cell md:align-middle md:border-none'}>
                                 <div className={'time'}>
-                                    {transaction.timeAgo || 'Несколько секунд назад'}
+                                    {transaction.timeAgo}
                                 </div>
                             </div>
                             <div className={'dir-from row-[2] col-[1]  flex items-center justify-end md:justify-normal h-[4em] md:h-auto px-[.6em] md:min-w-[28%] md:text-right md:table-cell md:align-middle'}>

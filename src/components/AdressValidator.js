@@ -1,11 +1,12 @@
 import React from "react";
 import errorIco from '../svg/error.png'
+import {t} from"i18next"
 
 export const AdressValidator  = ({isValid, address, setAddress, activeCoin2, selectedName1, selectedName2, valid, validError, setValidError, handleAddressChange}) => {
 
 
 
-    const rateCheck = activeCoin2 === 'russian-ruble' || activeCoin2 === 'georgian-lari' ? 'Введите номер банковской карты' : `Ваш ${selectedName2} адрес`
+    const rateCheck = activeCoin2 === 'russian-ruble' || activeCoin2 === 'georgian-lari' ? t('bank') : `${t('mainPage.ur')} ${selectedName2} ${t('mainPage.address')}`
 
     return (
         <div id={'field'} className={`relative rounded-[.5rem] mt-[.2em] pointer-events-auto text-center text-[12px] text-white`}>

@@ -1,0 +1,104 @@
+{
+  "over": "Sipariş süresi doldu",
+  "popular": "Popüler para birimleri",
+  "ticker": "Bir para birimi veya ticker yazın",
+  "bank": "Banka kartı numaranızı girin",
+  "mainPage": {
+    "title": "Yıldırım hızında kripto para değişimi",
+    "send": "Gönder",
+    "receive": "Al",
+    "amount": "Miktarı girin",
+    "destination": "Hedef",
+    "ur": "Senin",
+    "address": "adres",
+    "type": "Emir tipi",
+    "fixed": "Sabit kur",
+    "float": "Dalgalı kur",
+    "exchange": "Şimdi değiştir",
+    "hint": "Siteyi kullanarak ve bir değişim oluşturarak, FixedFloat'ın",
+    "hint2": "ve",
+    "terms": "Hizmet Şartları",
+    "policy": "Gizlilik Politikası"
+  },
+  "pros": {
+    "title": "2018'den beri güvenilir",
+    "pros1": "Zaman tasarrufu",
+    "text1": "Tam otomasyon sayesinde maksimum değişim hızı",
+    "pros2": "Değişim yap",
+    "text2": "Doğru stratejiyi seçin ve avantajlı işlemler yapın",
+    "pros3": "Para tasarrufu",
+    "text3": "En iyi döviz kurları ve minimum komisyonlar"
+  },
+  "recent": {
+    "title": "Son işlemler",
+    "sec": "saniye önce",
+    "min": "dakika önce"
+  },
+  "faq": {
+    "title1": "Siparişimi nasıl takip edebilirim?",
+    "text1": "Üç şekilde: e-posta ile (e-posta adresinizi bırakırsanız), web sitemizde (tarayıcınız çerezleri kabul ediyorsa) veya siparişinizin bağlantılarıyla blok zincirindeki işlemleri görüntüleyerek.",
+    "title2": "Neden size güvenebilirim?",
+    "text2": "Kayıt olmadan ve kişisel bilgilerinizi paylaşmadan. Fonlarınızı tutmuyoruz, tüm değişimler tamamen otomatik modda anında gerçekleşir.",
+    "title3": "Gizli ücretler var mı?",
+    "text3": "Dürüstlük bizim önceliğimizdir, bu nedenle tam şeffaflık taahhüt ediyoruz ve tüm ücretleri açıkça belirtiyoruz:",
+    "fix": "Sabit kur seçerseniz %1",
+    "float": "Dalgalı kur seçerseniz %0.5",
+    "goto": "SSS sayfasına git"
+  },
+  "popup": {
+    "title": "Sabit ve dalgalı kurlar arasındaki fark nedir?",
+    "fix": {
+      "text": "Sabit kur",
+      "1": "Sabit kur seçerek, işlem başlatma anında gördüğünüz fiyatı alırsınız.",
+      "p1": "Sadece %1 + ağ ücreti ödeyin.",
+      "p2": "Kurlar 10 dakika boyunca sabit kalır.",
+      "p3": "Piyasa kurunda işleminiz blok zincir ağına görünmeden önce %1.2'den fazla değişirse, size bir geri ödeme yapmanız veya piyasa kurunda devam etmeniz istenecektir.",
+      "att": "Dikkat! İşleminiz 10 dakika içinde alınmalı ve miktar sipariş miktarıyla tam olarak eşleşmelidir. Aksi takdirde, size bir geri ödeme yapmanız veya piyasa kurunda devam etmeniz istenecektir."
+    },
+    "float": {
+      "title": "Dalgalı kur",
+      "text": "İşleminiz gerekli blok zinciri onaylarını aldığında, döviz kuru nihayetinde belirlenir. Piyasa yükselirse daha fazla kripto para alırsınız, düşerse daha az alırsınız. Her şey adil.",
+      "p1": "Sadece %0.5 + ağ ücreti ödeyin.",
+      "p2": "Değişim, işleminiz gerekli blok zinciri onaylarını aldıktan sonra 10 dakika içinde nihai olarak belirlenen piyasa kurunda yapılır.",
+      "ex": "Örnek:",
+      "t1": "1 BTC için 28.37362388 ETH değiştiriyorsunuz. Bir",
+      "fixed": "sabit",
+      "t2": "kur ile tam olarak 28.37362388 ETH alacaksınız. Bir",
+      "float": "dalgalı",
+      "t3": "kur ile ETH miktarı yukarı veya aşağı doğru değişebilir. Piyasa kurundaki değişikliklere bağlıdır."
+    }
+  },
+  "second": {
+    "send": "GÖNDERİLEN",
+    "receive": "ALDIĞINIZ",
+    "info": {
+      "id": "Sipariş Kimliği",
+      "time": "Kalan Süre",
+      "type": "Emir tipi",
+      "float": "Dalgalı kur",
+      "fixed": "Sabit kur",
+      "created": "Oluşturma Zamanı"
+    },
+    "details": {
+      "send": "Gönder",
+      "to": "adresine",
+      "p1": "Ağ onayları alındıktan sonra döviz kuru sabitlenecektir.",
+      "p2": "ağ onayı.",
+      "address": "Alma adresi"
+    },
+    "qr": "Adres",
+    "qrWith": "Miktarla birlikte",
+    "know": {
+      "title": "Bilmeniz gerekenler",
+      "p1": "TRX blok zinciri için sadece 1 onay gereklidir.",
+      "p2": "Bitcoin işlem onay hızı, Bitcoin blok zinciri ağının yoğunluk düzeyine bağlıdır. Daha fazla bilgi için makalemizi okuyun.",
+      "p3": "Dalgalı kur ile sipariş edilen miktar ile gönderdiğiniz işlem miktarı farklı ise, sipariş otomatik olarak yeniden hesaplanır.",
+      "p4": "Siparişinizin süresi dolduktan sonra ancak 24 saat içinde alınan işlem otomatik olarak siparişte görüntülenir. Siparişi kendiniz devam ettirebilir veya bir geri ödeme yapabilirsiniz."
+    },
+    "email": {
+      "title": "Sipariş durumu bildirimleri",
+      "p": "Bu siparişin durumu ile ilgili değişiklik bildirimlerini almak istiyorsanız e-posta adresinizi girin",
+      "but": "Onayla"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "over": "Pedido expirado",
+  "popular": "Moedas populares",
+  "ticker": "Digite uma moeda ou ticker",
+  "bank": "Digite o número do seu cartão bancário",
+  "mainPage": {
+    "title": "Troca de criptomoedas rápida",
+    "send": "Enviar",
+    "receive": "Receber",
+    "amount": "Insira o valor",
+    "destination": "Destino",
+    "ur": "Seu",
+    "address": "endereço",
+    "type": "Tipo de ordem",
+    "fixed": "Taxa fixa",
+    "float": "Taxa flutuante",
+    "exchange": "Trocar agora",
+    "hint": "Ao usar o site e criar uma troca, você concorda com os",
+    "hint2": "e",
+    "terms": "Termos de Serviço",
+    "policy": "Política de Privacidade"
+  },
+  "pros": {
+    "title": "Confiável desde 2018",
+    "pros1": "Economize tempo",
+    "text1": "Velocidade máxima de troca devido à automação completa",
+    "pros2": "Faça uma troca",
+    "text2": "Escolha a estratégia certa e faça negociações favoráveis",
+    "pros3": "Economize dinheiro",
+    "text3": "Melhores taxas de câmbio e comissões mínimas"
+  },
+  "recent": {
+    "title": "Transações recentes",
+    "sec": "segundos atrás",
+    "min": "minutos atrás"
+  },
+  "faq": {
+    "title1": "Como posso rastrear meu pedido?",
+    "text1": "De três maneiras: por e-mail (se você deixar seu endereço de e-mail), em nosso site (se seu navegador aceitar cookies) ou visualizando as transações na blockchain pelos links do seu pedido.",
+    "title2": "Por que posso confiar em você?",
+    "text2": "Sem registro e sem necessidade de compartilhar seus dados pessoais. Não mantemos seus fundos, todas as trocas ocorrem instantaneamente em modo totalmente automático.",
+    "title3": "Você tem taxas ocultas?",
+    "text3": "A honestidade é nossa prioridade, por isso nos comprometemos com total transparência e tornamos todas as taxas claras:",
+    "fix": "1% se você optar por uma taxa fixa",
+    "float": "0,5% se você optar por uma taxa flutuante",
+    "goto": "Ir para a página de FAQ"
+  },
+  "popup": {
+    "title": "Qual é a diferença entre taxas fixas e flutuantes?",
+    "fix": {
+      "text": "Taxa fixa",
+      "1": "Optando por uma taxa fixa, você recebe o preço que vê no momento de iniciar a transação.",
+      "p1": "Pague apenas 1% + taxa de rede.",
+      "p2": "As taxas congelam por 10 minutos.",
+      "p3": "Se a taxa de mercado mudar mais de 1,2% antes da aparição da sua transação na rede blockchain, você será solicitado a fazer um reembolso ou continuar trocando pela taxa de mercado.",
+      "att": "Atenção! Sua transação deve ser recebida dentro de 10 minutos e o valor deve corresponder exatamente ao valor do pedido. Caso contrário, você será solicitado a fazer um reembolso ou continuar a troca pela taxa de mercado."
+    },
+    "float": {
+      "title": "Taxa flutuante",
+      "text": "A taxa de câmbio é finalmente definida quando sua transação recebe o número necessário de confirmações da rede blockchain. Se o mercado subir, você receberá mais criptomoeda, se descer - menos. Tudo justo.",
+      "p1": "Pague apenas 0,5% + taxa de rede.",
+      "p2": "A troca será feita à taxa de mercado, que é finalmente definida dentro de 10 minutos após sua transação receber o número necessário de confirmações na rede blockchain.",
+      "ex": "Exemplo:",
+      "t1": "você está trocando 1 BTC por 28.37362388 ETH. Com uma",
+      "fixed": "taxa fixa",
+      "t2": "você receberá exatamente 28.37362388 ETH. Com uma",
+      "float": "taxa flutuante",
+      "t3": "a quantidade de ETH pode mudar para cima ou para baixo. Depende das mudanças na taxa de mercado."
+    }
+  },
+  "second": {
+    "send": "VOCÊ ENVIA",
+    "receive": "VOCÊ RECEBE",
+    "info": {
+      "id": "ID do Pedido",
+      "time": "Tempo Restante",
+      "type": "Tipo de Ordem",
+      "float": "Taxa flutuante",
+      "fixed": "Taxa fixa",
+      "created": "Hora de Criação"
+    },
+    "details": {
+      "send": "Enviar",
+      "to": "para o endereço",
+      "p1": "A taxa de câmbio será fixa após o recebimento",
+      "p2": "das confirmações da rede.",
+      "address": "Endereço de recebimento"
+    },
+    "qr": "Endereço",
+    "qrWith": "Com valor",
+    "know": {
+      "title": "O que você precisa saber?",
+      "p1": "Apenas 1 confirmação da blockchain TRX é necessária para concluir a troca",
+      "p2": "A velocidade de confirmação de uma transação de Bitcoin depende do nível de congestionamento da rede blockchain Bitcoin, leia mais em nosso artigo",
+      "p3": "Se o valor da transação que você enviou for diferente do valor inicial especificado na ordem com uma taxa flutuante, a ordem será recalculada automaticamente.",
+      "p4": "Se sua transação for recebida após a expiração do pedido, mas dentro de 24 horas, essa transação será exibida automaticamente no pedido. Você poderá continuar o pedido sozinho ou fazer um reembolso."
+    },
+    "email": {
+      "title": "Notificações de status do pedido",
+      "p": "Digite seu e-mail se quiser receber notificações sobre mudanças no status deste pedido",
+      "but": "Confirmar"
+    }
+  }
+}

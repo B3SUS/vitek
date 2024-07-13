@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import {t} from 'i18next'
 
 function getCurrentFormattedTime() {
     const now = new Date();
@@ -23,7 +24,7 @@ export const ExchangeButton = ({
                                    selectedCoin2,
                                    selectedIcon1,
                                    selectedIcon2,
-    selectedColor1, selectedColor2, address
+    selectedColor1, selectedColor2, address, selectedOption
                                }) => {
     const navigate = useNavigate();
     const initialTime = 1800;
@@ -82,7 +83,8 @@ export const ExchangeButton = ({
                     randomCode,
                     selectedColor1,
                     selectedColor2,
-                    address
+                    address,
+                    selectedOption
                 },
                 replace: true,
             });
@@ -95,7 +97,7 @@ export const ExchangeButton = ({
         <div className="exchange-button mt-[1em] text-center font-[Verdana] p-0 outline-0 text-white text-[12px] md:text-[16px] md:mt-0 md:text-nowrap">
             <button className="bg-white rounded-[.5em] border-0 cursor-pointer inline-block text-[1em] overflow-hidden h-[3.575em] p-0 text-center" onClick={handleClick}>
                 <span className="w-auto box-border items-center justify-center bg-[#008fdf] flex text-white text-[1em] font-[MontSemi] h-full py-[.73em] px-[3em] text-center">
-                    Exchange now
+                    {t('mainPage.exchange')}
                 </span>
             </button>
         </div>

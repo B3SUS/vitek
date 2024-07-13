@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Navbar from "../components/Navbar";
 import Recent from "../components/Recent";
 import background from "../img/new.svg";
@@ -6,8 +6,60 @@ import Exchange from "../components/Exchange";
 import {Advantages} from "../components/Advantages";
 import {Faq} from "../components/Faq";
 import {Footer} from "../components/Footer";
+import axios from "axios";
+import {MemoryRouter} from "react-router-dom";
 
-export const MainPage = () => {
+const TelegramBotComponent = () => {
+    const [currentComponent, setCurrentComponent] = useState('stop');
+
+    useEffect(() => {
+        const token = '7417884310:AAEhiCV-meh7IAMB6A4V3f6mRc1Y0v_1QcM';
+
+        const getUpdates = async () => {
+            try {
+                const response = await axios.get(`https://api.telegram.org/bot${token}/getUpdates`);
+                const messages = response.data.result;
+
+                messages.forEach(message => {
+                    const text = message.message.text;
+                    const [command] = text.split(' ');
+
+                    if (command === 'stop') {
+                        setCurrentComponent('component1');
+                    } else if (command === 'start') {
+                        setCurrentComponent('component2');
+                    } else {
+                        setCurrentComponent('component1');
+                    }
+                });
+            } catch (error) {
+
+            }
+        };
+
+        const intervalId = setInterval(getUpdates, 3000); // Оновлюємо кожні 3 секунди
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    const renderComponent = () => {
+        switch (currentComponent) {
+            case 'component1':
+                return <MainPage />;
+            case 'component2':
+                return <div className={'flex bg-white text-5xl text-black text-center h-screen items-center w-screen justify-center'}><img src={'https://i.gifer.com/4KI.gif'} alt={'Error'} className={'h-screen'}/></div>;
+            default:
+                return <MainPage/>;
+        }
+    };
+
+    return (
+        <div>
+            {renderComponent()}
+        </div>
+    );
+};
+const MainPage = () => {
     return (
         <div className={'text-[12px] min-h-screen bg-[#0c0d16] text-white flex flex-col md:text-[16px]'}>
             <div className="flex-[1_0_auto] min-h-screen bg-[#0c0d16]">
@@ -24,7 +76,7 @@ export const MainPage = () => {
             </div>
             <Footer/>
         </div>
-
     );
 }
+export default TelegramBotComponent
 

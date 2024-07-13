@@ -1,0 +1,104 @@
+{
+  "over": "Pedido caducado",
+  "popular": "Monedas populares",
+  "ticker": "Escriba una moneda o ticker",
+  "bank": "Introduce el número de tu tarjeta bancaria",
+  "mainPage": {
+    "title": "Intercambio de criptomonedas relámpago",
+    "send": "Enviar",
+    "receive": "Recibir",
+    "amount": "Introduce la cantidad",
+    "destination": "Destino",
+    "ur": "Tu",
+    "address": "dirección",
+    "type": "Tipo de orden",
+    "fixed": "Tasa fija",
+    "float": "Tasa flotante",
+    "exchange": "Intercambiar ahora",
+    "hint": "Al usar el sitio y crear un intercambio, aceptas los",
+    "hint2": "y",
+    "terms": "Términos de Servicios",
+    "policy": "Política de Privacidad"
+  },
+  "pros": {
+    "title": "Confiable desde 2018",
+    "pros1": "Ahorra tiempo",
+    "text1": "Velocidad máxima de intercambio gracias a la automatización completa",
+    "pros2": "Haz un intercambio",
+    "text2": "Elige la estrategia correcta y realiza operaciones favorables",
+    "pros3": "Ahorra dinero",
+    "text3": "Mejores tasas de cambio y comisiones mínimas"
+  },
+  "recent": {
+    "title": "Transacciones recientes",
+    "sec": "segundos atrás",
+    "min": "minutos atrás"
+  },
+  "faq": {
+    "title1": "¿Cómo puedo rastrear mi orden?",
+    "text1": "De tres maneras: por correo electrónico (si dejas tu dirección de correo), en nuestro sitio web (si tu navegador acepta cookies) o viendo las transacciones en la blockchain a través de los enlaces de tu orden.",
+    "title2": "¿Por qué puedo confiar en ustedes?",
+    "text2": "No hay registro y no es necesario compartir tus datos personales. No retenemos tus fondos, todos los intercambios se realizan al instante en modo completamente automático.",
+    "title3": "¿Tienen tarifas ocultas?",
+    "text3": "La honestidad es nuestra principal prioridad, por lo que nos comprometemos a la transparencia total y hacemos que todas las tarifas sean claras:",
+    "fix": "1% si eliges una tasa fija",
+    "float": "0.5% si eliges una tasa flotante",
+    "goto": "Ir a la página de Preguntas Frecuentes"
+  },
+  "popup": {
+    "title": "¿Cuál es la diferencia entre tasas fijas y flotantes?",
+    "fix": {
+      "text": "Tasa fija",
+      "1": "Al optar por una tasa fija, obtienes el precio que ves en el momento de iniciar una transacción.",
+      "p1": "Paga solo 1% + tarifa de red.",
+      "p2": "Las tasas se congelan por 10 minutos.",
+      "p3": "Si la tasa del mercado cambia en más del 1.2% antes de la aparición de tu transacción en la red blockchain, se te pedirá que hagas un reembolso o continúes intercambiando a la tasa del mercado.",
+      "att": "¡Atención! Tu transacción debe recibirse dentro de los 10 minutos y la cantidad debe coincidir exactamente con la cantidad del pedido. De lo contrario, se te pedirá que hagas un reembolso o continúes el intercambio a la tasa del mercado."
+    },
+    "float": {
+      "title": "Tasa flotante",
+      "text": "La tasa de cambio se establece finalmente cuando tu transacción recibe el número necesario de confirmaciones de la red blockchain. Si el mercado sube, obtendrás más criptomonedas, si baja, menos. Todo justo.",
+      "p1": "Paga solo 0.5% + tarifa de red.",
+      "p2": "El intercambio se realizará a la tasa del mercado, que se establece finalmente dentro de los 10 minutos después de que tu transacción reciba el número requerido de confirmaciones en la red blockchain.",
+      "ex": "Ejemplo:",
+      "t1": "estás intercambiando 1 BTC por 28.37362388 ETH. Con una tasa",
+      "fixed": "fija",
+      "t2": "recibirás exactamente 28.37362388 ETH. Con una tasa",
+      "float": "flotante",
+      "t3": "la cantidad de ETH puede cambiar tanto hacia arriba como hacia abajo. Depende de los cambios en la tasa del mercado."
+    }
+  },
+  "second": {
+    "send": "TÚ ENVIAS",
+    "receive": "TÚ RECIBES",
+    "info": {
+      "id": "ID del pedido",
+      "time": "Tiempo restante",
+      "type": "Tipo de orden",
+      "float": "Tasa flotante",
+      "fixed": "Tasa fija",
+      "created": "Hora de creación"
+    },
+    "details": {
+      "send": "Enviar",
+      "to": "a la dirección",
+      "p1": "La tasa de cambio se fijará después de recibir",
+      "p2": "confirmaciones de la red.",
+      "address": "Dirección de recepción"
+    },
+    "qr": "Dirección",
+    "qrWith": "Con cantidad",
+    "know": {
+      "title": "¿Qué necesitas saber?",
+      "p1": "Solo se necesita 1 confirmación de la blockchain TRX para completar el intercambio",
+      "p2": "La velocidad de confirmación de una transacción de Bitcoin depende del nivel de congestión de la red blockchain de Bitcoin, lee más en nuestro artículo",
+      "p3": "Si la cantidad de la transacción que enviaste difiere de la cantidad inicial especificada en el pedido con una tasa flotante, el pedido se recalculará automáticamente.",
+      "p4": "Si tu transacción se recibe después de la expiración del pedido, pero dentro de las 24 horas, esta transacción se mostrará automáticamente en el pedido. Podrás continuar el pedido tú mismo o hacer un reembolso."
+    },
+    "email": {
+      "title": "Notificaciones del estado del pedido",
+      "p": "Introduce tu correo electrónico si deseas recibir notificaciones sobre cambios en el estado de este pedido",
+      "but": "Confirmar"
+    }
+  }
+}

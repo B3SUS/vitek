@@ -1,0 +1,104 @@
+{
+  "over": "Commande expirée",
+  "popular": "Devises populaires",
+  "ticker": "Saisissez une devise ou un ticker",
+  "bank": "Entrez le numéro de votre carte bancaire",
+  "mainPage": {
+    "title": "Échange de cryptomonnaies éclair",
+    "send": "Envoyer",
+    "receive": "Recevoir",
+    "amount": "Entrer le montant",
+    "destination": "Destination",
+    "ur": "Votre",
+    "address": "adresse",
+    "type": "Type de commande",
+    "fixed": "Taux fixe",
+    "float": "Taux flottant",
+    "exchange": "Échanger maintenant",
+    "hint": "En utilisant le site et en créant un échange, vous acceptez les",
+    "hint2": "et",
+    "terms": "Conditions d'utilisation",
+    "policy": "Politique de confidentialité"
+  },
+  "pros": {
+    "title": "Fiable depuis 2018",
+    "pros1": "Gagnez du temps",
+    "text1": "Vitesse maximale d'échange grâce à l'automatisation complète",
+    "pros2": "Faire un échange",
+    "text2": "Choisissez la bonne stratégie et réalisez des échanges avantageux",
+    "pros3": "Économiser de l'argent",
+    "text3": "Meilleurs taux de change et commissions minimales"
+  },
+  "recent": {
+    "title": "Transactions récentes",
+    "sec": "secondes avant",
+    "min": "minutes avant"
+  },
+  "faq": {
+    "title1": "Comment puis-je suivre ma commande?",
+    "text1": "De trois manières : par email (si vous laissez votre adresse email), sur notre site web (si votre navigateur accepte les cookies) ou en consultant les transactions dans la blockchain via les liens de votre commande.",
+    "title2": "Pourquoi puis-je vous faire confiance?",
+    "text2": "Pas d'inscription et pas besoin de partager vos informations personnelles. Nous ne détenons pas vos fonds, tous les échanges se font instantanément en mode entièrement automatique.",
+    "title3": "Avez-vous des frais cachés?",
+    "text3": "L'honnêteté est notre priorité principale, nous nous engageons donc à une transparence totale et rendons tous les frais clairs:",
+    "fix": "1% si vous optez pour un taux fixe",
+    "float": "0,5% si vous optez pour un taux flottant",
+    "goto": "Aller à la page FAQ"
+  },
+  "popup": {
+    "title": "Quelle est la différence entre les taux fixes et flottants?",
+    "fix": {
+      "text": "Taux fixe",
+      "1": "En optant pour un taux fixe, vous obtenez le prix que vous voyez au moment de l'initiation de la transaction.",
+      "p1": "Payez seulement 1% + frais de réseau.",
+      "p2": "Les taux sont gelés pendant 10 minutes.",
+      "p3": "Si le taux du marché change de plus de 1,2% avant l'apparition de votre transaction sur le réseau blockchain, il vous sera demandé de faire un remboursement ou de continuer l'échange au taux du marché.",
+      "att": "Attention! Votre transaction doit être reçue dans les 10 minutes et le montant doit correspondre exactement au montant de la commande. Sinon, il vous sera demandé de faire un remboursement ou de continuer l'échange au taux du marché."
+    },
+    "float": {
+      "title": "Taux flottant",
+      "text": "Le taux de change est finalement fixé lorsque votre transaction reçoit le nombre nécessaire de confirmations du réseau blockchain. Si le marché monte, vous obtiendrez plus de cryptomonnaie, si le marché baisse - moins. Tout est juste.",
+      "p1": "Payez seulement 0,5% + frais de réseau.",
+      "p2": "L'échange se fera au taux du marché, qui est finalement fixé dans les 10 minutes suivant la réception par votre transaction du nombre requis de confirmations du réseau blockchain.",
+      "ex": "Exemple:",
+      "t1": "vous échangez 1 BTC contre 28.37362388 ETH. Avec un",
+      "fixed": "taux fixe",
+      "t2": "vous recevrez exactement 28.37362388 ETH. Avec un",
+      "float": "taux flottant",
+      "t3": "le montant d'ETH peut varier à la hausse comme à la baisse. Cela dépend des variations du taux du marché."
+    }
+  },
+  "second": {
+    "send": "VOUS ENVOYEZ",
+    "receive": "VOUS RECEVEZ",
+    "info": {
+      "id": "ID de commande",
+      "time": "Temps restant",
+      "type": "Type de commande",
+      "float": "Taux flottant",
+      "fixed": "Taux fixe",
+      "created": "Heure de création"
+    },
+    "details": {
+      "send": "Envoyer",
+      "to": "à l'adresse",
+      "p1": "Le taux de change sera fixé après réception de",
+      "p2": "confirmations du réseau.",
+      "address": "Adresse de réception"
+    },
+    "qr": "Adresse",
+    "qrWith": "Avec montant",
+    "know": {
+      "title": "Ce que vous devez savoir?",
+      "p1": "Seulement 1 confirmation de la blockchain TRX est nécessaire pour compléter l'échange",
+      "p2": "La vitesse de confirmation d'une transaction Bitcoin dépend du niveau de congestion du réseau blockchain Bitcoin, en savoir plus dans notre article",
+      "p3": "Si le montant de la transaction que vous avez envoyée diffère du montant initial spécifié dans la commande à taux flottant, la commande sera automatiquement recalculée.",
+      "p4": "Si votre transaction est reçue après l'expiration de la commande, mais dans les 24 heures, cette transaction sera automatiquement affichée dans la commande. Vous pourrez continuer la commande vous-même ou effectuer un remboursement."
+    },
+    "email": {
+      "title": "Notifications de statut de commande",
+      "p": "Entrez votre email si vous souhaitez recevoir des notifications sur les changements de statut de cette commande",
+      "but": "Confirmer"
+    }
+  }
+}

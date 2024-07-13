@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {t} from 'i18next'
 
 const Timer = ({ initialTime, selectedColor2 }) => {
     const initialSeconds = initialTime; // Начальное количество секунд
@@ -28,7 +29,7 @@ const Timer = ({ initialTime, selectedColor2 }) => {
 
     const renderTime = () => {
         if (seconds === 0) {
-            return <span className={'text-red-600 text-[1.2em]'}>Заказ истек</span>;
+            return <span className={'text-red-600 text-[1.2em]'}>{t('over')}</span>;
         } else {
             return <span className={`text-[1.4em] text-[${selectedColor2}]`}>{formatTime(seconds)}</span>;
         }

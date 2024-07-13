@@ -1,0 +1,104 @@
+{
+  "over": "Ordine scaduto",
+  "popular": "Valute popolari",
+  "ticker": "Inserisci una valuta o un ticker",
+  "bank": "Inserisci il numero della tua carta di credito",
+  "mainPage": {
+    "title": "Scambio di criptovalute lampo",
+    "send": "Invia",
+    "receive": "Ricevi",
+    "amount": "Inserisci l'importo",
+    "destination": "Destinazione",
+    "ur": "Il tuo",
+    "address": "indirizzo",
+    "type": "Tipo di ordine",
+    "fixed": "Tasso fisso",
+    "float": "Tasso variabile",
+    "exchange": "Scambia ora",
+    "hint": "Utilizzando il sito e creando uno scambio, accetti i",
+    "hint2": "e",
+    "terms": "Termini di Servizio",
+    "policy": "Politica sulla Privacy"
+  },
+  "pros": {
+    "title": "Affidabile dal 2018",
+    "pros1": "Risparmia tempo",
+    "text1": "Massima velocità di scambio grazie all'automazione completa",
+    "pros2": "Effettua uno scambio",
+    "text2": "Scegli la strategia giusta e fai scambi vantaggiosi",
+    "pros3": "Risparmia denaro",
+    "text3": "Migliori tassi di cambio e commissioni minime"
+  },
+  "recent": {
+    "title": "Transazioni recenti",
+    "sec": "secondi fa",
+    "min": "minuti fa"
+  },
+  "faq": {
+    "title1": "Come posso tracciare il mio ordine?",
+    "text1": "In tre modi: via email (se lasci il tuo indirizzo email), sul nostro sito web (se il tuo browser accetta i cookie) o visualizzando le transazioni nella blockchain tramite i link del tuo ordine.",
+    "title2": "Perché posso fidarmi di voi?",
+    "text2": "Nessuna registrazione e nessun bisogno di condividere i tuoi dati personali. Non trattiamo i tuoi fondi, tutti gli scambi avvengono istantaneamente in modalità completamente automatica.",
+    "title3": "Avete commissioni nascoste?",
+    "text3": "L'onestà è la nostra principale priorità, quindi ci impegniamo alla massima trasparenza e rendiamo tutte le commissioni chiare:",
+    "fix": "1% se opti per un tasso fisso",
+    "float": "0,5% se opti per un tasso variabile",
+    "goto": "Vai alla pagina FAQ"
+  },
+  "popup": {
+    "title": "Qual è la differenza tra tassi fissi e variabili?",
+    "fix": {
+      "text": "Tasso fisso",
+      "1": "Optando per un tasso fisso, ottieni il prezzo che vedi al momento dell'avvio della transazione.",
+      "p1": "Paga solo l'1% + commissione di rete.",
+      "p2": "I tassi sono bloccati per 10 minuti.",
+      "p3": "Se il tasso di mercato cambia di oltre l'1,2% prima della comparsa della tua transazione sulla rete blockchain, ti verrà chiesto di effettuare un rimborso o di continuare lo scambio al tasso di mercato.",
+      "att": "Attenzione! La tua transazione deve essere ricevuta entro 10 minuti e l'importo deve corrispondere esattamente all'importo dell'ordine. In caso contrario, ti verrà chiesto di effettuare un rimborso o di continuare lo scambio al tasso di mercato."
+    },
+    "float": {
+      "title": "Tasso variabile",
+      "text": "Il tasso di cambio viene fissato definitivamente quando la tua transazione riceve il numero necessario di conferme della rete blockchain. Se il mercato sale, otterrai più criptovaluta, se scende - meno. Tutto giusto.",
+      "p1": "Paga solo lo 0,5% + commissione di rete.",
+      "p2": "Lo scambio verrà effettuato al tasso di mercato, che viene fissato definitivamente entro 10 minuti dopo che la tua transazione ha ricevuto il numero necessario di conferme della rete blockchain.",
+      "ex": "Esempio:",
+      "t1": "stai scambiando 1 BTC per 28,37362388 ETH. Con un",
+      "fixed": "tasso fisso",
+      "t2": "riceverai esattamente 28,37362388 ETH. Con un",
+      "float": "tasso variabile",
+      "t3": "la quantità di ETH può variare sia verso l'alto che verso il basso. Dipende dalle variazioni del tasso di mercato."
+    }
+  },
+  "second": {
+    "send": "TU INVII",
+    "receive": "TU RICEVI",
+    "info": {
+      "id": "ID dell'ordine",
+      "time": "Tempo rimanente",
+      "type": "Tipo di ordine",
+      "float": "Tasso variabile",
+      "fixed": "Tasso fisso",
+      "created": "Ora di creazione"
+    },
+    "details": {
+      "send": "Invia",
+      "to": "all'indirizzo",
+      "p1": "Il tasso di cambio verrà fissato dopo aver ricevuto",
+      "p2": "conferme della rete.",
+      "address": "Indirizzo di ricezione"
+    },
+    "qr": "Indirizzo",
+    "qrWith": "Con importo",
+    "know": {
+      "title": "Cosa devi sapere?",
+      "p1": "È necessaria solo 1 conferma della blockchain TRX per completare lo scambio",
+      "p2": "La velocità di conferma di una transazione Bitcoin dipende dal livello di congestione della rete blockchain Bitcoin, leggi di più nel nostro articolo",
+      "p3": "Se l'importo della transazione che hai inviato differisce dall'importo iniziale specificato nell'ordine a tasso variabile, l'ordine verrà ricalcolato automaticamente.",
+      "p4": "Se la tua transazione viene ricevuta dopo la scadenza dell'ordine, ma entro 24 ore, questa transazione verrà visualizzata automaticamente nell'ordine. Potrai continuare l'ordine da solo o effettuare un rimborso."
+    },
+    "email": {
+      "title": "Notifiche di stato dell'ordine",
+      "p": "Inserisci la tua email se desideri ricevere notifiche sui cambiamenti di stato di questo ordine",
+      "but": "Conferma"
+    }
+  }
+}

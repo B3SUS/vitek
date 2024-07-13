@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import CoinLi from "./coinLI";
+import {t} from "i18next";
 
 export const ExchangeAmount  = ({
                                     coins, copiedCoins,
@@ -90,14 +91,14 @@ export const ExchangeAmount  = ({
 
                 <div id={'wrap-header'} className={`flex justify-between items-end pb-[.4em] px-[1.2em]`} style={{color: selectedColor1}}>
                     <header className={'text-[.9em] text-left whitespace-nowrap overflow-hidden font-[MontMed] leading-[1.2]'}>
-                        Send
+                        {t('mainPage.send')}
                     </header>
                 </div>
 
                 <div className={'input-wabbr relative mt-[.2em] font-sans md:text-[16px]'} style={{color: selectedColor1}}>
 
                     <div
-                        className={`ui-selector-outer items-stretch flex flex-col text-[1.4em] h-full left-0 top-0 fixed w-full z-50 font-sans text-[#8247e5] ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                        className={`ui-selector-outer md:h-[30em] items-stretch flex flex-col text-[1.4em] h-full left-0 top-0 fixed w-full z-[1000] font-sans text-[#8247e5] md:absolute  ${isOpen ? 'visible' : 'invisible'}`}>
 
                         <label  className={`ui-select bg-[#21284b] rounded-[.4em .4em 0 0] border-0 h-[3.575em] min-h-[3em] p-0 text-[${selectedColor1}] box-border cursor-pointer block relative z-10 select-none font-[Verdana]`}>
 
@@ -112,7 +113,7 @@ export const ExchangeAmount  = ({
                                 </div>
 
                                 <div className={'ui-select-inner h-full font-[MontL] w-full'}>
-                                    <input type="text" placeholder={"Type a currency or ticker"} value={searchValue} onChange={handleSearchChange} style={{color:selectedColor1}}
+                                    <input type="text" placeholder={t('ticker')} value={searchValue} onChange={handleSearchChange} style={{color:selectedColor1}}
                                            className={`dynamic-placeholder text-left py-[.3em] px-0 box-border bg-none h-full w-full placeholder:font-[MontL] bg-transparent focus:outline-none`}
                                     />
                                 </div>
@@ -122,13 +123,13 @@ export const ExchangeAmount  = ({
                         </label>
 
                         <div
-                            className={'ui-select-list relative flex-auto h-full border-0 rounded-[0 0 .4em .4em] box-border block left-0 mt-0 overflow-hidden pt-0 w-full z-50 select-none font-sans text-[12px]'}
+                            className={'ui-select-list relative md:block flex-auto h-full border-0 rounded-[0 0 .4em .4em] box-border left-0 mt-0 overflow-hidden pt-0 w-full z-50 select-none font-sans text-[12px]'}
                         >
 
-                            <ul className={'pr-0 w-full max-h-none bg-[#21284b] pt-[.3em] block h-full overflow-x-hidden overflow-y-auto relative list-none m-0 outline-0 text-[1.4em]'}>
+                            <ul className={'pr-0 w-full max-h-none bg-[#21284b] pt-[.3em] block h-full overflow-x-hidden overflow-y-auto relative list-none m-0 outline-0 text-[1.4em] z-[2000]'}>
 
                                 <li className={'box-border block m-0 w-full text-[#636363] text-[.8em] py-[.4em] px-[1.25em] font-[Verdana] overflow-hidden'}>
-                                    Популярные валюты
+                                    {t('popular')}
                                 </li>
 
                                 {filteredCoins.map((coin) => (
@@ -151,7 +152,7 @@ export const ExchangeAmount  = ({
 
                     </div>
                     <div className={" flex flex-col gap-y-2"}>
-                        <input autoComplete={'off'} required={true} placeholder={'Enter the amount'} type={'number'} maxLength={18} value={amount1} onChange={handleAmount1Change} onKeyDown={handleKeyPress}
+                        <input autoComplete={'off'} required={true} placeholder={t('mainPage.amount')} type={'number'} maxLength={18} value={amount1} onChange={handleAmount1Change} onKeyDown={handleKeyPress}
                                className={'no-spinner select-amount-from bg-transparent border-transparent border-solid relative py-[.3em] pr-[4.4em] pl-[.7em] w-full box-border rounded-[.5rem] text-[1.625em] h-[2.2em] font-[MontMed]'}
                         >
                         </input>
@@ -195,15 +196,15 @@ export const ExchangeAmount  = ({
 
                 <div id={'wrap-header'} className={'flex justify-between items-end pb-[.4em] px-[1.2em] font-[Verdana] m-0 outline-0'} style={{color:selectedColor2}}>
                     <header className={'text-[.9em] text-left whitespace-nowrap overflow-hidden font-[MontMed] leading-[1.2]'}>
-                        Receive
+                        {t('mainPage.receive')}
                     </header>
                 </div>
 
                 <div className={'input-wabbr relative mt-[.2em] font-sans text-[12px] md:text-[16px]'} style={{color:selectedColor2}}>
 
-                    <div className={`ui-selector-outer items-stretch flex flex-col text-[1.4em] h-full left-0 top-0 fixed w-full font-sans text-[#8247e5] ${isOpen2 ? 'translate-x-0' : '-translate-x-full'}`}>
+                    <div className={`ui-selector-outer md:h-[30em] items-stretch flex flex-col text-[1.4em] h-full left-0 top-0 fixed w-full z-50 font-sans text-[#8247e5] md:absolute ${isOpen2 ? 'visible' : 'invisible'}`}>
 
-                        <label className={'ui-select bg-[#21284b] rounded-[.4em .4em 0 0] border-0 h-[3.575em] min-h-[3em] p-0 text-[#f7931a] box-border cursor-pointer block relative z-10 select-none font-[Verdana]'}>
+                        <label className={'ui-select bg-[#21284b] rounded-[.4em .4em 0 0] border-0 h-[3.575em] min-h-[3em] p-0 text-[#f7931a] box-border cursor-pointer block relative z-50 select-none font-[Verdana]'}>
 
                             <div className={'ui-select-search flex opacity-100 p-[0 2.4em 0 0] bottom-0 left-0 absolute right-0 top-0 font-[Verdana] cursor-pointer'}>
 
@@ -216,7 +217,7 @@ export const ExchangeAmount  = ({
                                 </div>
 
                                 <div className={'ui-select-inner h-full font-[Arial] w-full'}>
-                                    <input type="text" placeholder={"Type a currency or ticker"} style={{color:selectedColor2}} value={searchValue} onChange={handleSearchChange2}
+                                    <input type="text" placeholder={t('ticker')} style={{color:selectedColor2}} value={searchValue} onChange={handleSearchChange2}
                                            className={'dynamic-placeholder2 text-left py-[.3em] px-0 box-border bg-none h-full w-full placeholder:font-[MontL] placeholder:text-[rgba(247,147,26,0.5)] bg-transparent focus:outline-none'}
                                     />
                                 </div>
@@ -226,13 +227,13 @@ export const ExchangeAmount  = ({
                         </label>
 
                         <div
-                            className={'ui-select-list relative flex-auto h-full border-0 rounded-[0 0 .4em .4em] box-border block left-0 mt-0 overflow-hidden pt-0 w-full z-20 select-none font-sans text-[12px]'}
+                            className={'ui-select-list relative flex-auto h-full border-0 rounded-[0 0 .4em .4em] box-border block left-0 mt-0 overflow-hidden pt-0 w-full z-50 select-none font-sans text-[12px]'}
                         >
 
                             <ul className={'pr-0 w-full max-h-none bg-[#21284b] pt-[.3em] block h-full overflow-x-hidden overflow-y-auto relative list-none m-0 outline-0 text-[1.4em]'}>
 
                                 <li className={'box-border block m-0 w-full text-[#636363] text-[.8em] py-[.4em] px-[1.25em] font-[Verdana]'}>
-                                    Популярные валюты
+                                    {t('popular')}
                                 </li>
 
                                 {filteredCoins.map((coin) => (

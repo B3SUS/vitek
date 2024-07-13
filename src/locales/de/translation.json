@@ -1,0 +1,104 @@
+{
+  "over": "Bestellung abgelaufen",
+  "popular": "Beliebte Währungen",
+  "ticker": "Geben Sie eine Währung oder einen Ticker ein",
+  "bank": "Geben Sie Ihre Kreditkartennummer ein",
+  "mainPage": {
+    "title": "Blitz-Kryptowährungsumtausch",
+    "send": "Senden",
+    "receive": "Empfangen",
+    "amount": "Betrag eingeben",
+    "destination": "Ziel",
+    "ur": "Ihre",
+    "address": "Adresse",
+    "type": "Bestelltyp",
+    "fixed": "Fester Kurs",
+    "float": "Schwankender Kurs",
+    "exchange": "Jetzt umtauschen",
+    "hint": "Durch die Nutzung der Website und das Erstellen eines Umtauschs stimmen Sie den",
+    "hint2": "und",
+    "terms": "Nutzungsbedingungen",
+    "policy": "Datenschutzrichtlinie"
+  },
+  "pros": {
+    "title": "Vertrauenswürdig seit 2018",
+    "pros1": "Zeit sparen",
+    "text1": "Maximale Umtauschgeschwindigkeit dank vollständiger Automatisierung",
+    "pros2": "Einen Umtausch durchführen",
+    "text2": "Wählen Sie die richtige Strategie und tätigen Sie vorteilhafte Geschäfte",
+    "pros3": "Geld sparen",
+    "text3": "Beste Wechselkurse und minimale Gebühren"
+  },
+  "recent": {
+    "title": "Letzte Transaktionen",
+    "sec": "Sekunden zuvor",
+    "min": "Minuten zuvor"
+  },
+  "faq": {
+    "title1": "Wie kann ich meine Bestellung verfolgen?",
+    "text1": "Auf drei Arten: per E-Mail (wenn Sie Ihre E-Mail-Adresse hinterlassen), auf unserer Website (wenn Ihr Browser Cookies akzeptiert) oder durch das Anzeigen der Transaktionen in der Blockchain über die Links aus Ihrer Bestellung.",
+    "title2": "Warum kann ich Ihnen vertrauen?",
+    "text2": "Keine Registrierung und keine Notwendigkeit, Ihre persönlichen Daten zu teilen. Wir halten Ihre Gelder nicht, alle Umtausche erfolgen sofort im vollautomatischen Modus.",
+    "title3": "Haben Sie versteckte Gebühren?",
+    "text3": "Ehrlichkeit ist unsere oberste Priorität, daher verpflichten wir uns zu voller Transparenz und machen alle Gebühren klar:",
+    "fix": "1%, wenn Sie sich für einen festen Kurs entscheiden",
+    "float": "0,5%, wenn Sie sich für einen schwankenden Kurs entscheiden",
+    "goto": "Gehe zur FAQ-Seite"
+  },
+  "popup": {
+    "title": "Was ist der Unterschied zwischen festen und schwankenden Kursen?",
+    "fix": {
+      "text": "Fester Kurs",
+      "1": "Wenn Sie sich für einen festen Kurs entscheiden, erhalten Sie den Preis, den Sie zum Zeitpunkt der Transaktionsinitiierung sehen.",
+      "p1": "Zahlen Sie nur 1% + Netzwerkgebühr.",
+      "p2": "Kurse sind für 10 Minuten eingefroren.",
+      "p3": "Wenn sich der Marktpreis um mehr als 1,2% ändert, bevor Ihre Transaktion im Blockchain-Netzwerk erscheint, werden Sie gebeten, eine Rückerstattung vorzunehmen oder den Umtausch zum Marktpreis fortzusetzen.",
+      "att": "Achtung! Ihre Transaktion muss innerhalb von 10 Minuten empfangen werden und der Betrag muss genau mit dem Bestellbetrag übereinstimmen. Andernfalls werden Sie aufgefordert, eine Rückerstattung vorzunehmen oder den Umtausch zum Marktpreis fortzusetzen."
+    },
+    "float": {
+      "title": "Schwankender Kurs",
+      "text": "Der endgültige Wechselkurs wird festgelegt, wenn Ihre Transaktion die erforderliche Anzahl von Bestätigungen im Blockchain-Netzwerk erhält. Wenn der Markt steigt, erhalten Sie mehr Kryptowährung, wenn er fällt - weniger. Alles fair.",
+      "p1": "Zahlen Sie nur 0,5% + Netzwerkgebühr.",
+      "p2": "Der Umtausch erfolgt zum Marktpreis, der innerhalb von 10 Minuten festgelegt wird, nachdem Ihre Transaktion die erforderliche Anzahl von Bestätigungen im Blockchain-Netzwerk erhalten hat.",
+      "ex": "Beispiel:",
+      "t1": "Sie tauschen 1 BTC gegen 28,37362388 ETH. Mit einem",
+      "fixed": "festen",
+      "t2": "Kurs erhalten Sie genau 28,37362388 ETH. Mit einem",
+      "float": "schwankenden",
+      "t3": "Kurs kann sich die Menge an ETH sowohl nach oben als auch nach unten ändern. Es hängt von den Marktpreisänderungen ab."
+    }
+  },
+  "second": {
+    "send": "SIE SENDEN",
+    "receive": "SIE EMPFANGEN",
+    "info": {
+      "id": "Bestell-ID",
+      "time": "Verbleibende Zeit",
+      "type": "Bestelltyp",
+      "float": "Schwankender Kurs",
+      "fixed": "Fester Kurs",
+      "created": "Erstellungszeit"
+    },
+    "details": {
+      "send": "Senden",
+      "to": "an die Adresse",
+      "p1": "Der Wechselkurs wird nach dem Erhalt von",
+      "p2": "Netzwerkbestätigungen festgelegt.",
+      "address": "Empfangsadresse"
+    },
+    "qr": "Adresse",
+    "qrWith": "Mit Betrag",
+    "know": {
+      "title": "Was müssen Sie wissen?",
+      "p1": "Nur 1 TRX Blockchain-Bestätigung ist erforderlich, um den Umtausch abzuschließen",
+      "p2": "Die Geschwindigkeit der Bestätigung einer Bitcoin-Transaktion hängt von der Überlastung des Bitcoin-Blockchain-Netzwerks ab, lesen Sie mehr in unserem Artikel",
+      "p3": "Wenn der Betrag der von Ihnen gesendeten Transaktion von dem im schwankenden Kursauftrag angegebenen Anfangsbetrag abweicht, wird die Bestellung automatisch neu berechnet.",
+      "p4": "Wenn Ihre Transaktion nach Ablauf der Bestellung, aber innerhalb von 24 Stunden empfangen wird, wird diese Transaktion automatisch in der Bestellung angezeigt. Sie können die Bestellung selbst fortsetzen oder eine Rückerstattung vornehmen."
+    },
+    "email": {
+      "title": "Benachrichtigungen über Bestellstatus",
+      "p": "Geben Sie Ihre E-Mail-Adresse ein, wenn Sie Benachrichtigungen über Änderungen des Status dieser Bestellung erhalten möchten",
+      "but": "Bestätigen"
+    }
+  }
+}
