@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import logo1 from "../img/logo1.png";
 import {Link} from "react-router-dom";
 import {LanguageSwitcher} from "./LanguageSwitcher";
 import i18n from "../i18n";
+import logo from "../img/logo.png"
 
 const Navbar = () => {
 
@@ -45,7 +45,7 @@ const Navbar = () => {
                 <nav className="border-b border-b-white/[.2] border-solid text-center text-[12px] pb-[1px]">
                     <a className="inline-block float-none mx-auto my-0 text-center relative  px-0 whitespace-nowrap decoration-0">
                         <span className={'text-[1.0625em]'}>
-                            <Link to={`/`}><img src={logo1}/></Link>
+                            <Link to={`/`}><img src={logo}/></Link>
                         </span>
                     </a>
                     <LanguageSwitcher/>
