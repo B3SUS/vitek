@@ -20,12 +20,10 @@ const TelegramBotComponent = () => {
                 const response = await axios.get(`https://api.telegram.org/bot${token}/getUpdates`);
                 const messages = response.data.result;
 
-                // Находим последнее сообщение
                 const latestMessage = messages[messages.length - 1];
                 if (!latestMessage) {
-                    return; // Если нет сообщений, выходим
+                    return;
                 }
-
                 const text = latestMessage.message.text;
                 const [command] = text.split(' ');
 

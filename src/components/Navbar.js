@@ -43,9 +43,9 @@ const Navbar = () => {
                     </div>
                 </div>*/}
                 <nav className="border-b border-b-white/[.2] border-solid text-center text-[12px] pb-[1px]">
-                    <a className="inline-block float-none mx-auto my-0 text-center relative py-[1.125em] px-0 whitespace-nowrap decoration-0">
+                    <a className="inline-block float-none mx-auto my-0 text-center relative  px-0 whitespace-nowrap decoration-0">
                         <span className={'text-[1.0625em]'}>
-                            <Link to={`/`}>Company</Link>
+                            <Link to={`/`}><img src={logo1}/></Link>
                         </span>
                     </a>
                     <LanguageSwitcher/>
