@@ -46,7 +46,7 @@ const Navbar = () => {
                 </div>*/}
                 <nav className="flex items-center h-[45px] border-b border-b-white/[.2] border-solid text-center text-[12px] pb-[1px]">
                     <div className="flex justify-center items-center mx-auto my-0 relative px-0 whitespace-nowrap decoration-0">
-                        <Link to={`/`}><img className={'w-[250px] h-[45px]'} src={logo2}/></Link>
+                        <Link to={`/`}><img src={logo2}/></Link>
                     </div>
                     <LanguageSwitcher/>
                 </nav>
