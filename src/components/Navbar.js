@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {LanguageSwitcher} from "./LanguageSwitcher";
 import i18n from "../i18n";
-import logo from "../img/logo.png"
+import logo from "../img/logo.svg"
 
 const Navbar = () => {
 
@@ -42,12 +42,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>*/}
-                <nav className="border-b border-b-white/[.2] border-solid text-center text-[12px] pb-[1px]">
-                    <a className="inline-block float-none mx-auto my-0 text-center relative  px-0 whitespace-nowrap decoration-0">
-                        <span className={'text-[1.0625em]'}>
-                            <Link to={`/`}><img src={logo}/></Link>
-                        </span>
-                    </a>
+                <nav className="flex items-center h-[45px] border-b border-b-white/[.2] border-solid text-center text-[12px] pb-[1px]">
+                    <div className="flex justify-center items-center mx-auto my-0 relative px-0 whitespace-nowrap decoration-0">
+                        <Link to={`/`}><img className={'my-auto'} src={logo}/></Link>
+                    </div>
                     <LanguageSwitcher/>
                 </nav>
             </div>
