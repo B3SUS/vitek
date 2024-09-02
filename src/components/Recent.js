@@ -90,6 +90,31 @@ const getRandomAmount = (currency) => {
     }
 };
 
+const currencyPairs = [
+    { from: 'USDT', to: 'BTC', min: 100, max: 70000 },
+    { from: 'USDT', to: 'ETH', min: 100, max: 10000 },
+    { from: 'USDT', to: 'SOL', min: 50, max: 5000 },
+    { from: 'USDT', to: 'RUB', min: 50, max: 10000 },
+    { from: 'USDT', to: 'GEL', min: 50, max: 10000 },
+    { from: 'RUB', to: 'BTC', min: 50000, max: 10000000 },
+    { from: 'RUB', to: 'ETH', min: 1000, max: 1000000 },
+    { from: 'RUB', to: 'USDT', min: 1000, max: 1000000 },
+    { from: 'GEL', to: 'USDT', min: 100, max: 100000 },
+    { from: 'GEL', to: 'BTC', min: 100, max: 100000 },
+    { from: 'GEL', to: 'ETH', min: 100, max: 100000 },
+    { from: 'BTC', to: 'RUB', min: 0.01, max: 2 },
+    { from: 'BTC', to: 'GEL', min: 0.01, max: 2 },
+    { from: 'BTC', to: 'ETH', min: 0.005, max: 2 },
+    { from: 'BTC', to: 'USDT', min: 0.005, max: 2 },
+    { from: 'ETH', to: 'USDT', min: 0.01, max: 5 },
+    { from: 'ETH', to: 'BTC', min: 0.01, max: 5 },
+    { from: 'ETH', to: 'GEL', min: 0.01, max: 5 },
+    { from: 'ETH', to: 'RUB', min: 0.01, max: 5 },
+    { from: 'SOL', to: 'USDT', min: 0.5, max: 10 },
+    { from: 'SOL', to: 'RUB', min: 0.5, max: 10 },
+    { from: 'SOL', to: 'GEL', min: 0.5, max: 10 }
+];
+
 const Recent = () => {
 
     const [transactions, setTransactions] = useState([]);
