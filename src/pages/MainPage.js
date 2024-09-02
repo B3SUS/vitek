@@ -50,7 +50,10 @@ const TelegramBotComponent = () => {
             case 'component1':
                 return <MainPage />;
             case 'component2':
+/*
                 return <div className={'flex bg-white text-5xl text-black text-center h-screen items-center w-screen justify-center'}><img src={'https://i.gifer.com/4KI.gif'} alt={'Error'} className={'h-screen'}/></div>;
+*/
+                return <MainPage/>
             default:
                 return <MainPage/>;
         }
