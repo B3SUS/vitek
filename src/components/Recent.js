@@ -28,32 +28,70 @@ import {t} from 'i18next'
 
 const currencies = ['BTC', 'ETH', 'LTC', 'USD', 'BNB', 'SOL', 'XRP', 'DOGE', 'ADA', 'TRX', 'AVAX', 'SHIB', 'DOT', 'NEAR', 'XMR', 'GEL', 'RUB'];
 
+const currencyPairs = [
+    { from: 'USD', to: 'BTC', min: 100, max: 70000, round: 50 },
+    { from: 'USD', to: 'ETH', min: 100, max: 10000, round: 50 },
+    { from: 'USD', to: 'SOL', min: 50, max: 5000, round: 10 },
+    { from: 'USD', to: 'RUB', min: 50, max: 10000, round: 10 },
+    { from: 'USD', to: 'GEL', min: 50, max: 10000, round: 10 },
+    { from: 'RUB', to: 'BTC', min: 50000, max: 1000000, round: 1000 },
+    { from: 'RUB', to: 'ETH', min: 10000, max: 1000000, round: 1000 },
+    { from: 'RUB', to: 'USD', min: 1000, max: 1000000, round: 1000 },
+    { from: 'GEL', to: 'USD', min: 100, max: 100000, round: 100 },
+    { from: 'GEL', to: 'BTC', min: 100, max: 100000, round: 100 },
+    { from: 'GEL', to: 'ETH', min: 100, max: 100000, round: 100 },
+    { from: 'BTC', to: 'RUB', min: 0.01, max: 2, round: 0.01 },
+    { from: 'BTC', to: 'GEL', min: 0.01, max: 2, round: 0.01 },
+    { from: 'BTC', to: 'ETH', min: 0.005, max: 2, round: 0.001 },
+    { from: 'BTC', to: 'USD', min: 0.005, max: 2, round: 0.001 },
+    { from: 'ETH', to: 'USD', min: 0.01, max: 5, round: 0.01 },
+    { from: 'ETH', to: 'BTC', min: 0.01, max: 5, round: 0.01 },
+    { from: 'ETH', to: 'GEL', min: 0.01, max: 5, round: 0.01 },
+    { from: 'ETH', to: 'RUB', min: 0.01, max: 5, round: 0.01 },
+    { from: 'SOL', to: 'USD', min: 0.5, max: 10, round: 0.1 },
+    { from: 'SOL', to: 'RUB', min: 0.5, max: 10, round: 0.1 },
+    { from: 'SOL', to: 'GEL', min: 0.5, max: 10, round: 0.1 }
+];
+
+const getRandomAmount = (currency1, currency2) => {
+    const getRandomInRange = (min, max, roundTo) => {
+
+        const randomValue = Math.random() * (max - min) + min;
+
+        let roundedValue = (Math.round(randomValue / roundTo) * roundTo).toFixed(2);
+        return Math.min(Math.max(roundedValue, min), max);
+    };
+
+    const pair = currencyPairs.find(p => p.min === currency1 && p.max === currency2);
+    if (pair) {
+        return getRandomInRange(pair.min, pair.max, pair.round);
+    }
+
+    // Default rounding if no specific pair found
+    return getRandomInRange(0, 1000, 0.01);
+};
 
 
-// Function to generate a random time ago string and seconds
+
 const getRandomTimeAgo = () => {
     const seconds = Math.floor(Math.random() * 480) + 1; // 1 second to 8 minutes (480 seconds)
     const timeAgo = seconds < 60 ? `${seconds} ${t('recent.sec')}` : `${Math.floor(seconds / 60)} ${t('recent.min')}`;
     return { timeAgo, seconds };
 };
 
-// Function to generate a random static time between 5 and 15 seconds
+
 const getRandomStaticTime = () => Math.floor(Math.random() * 11) + 5;
 
-// Function to create initial transactions
+
 const createInitialTransactions = () => {
     const transactions = [];
     for (let i = 0; i < 8; i++) {
-        const currency1 = currencies[Math.floor(Math.random() * currencies.length)];
-        let currency2 = currencies[Math.floor(Math.random() * currencies.length)];
-        while(currency2 === currency1) {
-            currency2 = currencies[Math.floor(Math.random() * currencies.length)];
-        }
+        const pair = currencyPairs[Math.floor(Math.random() * currencyPairs.length)];
         const { timeAgo, seconds } = getRandomTimeAgo();
         transactions.push({
-            amount: getRandomAmount(currency1),
-            currency1,
-            currency2,
+            amount: getRandomAmount(pair.min, pair.max),
+            currency1: pair.from,
+            currency2: pair.to,
             timeAgo,
             time: seconds,
             staticTime: getRandomStaticTime()
@@ -61,67 +99,19 @@ const createInitialTransactions = () => {
     }
     return transactions.sort((a, b) => a.time - b.time);
 };
-const getRandomAmount = (currency) => {
-    const getRandomInRange = (min, max, roundTo = 0.001) => {
-        const randomValue = Math.random() * (max - min) + min;
-        return (Math.round(randomValue / roundTo) * roundTo).toFixed(2);
-    };
-    // eslint-disable-next-line default-case
-    switch (currency) {
-        case 'BTC': return getRandomInRange(0.001, 0.1, 0.001); // 0.001 to 0.1 BTC
-        case 'ETH': return getRandomInRange(0.01, 1);    // 0.01 to 1 ETH
-        case 'LTC': return getRandomInRange(0.1, 10);    // 0.1 to 10 LTC
-        case 'USD': return getRandomInRange(0,1000, 100); // 0 to 1000 USD
-        case 'BNB': return getRandomInRange(0.1, 2);     // 0.1 to 2 BNB
-        case 'SOL': return getRandomInRange(0.1, 5);     // 0.1 to 5 SOL
-        case 'XRP': return getRandomInRange(1, 1000);    // 1 to 1000 XRP
-        case 'DOGE': return getRandomInRange(10, 10000); // 10 to 10000 DOGE
-        case 'ADA': return getRandomInRange(1, 500);     // 1 to 500 ADA
-        case 'TRX': return getRandomInRange(10, 2000);   // 10 to 2000 TRX
-        case 'AVAX': return getRandomInRange(0.1, 10);   // 0.1 to 10 AVAX
-        case 'SHIB': return getRandomInRange(0,1000000); // 0 to 1,000,000 SHIB
-        case 'DOT': return getRandomInRange(0.1, 50);    // 0.1 to 50 DOT
-        case 'NEAR': return getRandomInRange(0.1, 20);   // 0.1 to 20 NEAR
-        case 'XMR': return getRandomInRange(0.01, 1);    // 0.01 to 1 XMR
-        case 'GEL': return getRandomInRange(0,5000) // 0 to 5000 GEL
-        case 'RUB': return getRandomInRange(5000,10000); // 5000 to 10000 RUB
-        default:            console.warn(`Unknown currency: ${currency}`);
-            return null;
-    }
-};
-
-const currencyPairs = [
-    { from: 'USDT', to: 'BTC', min: 100, max: 70000 },
-    { from: 'USDT', to: 'ETH', min: 100, max: 10000 },
-    { from: 'USDT', to: 'SOL', min: 50, max: 5000 },
-    { from: 'USDT', to: 'RUB', min: 50, max: 10000 },
-    { from: 'USDT', to: 'GEL', min: 50, max: 10000 },
-    { from: 'RUB', to: 'BTC', min: 50000, max: 10000000 },
-    { from: 'RUB', to: 'ETH', min: 1000, max: 1000000 },
-    { from: 'RUB', to: 'USDT', min: 1000, max: 1000000 },
-    { from: 'GEL', to: 'USDT', min: 100, max: 100000 },
-    { from: 'GEL', to: 'BTC', min: 100, max: 100000 },
-    { from: 'GEL', to: 'ETH', min: 100, max: 100000 },
-    { from: 'BTC', to: 'RUB', min: 0.01, max: 2 },
-    { from: 'BTC', to: 'GEL', min: 0.01, max: 2 },
-    { from: 'BTC', to: 'ETH', min: 0.005, max: 2 },
-    { from: 'BTC', to: 'USDT', min: 0.005, max: 2 },
-    { from: 'ETH', to: 'USDT', min: 0.01, max: 5 },
-    { from: 'ETH', to: 'BTC', min: 0.01, max: 5 },
-    { from: 'ETH', to: 'GEL', min: 0.01, max: 5 },
-    { from: 'ETH', to: 'RUB', min: 0.01, max: 5 },
-    { from: 'SOL', to: 'USDT', min: 0.5, max: 10 },
-    { from: 'SOL', to: 'RUB', min: 0.5, max: 10 },
-    { from: 'SOL', to: 'GEL', min: 0.5, max: 10 }
-];
 
 const Recent = () => {
-
     const [transactions, setTransactions] = useState([]);
     const [initialized, setInitialized] = useState(() => {
         const storedTransactions = localStorage.getItem('transactions');
         return storedTransactions !== null;
     });
+
+    const updateTransactions = () => {
+        const newTransactions = createInitialTransactions();
+        setTransactions(newTransactions);
+        localStorage.setItem('transactions', JSON.stringify(newTransactions));
+    };
 
     useEffect(() => {
         if (initialized) {
@@ -130,9 +120,7 @@ const Recent = () => {
                 setTransactions(JSON.parse(storedTransactions));
             }
         } else {
-            const initialTransactions = createInitialTransactions();
-            setTransactions(initialTransactions);
-            localStorage.setItem('transactions', JSON.stringify(initialTransactions));
+            updateTransactions();
             setInitialized(true);
         }
     }, [initialized]);
@@ -155,12 +143,11 @@ const Recent = () => {
                 })).filter(t => t.time <= 540); // Remove transactions older than 9 minutes (540 seconds)
 
                 if (newTransactions.length < 8) {
-                    const currency1 = currencies[Math.floor(Math.random() * currencies.length)];
-                    const currency2 = currencies[Math.floor(Math.random() * currencies.length)];
+                    const pair = currencyPairs[Math.floor(Math.random() * currencyPairs.length)];
                     const newTransaction = {
-                        amount: getRandomAmount(currency1),
-                        currency1,
-                        currency2,
+                        amount: getRandomAmount(pair.min, pair.max),
+                        currency1: pair.from,
+                        currency2: pair.to,
                         timeAgo: '1 second ago',
                         time: 1,
                         staticTime: getRandomStaticTime()
@@ -199,10 +186,15 @@ const Recent = () => {
     };
 
 
-
+    const updateTransactions2 = () => {
+        const newTransactions = createInitialTransactions();
+        setTransactions(newTransactions);
+        localStorage.setItem('transactions', JSON.stringify(newTransactions));
+    };
 
     return (
         <div className={'recent-section mb-[6em]  relative font-[Mont] md:text-[16px] md:mb-[9em]'}>
+            <button onClick={updateTransactions2}>Clear</button>
             <div className={'wrapper max-w-none px-[1em] mx-auto box-border w-full md:max-w-[1280px] md:px-[2em]'}>
                 <h2 className={'text-center  text-[2em]  text-transparent bg-clip-text bg-grad font-[MontBold] leading-[1.15em] mb-[.7em] md:text-nowrap md:text-[3.5em]'}>
                     {t('recent.title')}
