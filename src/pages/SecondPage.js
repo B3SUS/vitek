@@ -18,6 +18,7 @@ export const SecondPage = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
 
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -39,9 +40,8 @@ export const SecondPage = () => {
         setQr(e.target.value);
     };
 
-    if (!valid){
-        return <Navigate to='/' replace/>
-    }
+
+
 
     const qrcodeValue = () => {
         if (loading) {

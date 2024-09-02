@@ -123,10 +123,10 @@ const ExchangeForm = () => {
                 const assetsData = responses[0].data.data;
                 const ratesData = responses[1].data.data;
 
-                // Фільтруємо курси для рубля і ларі
+
                 const filteredRates = ratesData.filter(rate => rate.id === 'russian-ruble' || rate.id === 'georgian-lari');
 
-                // Об'єднуємо дані про активи та курси
+
                 const combinedData = [
                     ...assetsData.map(asset => ({
                         ...asset,
@@ -320,16 +320,6 @@ const ExchangeForm = () => {
         var valid = WAValidator.validate(address, selectedName2, 'prod');
     }
 
-    /*const handleAddressChange = (newAddress) => {
-        setAddress(newAddress);
-
-        if (neededCoins.includes(selectedId2) && newAddress !== '') {
-            const isValidAddress = WAValidator.validate(newAddress, selectedName2, 'prod');
-            if(isValidAddress===false)setValidError(!isValidAddress);
-            console.log(validError)
-        }
-
-    };*/
 
     const handleAddressChange = (newAddress) => {
         setAddress(newAddress);

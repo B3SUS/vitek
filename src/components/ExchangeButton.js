@@ -86,7 +86,7 @@ export const ExchangeButton = ({
                     address,
                     selectedOption
                 },
-                replace: true,
+                replace: false,
             });
         } else {
             setValidError(valid);
